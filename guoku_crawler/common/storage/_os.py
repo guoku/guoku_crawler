@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from os.path import join, normcase, abspath, sep, dirname
 
-from guoku_crawler.storage.encoding import force_text
+from guoku_crawler.common.storage.encoding import force_text
 
 
 def safe_join(base, *paths):

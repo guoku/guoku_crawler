@@ -7,7 +7,7 @@ Move a file in the safest way possible::
 
 import os
 
-from guoku_crawler.storage import locks
+from guoku_crawler.common.storage import locks
 
 
 try:

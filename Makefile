@@ -23,6 +23,10 @@ help:
 	@echo "release - package and upload a release"
 	@echo "dist - package"
 	@echo "install - install the package to the active Python's site-packages"
+	@echo "celery - start celery worker, celery beat and flower"
+	@echo "celery-worker - start celery worker"
+	@echo "celery-beat - start celery beat"
+	@echo "celery-flower - start celery flower"
 
 clean: clean-build clean-pyc clean-test
 
@@ -70,3 +74,14 @@ dist: clean
 
 install: clean
 	python setup.py install
+
+celery: celery-worker celery-beat celery-flower
+
+celery-worker:
+	celery -A guoku_crawler worker -l info &
+
+celery-beat:
+	celery -A guoku_crawler beat -l info &
+
+celery-flower:
+	flower -A guoku_crawler auto_refresh=True --address=127.0.0.1 --basic-auth=guoku:guoku1@# &

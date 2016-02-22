@@ -3,30 +3,31 @@
 
 import re
 import random
-# import redis
-from urllib.parse import urljoin
+import logging
+
 from celery.task import task
 from datetime import datetime
 from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 from wand.exceptions import WandException
-from guoku_crawler.article.utils import clean_xml, queryset_iterator, clean_title
-from guoku_crawler.article import RequestsTask, WeiXinClient, ToManyRequests
+
+from guoku_crawler import config
 from guoku_crawler.article import Expired
+from guoku_crawler.celery import RequestsTask
+from guoku_crawler.common.parse import clean_xml, clean_title
+from guoku_crawler.common.utils import queryset_iterator
 from guoku_crawler.models import CoreArticle, CoreMedia, CoreGkuser
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
+from guoku_crawler.article import WeiXinClient, ToManyRequests
 
 
 SEARCH_API = 'http://weixin.sogou.com/weixinjs'
 ARTICLE_LIST_API = 'http://weixin.sogou.com/gzhjs'
-log = getLogger('django')
 weixin_client = WeiXinClient()
 qr_code_patterns = (re.compile('biz\s*=\s*"(?P<qr_url>[^"]*)'),
                     re.compile('fakeid\s*=\s*"(?P<qr_url>[^"]*)'),
                     re.compile('appuin\s*=\s*"(?P<qr_url>[^"]*)'))
-image_host = getattr(settings, 'IMAGE_HOST', None)
-# r = redis.Redis(host=settings.CONFIG_REDIS_HOST,
-#                 port=settings.CONFIG_REDIS_PORT,
-#                 db=settings.CONFIG_REDIS_DB)
+image_host = getattr(config, 'IMAGE_HOST', None)
 
 
 @task(base=RequestsTask, name='sogou.crawl_articles')
@@ -39,25 +40,13 @@ def crawl_articles():
         fetch_article_list.delay(user.pk)
 
 
-# def prepare_cookies():
-#     check_url = urljoin(settings.PHANTOM_SERVER, '_health')
-#     resp = requests.get(check_url)
-#     ready = resp.status_code == 200
-#     if ready:
-#         emails = settings.SOGOU_USERS
-#         for sg_email in emails:
-#             update_user_cookie.delay(sg_user=sg_email)
-#     else:
-#         log.error("phantom web server is unavailable!!!!!!")
-
-
 @task(base=RequestsTask, name='sogou.fetch_article_list')
 def fetch_article_list(authorized_user_pk, page=1):
     authorized_user = Profile.objects.get(pk=authorized_user_pk)
     open_id, ext, sg_cookie = get_tokens(authorized_user.weixin_id)
     if not open_id:
-        log.warning("skip user %s: cannot find open_id. Is weixin_id correct?",
-                    authorized_user.weixin_id)
+        logging.warning("skip user %s: cannot find open_id. Is weixin_id correct?",
+                        authorized_user.weixin_id)
         return
     if not authorized_user.weixin_openid:
         # save open_id if it's not set already
@@ -93,14 +82,14 @@ def fetch_article_list(authorized_user_pk, page=1):
             cleaned_title__startswith=item,
             creator=authorized_user.user
         )
-        log.info("filter sql is: %s", article.query)
+        logging.info("filter sql is: %s", article.query)
         if article:
             existed.append(item)
 
-    log.info("those articles are existed: %s", existed)
+    logging.info("those articles are existed: %s", existed)
     if existed:
-        log.info('some items on the page already exists in db; '
-                 'no need to go to next page')
+        logging.info('some items on the page already exists in db; '
+                     'no need to go to next page')
         go_next = False
     item_dict = {key: value for key, value
                  in item_dict.items() if key not in existed}
@@ -113,7 +102,7 @@ def fetch_article_list(authorized_user_pk, page=1):
             page=page,
         )
         # except (Warning, Error) as e:
-        #     log.error(
+        #     logging.error(
         #         'unexpected error in crawl_article - user pk: %d; ' +
         #         'title: %s; page: %d - %s',
         #         authorized_user_pk,
@@ -124,11 +113,11 @@ def fetch_article_list(authorized_user_pk, page=1):
 
     page += 1
     if int(response.jsonp['totalPages']) < page:
-        log.info('current page is the last page; will not go next page')
+        logging.info('current page is the last page; will not go next page')
         go_next = False
 
     if go_next:
-        log.info('prepare to get next page: %d', page)
+        logging.info('prepare to get next page: %d', page)
         fetch_article_list.delay(authorized_user_pk=authorized_user.pk,
                                  page=page)
 
@@ -142,7 +131,7 @@ def crawl_article(article_link, authorized_user_pk, article_data, sg_cookie, pag
             url=url, headers={'Cookie': sg_cookie})
     except (ToManyRequests, Expired) as e:
         # if too frequent error, re-crawl the page the current article is on
-        log.warning("too many requests or request expired. %s", e.message)
+        logging.warning("too many requests or request expired. %s", e.message)
         fetch_article_list.delay(authorized_user_pk=authorized_user.pk,
                                  page=page)
         return
@@ -163,10 +152,10 @@ def crawl_article(article_link, authorized_user_pk, article_data, sg_cookie, pag
         cleaned_title=cleaned_title,
         creator=creator,
     )
-    log.info("created article id: %s. title: %s. cleaned_title: %s",
+    logging.info("created article id: %s. title: %s. cleaned_title: %s",
              article.pk, title, cleaned_title)
     # except MultipleObjectsReturned as e:
-    #     log.error("duplicate articles, title: %s."
+    #     logging.error("duplicate articles, title: %s."
     #               " will use the first one. %s", title, e.message)
     #     article = CoreArticle.objects.filter(
     #         title=title,
@@ -185,7 +174,7 @@ def crawl_article(article_link, authorized_user_pk, article_data, sg_cookie, pag
         for (key, value) in article_info.items():
             setattr(article, key, value)
         article.save()
-        log.info('insert article. %s', title)
+        logging.info('insert article. %s', title)
 
     cover = fetch_image(article.cover)
     if cover:
@@ -200,7 +189,7 @@ def crawl_article(article_link, authorized_user_pk, article_data, sg_cookie, pag
                 image_tag.attrs.get('src') or image_tag.attrs.get('data-src')
             )
             if img_src:
-                log.info('fetch_image for article %d: %s', article.id, img_src)
+                logging.info('fetch_image for article %d: %s', article.id, img_src)
                 gk_img_rc = fetch_image(img_src, full=False)
                 if gk_img_rc:
                     full_path = "%s%s" % (image_host, gk_img_rc)
@@ -211,12 +200,12 @@ def crawl_article(article_link, authorized_user_pk, article_data, sg_cookie, pag
             content_html = article_soup.decode_contents(formatter="html")
             article.content = content_html
             article.save()
-    log.info('article %s finished.', article.pk)
+    logging.info('article %s finished.', article.pk)
     print('-' * 80)
 
 
 def get_tokens(weixin_id):
-    log.info('get open_id for %s', weixin_id)
+    logging.info('get open_id for %s', weixin_id)
     open_id = None
     ext = None
     params = dict(type='1', ie='utf8', query=weixin_id)
@@ -238,18 +227,18 @@ def get_tokens(weixin_id):
     if open_id:
         return open_id, ext, sg_cookie
     else:
-        log.warning('cannot find open_id for weixin_id: %s.', weixin_id)
+        logging.warning('cannot find open_id for weixin_id: %s.', weixin_id)
         return None, None, None
 
 
 def fetch_image(image_url, full=True):
-    log.info('fetch_image %s', image_url)
+    logging.info('fetch_image %s', image_url)
     if not image_url:
-        log.info('empty image url; skip')
+        logging.info('empty image url; skip')
         return
     if (not image_url.find('mmbiz.qpic.cn') >= 0 and
             not image_url.find('mp.weixin.qq.com') >= 0):
-        log.info('image url is not from mmbiz.qpic.cn; skip: %s', image_url)
+        logging.info('image url is not from mmbiz.qpic.cn; skip: %s', image_url)
         return
     from guoku_crawler.common.image import HandleImage
     r = weixin_client.get(url=image_url, stream=True)
@@ -268,7 +257,7 @@ def fetch_image(image_url, full=True):
         return image_name
 
     except (AttributeError, WandException) as e:
-        log.error('handle image(%s) Error: %s', image_url, e.message)
+        logging.error('handle image(%s) Error: %s', image_url, e.message)
 
 
 def parse_qr_code_url(article_soup):
@@ -294,8 +283,3 @@ def get_qr_code(authorized_user_pk, qr_code_url):
         qr_code_image = fetch_image(qr_code_url)
         authorized_user.weixin_qrcode_img = qr_code_image
         authorized_user.save()
-
-
-if __name__ == '__main__':
-    # prepare_cookies()
-    crawl_articles.delay()

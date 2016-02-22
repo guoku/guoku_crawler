@@ -38,28 +38,6 @@ def clean_xml(xml_str):
     return xml_str
 
 
-def queryset_iterator(queryset, chunk_size=100):
-    """
-    Iterate over a Django Queryset ordered by the primary key
-    This method loads a maximum of chunk size (default: 100) rows in it's
-    memory at the same time while django normally would load all rows in it's
-    memory. Using the iterator() method only causes it to not pre_load all the
-    classes.
-    Note that the implementation of the iterator does not support ordered query
-    sets.
-    :param chunk_size: maximum of chunk
-    :param queryset: query that want to query
-    """
-    pk = 0
-    last_pk = queryset.order_by('-pk')[0].pk
-    queryset = queryset.order_by('pk')
-    while pk < last_pk:
-        for row in queryset.filter(pk__gt=pk)[:chunk_size]:
-            pk = row.pk
-            yield row
-        gc.collect()
-
-
 def clean_title(article_title):
     if not article_title:
         return

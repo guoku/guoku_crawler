@@ -3,7 +3,7 @@
 import hashlib
 import random
 import time
-import config
+from guoku_crawler import config
 
 
 try:

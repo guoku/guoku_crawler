@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 import os
 
-from guoku_crawler.storage.crypto import get_random_string
-from guoku_crawler.storage.encoding import force_text
-from guoku_crawler.storage.file import File
-from guoku_crawler.storage.text import get_valid_filename
+from guoku_crawler.common.storage.crypto import get_random_string
+from guoku_crawler.common.storage.encoding import force_text
+from guoku_crawler.common.storage.file import File
+from guoku_crawler.common.storage.text import get_valid_filename
 
 
 class Storage(object):

@@ -4,8 +4,8 @@ import re
 
 from functools import wraps, total_ordering
 
-from guoku_crawler.storage import force_text
-from guoku_crawler.storage.encoding import Promise
+from guoku_crawler.common.storage import force_text
+from guoku_crawler.common.storage.encoding import Promise
 
 
 def _lazy_proxy_unpickle(func, args, kwargs, *resultclasses):

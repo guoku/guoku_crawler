@@ -6,7 +6,16 @@ import logging
 from _md5 import md5
 from wand.image import Image as WandImage
 
+from guoku_crawler import config
 from guoku_crawler.common.file import ContentFile
+from guoku_crawler.common.storage.storage import FileSystemStorage, MogileFSStorage
+
+
+def get_storage_class():
+    if config.LOCAL_FILE_STORAGE:
+        return FileSystemStorage
+    return MogileFSStorage
+default_storage = get_storage_class()
 
 
 class HandleImage(object):
@@ -87,4 +96,3 @@ class HandleImage(object):
             pass
 
         return file_name
-

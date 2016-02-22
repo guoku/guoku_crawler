@@ -1,23 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import datetime
 import os
-
 import errno
+from guoku_crawler import config
+import pymogile
+import datetime
+
 from asyncio import locks
+from os.path import abspath
 from urllib.parse import urljoin
 
-import pymogile as pymogile
-
-import config
-from guoku_crawler.common.file import File
-from guoku_crawler.storage import Storage
-from os.path import abspath
-
-from guoku_crawler.storage._os import safe_join
-from guoku_crawler.storage.encoding import force_text, filepath_to_uri
-from guoku_crawler.storage.exceptions import ImproperlyConfigured
-from guoku_crawler.storage.move import file_move_safe
+from guoku_crawler.common.storage import Storage, File
+from guoku_crawler.common.storage._os import safe_join
+from guoku_crawler.common.storage.move import file_move_safe
+from guoku_crawler.common.storage.encoding import force_text, filepath_to_uri
+from guoku_crawler.common.storage.exceptions import (ImproperlyConfigured,
+                                                     SuspiciousFileOperation)
 
 
 class FileSystemStorage(Storage):
@@ -80,7 +78,8 @@ class FileSystemStorage(Storage):
                         locks.lock(fd, locks.LOCK_EX)
                         for chunk in content.chunks():
                             if _file is None:
-                                mode = 'wb' if isinstance(chunk, bytes) else 'wt'
+                                mode = 'wb' if isinstance(chunk,
+                                                          bytes) else 'wt'
                                 _file = os.fdopen(fd, mode)
                             _file.write(chunk)
                     finally:
@@ -136,7 +135,8 @@ class FileSystemStorage(Storage):
         try:
             path = safe_join(self.location, name)
         except ValueError:
-            raise SuspiciousFileOperation("Attempted access to '%s' denied." % name)
+            raise SuspiciousFileOperation(
+                "Attempted access to '%s' denied." % name)
         return os.path.normpath(path)
 
     def size(self, name):
@@ -159,6 +159,7 @@ class FileSystemStorage(Storage):
 
 class MogileFSStorage(Storage):
     """MogileFS filesystem storage"""
+
     def __init__(self, base_url=config.MEDIA_URL):
 
         # the MOGILEFS_MEDIA_URL overrides MEDIA_URL
@@ -183,7 +184,7 @@ class MogileFSStorage(Storage):
 
     def filesize(self, filename):
         raise NotImplemented
-        #return os.path.getsize(self._get_absolute_path(filename))
+        # return os.path.getsize(self._get_absolute_path(filename))
 
     def path(self, filename):
         paths = self.get_mogile_paths(filename)
@@ -198,7 +199,8 @@ class MogileFSStorage(Storage):
         # def open(self, filename, mode='rb'):
 
         # raise NotImplemented
-        #return open(self._get_absolute_path(filename), mode)
+        # return open(self._get_absolute_path(filename), mode)
+
     def _open(self, filename, mode='rb'):
         f = self.client.read_file(filename)
         # f.closed = False
@@ -217,9 +219,11 @@ class MogileFSStorage(Storage):
             self.mogile_class = None
 
         # Write the file to mogile
-        success = self.client.store_file(filename, raw_contents, cls=self.mogile_class)
+        success = self.client.store_file(filename, raw_contents,
+                                         cls=self.mogile_class)
         if success:
-            print("Wrote file to key %s, %s@%s" % (filename, self.domain, self.trackers[0]))
+            print("Wrote file to key %s, %s@%s" % (
+            filename, self.domain, self.trackers[0]))
         else:
             print("FAILURE writing file %s" % (filename))
 
@@ -228,4 +232,3 @@ class MogileFSStorage(Storage):
     def delete(self, filename):
         print(filename)
         return self.client.delete(filename)
-
