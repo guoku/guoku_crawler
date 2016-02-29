@@ -3,7 +3,7 @@
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 
-from config import DATABASES
+from guoku_crawler.config import DATABASES
 
 
 SQLALCHEMY_DATABASE_URI = ('mysql+pymysql://{USER}:{PASSWORD}@'

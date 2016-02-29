@@ -30,17 +30,24 @@ CONNECTION_POOL = ''
 PHANTOM_SERVER = 'http://192.168.99.100:5000/'
 
 # Celery
-BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERYD_CONCURRENCY = 3
-CELERY_DISABLE_RATE_LIMITS = False
-CELERY_ALWAYS_EAGER = True
-# CELERY_IMPORTS = ('apps.fetch.article.weixin',)
+CELERY = dict(
+    BROKER_URL='redis://localhost:6379/0',
+    CELERY_RESULT_BACKEND='redis://localhost:6379/0',
+    CELERYD_CONCURRENCY=3,
+    CELERY_DISABLE_RATE_LIMITS=False,
+    CELERY_EAGER_PROPAGATES_EXCEPTIONS=True,
+    CELERY_ALWAYS_EAGER=True,
+    CELERY_IMPORTS=(
+        # 'guoku_crawler.article.tasks',
+        # 'guoku_crawler.article.weixin',
+                    ),
+)
+REQUEST_INTERVAL = 60
 
 # Redis
 CONFIG_REDIS_HOST = 'localhost'
 CONFIG_REDIS_PORT = 6379
-CONFIG_REDIS_DB = 1
+CONFIG_REDIS_DB = 0
 
 # Sogou
 SOGOU_USERS = [

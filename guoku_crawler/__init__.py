@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
+import redis
+import guoku_crawler.config
 
-__author__ = 'Huanghuang'
-__email__ = 'judy.programer@gmail.com'
-__version__ = '0.1.0'
+
+r = redis.Redis(host=config.CONFIG_REDIS_HOST,
+                port=config.CONFIG_REDIS_PORT,
+                db=config.CONFIG_REDIS_DB)

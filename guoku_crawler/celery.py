@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import requests
+from __future__ import absolute_import
 
 from celery import Celery
 from celery import Task
 
 from guoku_crawler import config
 
+import requests
 
-BROKER_URL = 'redis://localhost:6379/0'
-app = Celery('tasks', broker=config.BROKER_URL)
+app = Celery('guoku_crawler')
+app.conf.update(config.CELERY)
 
 
 class RequestsTask(Task):
@@ -29,9 +30,5 @@ class RequestsTask(Task):
         except (requests.Timeout, requests.ConnectionError) as e:
             raise self.retry(exc=e)
 
-
-from guoku_crawler.article.tasks import prepare_cookies
-from guoku_crawler.article.tasks import update_user_cookie
-
-
-__all__ = [prepare_cookies, update_user_cookie, RequestsTask]
+if __name__ == '__main__':
+    app.start()

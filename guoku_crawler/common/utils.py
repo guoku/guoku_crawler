@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import gc
+import logging
+
+from sqlalchemy import desc
+from sqlalchemy.exc import IntegrityError
+from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
+from sqlalchemy.sql import ClauseElement
+
 from guoku_crawler.common.storage.encoding import Promise, force_text
+from guoku_crawler.db import session
 
 
 def smart_text(s, encoding='utf-8', strings_only=False, errors='strict'):
@@ -16,23 +25,28 @@ def smart_text(s, encoding='utf-8', strings_only=False, errors='strict'):
     return force_text(s, encoding, strings_only, errors)
 
 
-def queryset_iterator(queryset, chunk_size=100):
-    """
-    Iterate over a Django Queryset ordered by the primary key
-    This method loads a maximum of chunk size (default: 100) rows in it's
-    memory at the same time while django normally would load all rows in it's
-    memory. Using the iterator() method only causes it to not pre_load all the
-    classes.
-    Note that the implementation of the iterator does not support ordered query
-    sets.
-    :param chunk_size: maximum of chunk
-    :param queryset: query that want to query
-    """
-    pk = 0
-    last_pk = queryset.order_by('-pk')[0].pk
-    queryset = queryset.order_by('pk')
-    while pk < last_pk:
-        for row in queryset.filter(pk__gt=pk)[:chunk_size]:
-            pk = row.pk
-            yield row
-        gc.collect()
+def get_or_create(model, **kwargs):
+    # Looks up an object with the given name, creating one if necessary.
+    assert kwargs is not None
+    try:
+        instance = session.query(model).get(**kwargs)
+        return instance, False
+    except MultipleResultsFound as e:
+        instance = session.query(model).filter_by(**kwargs).first()
+        logging.error("duplicate articles, title: %s."
+                      " will use the first one. %s", kwargs['title'], e)
+        return instance, False
+    except NoResultFound as e:
+        try:
+            if session.autocommit:
+                session.begin()  # begin
+            else:
+                session.begin(nested=True)  # savepoint
+            instance = model(**kwargs)
+            session.add(instance)
+            session.commit()
+            return instance, True
+        except IntegrityError:
+            session.rollback()  # rollback or rollback to savepoint
+            instance = session.query(model).filter_by(**kwargs).one()
+            return instance, False
