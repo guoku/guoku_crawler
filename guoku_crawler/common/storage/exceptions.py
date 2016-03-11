@@ -14,3 +14,6 @@ class SuspiciousOperation(Exception):
 class SuspiciousFileOperation(SuspiciousOperation):
     """A Suspicious filesystem operation was attempted"""
     pass
+
+class RemovedInDjango110Warning(DeprecationWarning):
+    pass

@@ -1,14 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import gc
 import logging
 
-from sqlalchemy import desc
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm.exc import NoResultFound, MultipleResultsFound
-from sqlalchemy.sql import ClauseElement
 
-from guoku_crawler.common.storage.encoding import Promise, force_text
+from guoku_crawler.common.storage.encoding import Promise
+from guoku_crawler.common.storage.encoding import force_unicode
 from guoku_crawler.db import session
 
 
@@ -22,14 +20,14 @@ def smart_text(s, encoding='utf-8', strings_only=False, errors='strict'):
     if isinstance(s, Promise):
         # The input is the result of a gettext_lazy() call.
         return s
-    return force_text(s, encoding, strings_only, errors)
+    return force_unicode(s, encoding, strings_only, errors)
 
 
 def get_or_create(model, **kwargs):
     # Looks up an object with the given name, creating one if necessary.
     assert kwargs is not None
     try:
-        instance = session.query(model).get(**kwargs)
+        instance = session.query(model).filter_by(**kwargs).first()
         return instance, False
     except MultipleResultsFound as e:
         instance = session.query(model).filter_by(**kwargs).first()

@@ -1,24 +1,26 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import logging
-import random
 import re
-from datetime import datetime
-from urllib.parse import urljoin
+import random
+import logging
+import requests
 
+from datetime import datetime
+from urlparse import urljoin
 from bs4 import BeautifulSoup
 from wand.exceptions import WandException
+from sqlalchemy.orm.exc import NoResultFound
 
 from guoku_crawler import config
-from guoku_crawler.article import Expired
-from guoku_crawler.article import WeiXinClient, ToManyRequests
-from guoku_crawler.celery import RequestsTask, app
-from guoku_crawler.common.parse import clean_xml, clean_title
-from guoku_crawler.common.utils import get_or_create
 from guoku_crawler.db import session
-from guoku_crawler.models import CoreArticle, CoreMedia, CoreGkuser, AuthGroup
+from guoku_crawler.celery import RequestsTask, app
+from guoku_crawler.common.image import HandleImage
+from guoku_crawler.common.parse import clean_xml
+from guoku_crawler.exceptions import ToManyRequests, Expired
+from guoku_crawler.models import CoreArticle, CoreMedia
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
+from guoku_crawler.article.client import WeiXinClient, update_sogou_cookie
 
 
 SEARCH_API = 'http://weixin.sogou.com/weixinjs'
@@ -30,22 +32,10 @@ qr_code_patterns = (re.compile('biz\s*=\s*"(?P<qr_url>[^"]*)'),
 image_host = getattr(config, 'IMAGE_HOST', None)
 
 
-# @app.task(base=RequestsTask, name='sogou.crawl_articles')
-def crawl_articles():
-    users = session.query(CoreGkuser).filter(
-        CoreGkuser.authorized_profile.any(Profile.weixin_id.isnot(None)),
-        CoreGkuser.groups.any(AuthGroup.name == 'Author')
-    ).all()
-    for user in users:
-        print(user)
-        crawl_user_articles(user.profile.id)
-
-
-# @app.task(base=RequestsTask, name='sogou.crawl_user_articles')
-def crawl_user_articles(authorized_user_id, page=1):
+@app.task(base=RequestsTask, name='weixin.crawl_list')
+def crawl_weixin_list(authorized_user_id, page=1):
     authorized_user = session.query(Profile).get(authorized_user_id)
-    print('>> authorized: ', authorized_user)
-    open_id, ext, sg_cookie = get_tokens(authorized_user.weixin_id)
+    open_id, ext, sg_cookie = get_sogou_tokens(authorized_user.weixin_id)
     if not open_id:
         logging.warning("skip user %s: cannot find open_id. "
                         "Is weixin_id correct?",
@@ -54,7 +44,7 @@ def crawl_user_articles(authorized_user_id, page=1):
     if not authorized_user.weixin_openid:
         # save open_id if it's not set already
         authorized_user.weixin_openid = open_id
-        authorized_user.save()
+        session.commit()
 
     go_next = True
     jsonp_callback = 'sogou.weixin_gzhcb'
@@ -74,17 +64,17 @@ def crawl_user_articles(authorized_user_id, page=1):
     for article_item in response.jsonp['items']:
         article_item_xml = clean_xml(article_item)
         article_item_xml = BeautifulSoup(article_item_xml, 'xml')
-        title = clean_title(article_item_xml.title1.text)
-        item_dict[title] = article_item_xml
+        identity_code = article_item_xml.item.display.docid.text
+        item_dict[identity_code] = article_item_xml
 
     existed = []
     for item in item_dict.keys():
         article = session.query(CoreArticle.title).filter(
             CoreArticle.creator == authorized_user.user,
-            CoreArticle.cleaned_title.like('{item}%'.format_map(item_dict))
+            CoreArticle.identity_code == item
         )
-        logging.info("filter sql is: %s", article.query)
-        if article:
+        logging.info("filter sql is: %s", article)
+        if article.all():
             existed.append(item)
 
     logging.info("those articles are existed: %s", existed)
@@ -94,11 +84,12 @@ def crawl_user_articles(authorized_user_id, page=1):
         go_next = False
     item_dict = {key: value for key, value
                  in item_dict.items() if key not in existed}
-    for cleaned_title, article_item in item_dict.items():
-        crawl_article(
+    for identity_code, article_item in item_dict.items():
+        crawl_weixin_article.delay(
             article_link=article_item.url.string,
             authorized_user_id=authorized_user.id,
-            article_data=dict(cover=article_item.imglink.string),
+            article_data=dict(cover=article_item.imglink.string,
+                              identity_code=identity_code),
             sg_cookie=sg_cookie,
             page=page,
         )
@@ -110,13 +101,15 @@ def crawl_user_articles(authorized_user_id, page=1):
 
     if go_next:
         logging.info('prepare to get next page: %d', page)
-        crawl_user_articles(authorized_user_id=authorized_user.id,
+        crawl_weixin_list.delay(authorized_user_id=authorized_user.id,
                                   page=page)
 
 
-# @app.task(base=RequestsTask, name='sogou.crawl_article')
-def crawl_article(article_link, authorized_user_id, article_data, sg_cookie,
-                  page):
+@app.task(base=RequestsTask, name='weixin.crawl_weixin_article')
+def crawl_weixin_article(article_link, authorized_user_id, article_data, sg_cookie,
+                         page):
+    identity_code = article_data.get('identity_code')
+    cover = article_data.get('cover')
     url = urljoin('http://weixin.sogou.com/', article_link)
     authorized_user = session.query(Profile).get(authorized_user_id)
 
@@ -126,11 +119,12 @@ def crawl_article(article_link, authorized_user_id, article_data, sg_cookie,
     except (ToManyRequests, Expired) as e:
         # if too frequent error, re-crawl the page the current article is on
         logging.warning("too many requests or request expired. %s", e.message)
-        crawl_user_articles(authorized_user_id=authorized_user.id,
+        crawl_weixin_list.delay(authorized_user_id=authorized_user.id,
                                   page=page)
         return
 
-    article_soup = BeautifulSoup(resp.utf8_content, from_encoding='utf8')
+    article_soup = BeautifulSoup(resp.utf8_content, from_encoding='utf8',
+                                 isHTML=True)
     if not authorized_user.weixin_qrcode_img:
         get_qr_code(authorized_user.id, parse_qr_code_url(article_soup))
 
@@ -139,32 +133,30 @@ def crawl_article(article_link, authorized_user_id, article_data, sg_cookie,
     published_time = datetime.strptime(published_time, '%Y-%m-%d')
     content = article_soup.find('div', id='js_content')
     creator = authorized_user.user
-    cleaned_title = clean_title(title)
 
-    article, created = get_or_create(CoreArticle, **dict(
-        cleaned_title=cleaned_title,
-        creator=creator,
-    ))
-    logging.info("created article id: %s. title: %s. cleaned_title: %s",
-                 article.id, title, cleaned_title)
-
-    if created:
-        article_info = dict(
+    try:
+        article = session.query(CoreArticle).filter_by(
+            identity_code=identity_code,
+        ).one()
+    except NoResultFound:
+        article = CoreArticle(
+            creator=creator,
+            identity_code=identity_code,
             title=title,
             content=content.decode_contents(formatter="html"),
             created_datetime=published_time,
             publish=CoreArticle.published,
+            cover=cover,
         )
-        article_info.update(article_data)
-        for (key, value) in article_info.items():
-            setattr(article, key, value)
-        article.save()
-        logging.info('insert article. %s', title)
+        session.add(article)
+        session.commit()
+    logging.info("created article id: %s. title: %s. identity_code: %s",
+                 article.id, title, identity_code)
 
     cover = fetch_image(article.cover)
     if cover:
         article.cover = cover
-        article.save()
+        session.commit()
 
     article_soup = BeautifulSoup(article.content)
     image_tags = article_soup.find_all('img')
@@ -185,12 +177,12 @@ def crawl_article(article_link, authorized_user_id, article_data, sg_cookie,
                         article.cover = gk_img_rc
             content_html = article_soup.decode_contents(formatter="html")
             article.content = content_html
-            article.save()
+            session.commit()
     logging.info('article %s finished.', article.id)
     print('-' * 80)
 
 
-def get_tokens(weixin_id):
+def get_sogou_tokens(weixin_id):
     logging.info('get open_id for %s', weixin_id)
     open_id = None
     ext = None
@@ -226,7 +218,6 @@ def fetch_image(image_url, full=True):
             not image_url.find('mp.weixin.qq.com') >= 0):
         logging.info('image url is not from mmbiz.qpic.cn; skip: %s', image_url)
         return
-    from guoku_crawler.common.image import HandleImage
     r = weixin_client.get(url=image_url, stream=True)
     try:
         try:
@@ -268,9 +259,17 @@ def get_qr_code(authorized_user_id, qr_code_url):
     if not authorized_user.weixin_qrcode_img:
         qr_code_image = fetch_image(qr_code_url)
         authorized_user.weixin_qrcode_img = qr_code_image
-        authorized_user.save()
+        session.commit()
 
 
-if __name__ == '__main__':
-    crawl_articles()
-    print('hhhhhh')
+@app.task(base=RequestsTask, name='weixin.prepare_sogou_cookies')
+def prepare_sogou_cookies():
+    check_url = urljoin(config.PHANTOM_SERVER, '_health')
+    resp = requests.get(check_url)
+    ready = resp.status_code == 200
+    if ready:
+        emails = config.SOGOU_USERS
+        for sg_email in emails:
+            update_sogou_cookie.delay(sg_user=sg_email)
+    else:
+        logging.error("phantom web server is unavailable!")

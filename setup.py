@@ -2,10 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup, find_packages
 
 
 with open('README.md') as readme_file:
@@ -30,9 +27,7 @@ setup(
     author="Huanghuang",
     author_email='judy.programer@gmail.com',
     url='https://github.com/judyyy/guoku_crawler',
-    packages=[
-        'guoku_crawler',
-    ],
+    packages=find_packages(),
     package_dir={'guoku_crawler':
                  'guoku_crawler'},
     include_package_data=True,

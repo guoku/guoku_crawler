@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from os.path import join, normcase, abspath, sep, dirname
 
-from guoku_crawler.common.storage.encoding import force_text
+from guoku_crawler.common.storage.encoding import force_unicode
 
 
 def safe_join(base, *paths):
@@ -13,8 +13,8 @@ def safe_join(base, *paths):
     The final path must be located inside of the base path component (otherwise
     a ValueError is raised).
     """
-    base = force_text(base)
-    paths = [force_text(p) for p in paths]
+    base = force_unicode(base)
+    paths = [force_unicode(p) for p in paths]
     final_path = abspath(join(base, *paths))
     base_path = abspath(base)
     # Ensure final_path starts with base_path (using normcase to ensure we

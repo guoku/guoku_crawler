@@ -7,7 +7,8 @@ From django.
 
 from io import BytesIO, StringIO
 
-from guoku_crawler.storage.file import File
+from guoku_crawler.common.storage.encoding import force_bytes
+from guoku_crawler.common.storage.file import File
 
 
 class ContentFile(File):
@@ -16,8 +17,8 @@ class ContentFile(File):
     """
 
     def __init__(self, content, name=None):
-        stream_class = StringIO if isinstance(content,
-                                              str) else BytesIO
+        stream_class = BytesIO
+        content = force_bytes(content)
         super(ContentFile, self).__init__(stream_class(content), name=name)
         self.size = len(content)
 

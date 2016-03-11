@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import sys
-
 from guoku_crawler.utils import config_from_env
 
 
@@ -17,12 +16,17 @@ DATABASES = {
 
 # Image
 # IMAGE_LOCAL = False
-# IMAGE_HOST = 'http://imgcdn.guoku.com/'
-IMAGE_LOCAL = True
 IMAGE_HOST = 'http://imgcdn.guoku.com/'
+IMAGE_LOCAL = True
 IMAGE_PATH = 'images/'
-LOCAL_FILE_STORAGE = True
+LOCAL_FILE_STORAGE = False
 MEDIA_ROOT = ''
+MOGILEFS_DOMAIN = 'prod'
+MOGILEFS_TRACKERS = ['10.0.2.50:7001']
+MOGILEFS_MEDIA_URL = 'images/'
+FILE_UPLOAD_DIRECTORY_PERMISSIONS = ''
+FILE_UPLOAD_PERMISSIONS = ''
+MEDIA_URL = 'images/'
 
 # System
 DEBUG = True
@@ -36,13 +40,13 @@ CELERY = dict(
     CELERYD_CONCURRENCY=3,
     CELERY_DISABLE_RATE_LIMITS=False,
     CELERY_EAGER_PROPAGATES_EXCEPTIONS=True,
-    CELERY_ALWAYS_EAGER=True,
+    CELERY_ALWAYS_EAGER=False,
     CELERY_IMPORTS=(
-        # 'guoku_crawler.article.tasks',
-        # 'guoku_crawler.article.weixin',
+        'guoku_crawler.article.tasks',
+        'guoku_crawler.article.weixin',
                     ),
 )
-REQUEST_INTERVAL = 60
+REQUEST_INTERVAL = 30
 
 # Redis
 CONFIG_REDIS_HOST = 'localhost'
@@ -67,9 +71,9 @@ SOGOU_USERS = [
     'finighboy78@superrito.com',
     'artimessill1959@einrot.com',
     'suildrued41@dayrep.com',
-    'ater1954@teleworm.us',
+    'drind1977@jourrapide.com',
     'duad1937@jourrapide.com',
-    'drecur44@superrito.com',
+    'alat1981@jourrapide.com',
     'paboy1973@superrito.com',
 ]
 SOGOU_PASSWORD = 'guoku1@#'

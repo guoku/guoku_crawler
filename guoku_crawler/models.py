@@ -75,12 +75,14 @@ class CoreAuthorizedUserProfile(Base):
     weibo_nick = Column(String(255))
     personal_domain_name = Column(String(64))
     weixin_openid = Column(String(255))
+    rss_url = Column(String(255), nullable=True)
     gk_user = relationship('CoreGkuser',
                            backref=backref('profile', uselist=False))
 
 
 class CoreArticle(Base):
     __tablename__ = 'core_article'
+    (remove, draft, published) = range(3)
 
     id = Column(Integer, primary_key=True)
     title = Column(String(255), nullable=False)
@@ -92,7 +94,7 @@ class CoreArticle(Base):
     showcover = Column(Integer, server_default=text("'0'"))
     read_count = Column(Integer, server_default=text("'0000000000'"))
     feed_read_count = Column(Integer, server_default=text("'0000000000'"))
-    cleaned_title = Column(String(255))
+    identity_code = Column(String(255))
     creator_id = Column(ForeignKey('core_gkuser.id'),
                         nullable=False, index=True)
 

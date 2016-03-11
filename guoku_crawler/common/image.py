@@ -3,22 +3,26 @@
 
 import logging
 
-from _md5 import md5
 from wand.image import Image as WandImage
+from hashlib import md5
 
 from guoku_crawler import config
 from guoku_crawler.common.file import ContentFile
 from guoku_crawler.common.storage.storage import FileSystemStorage, MogileFSStorage
 
+image_path = getattr(config, 'MOGILEFS_MEDIA_URL', 'images/')
+
 
 def get_storage_class():
     if config.LOCAL_FILE_STORAGE:
-        return FileSystemStorage
-    return MogileFSStorage
+        return FileSystemStorage()
+    return MogileFSStorage()
 default_storage = get_storage_class()
 
 
 class HandleImage(object):
+    path = image_path
+
     def __init__(self, file):
         self.content_type = self.get_content_type(file)
         self._name = None
@@ -77,7 +81,7 @@ class HandleImage(object):
 
         self._image_data = _img.make_blob()
 
-    def save(self, path=None, square=False):
+    def save(self, path='', square=False):
         if self.ext_name == 'png':
             self._image_data = self.img.make_blob(format='jpeg')
             self.ext_name = 'jpg'
@@ -85,13 +89,16 @@ class HandleImage(object):
         if square and (self.ext_name == 'jpg'):
             self.crop_square()
 
-        file_name = path + self.name + '.' + self.ext_name
-        if not default_storage.exists(file_name):
-            try:
-                file_name = default_storage.save(file_name,
-                                                 ContentFile(self.image_data))
-            except Exception as e:
-                logging.info(e)
+        if path:
+            self.path = path
+
+        file_name = self.path + self.name + '.' + self.ext_name
+        if not default_storage.exists(file_name=file_name):
+            # try:
+            file_name = default_storage.save(file_name,
+                                             ContentFile(self.image_data))
+            # except Exception as e:
+            #     logging.info(e)
         else:
             pass
 

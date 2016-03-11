@@ -2,20 +2,152 @@
 # -*- coding: utf-8 -*-
 import os
 import errno
-from guoku_crawler import config
+import warnings
+
+import itertools
 import pymogile
-import datetime
 
-from asyncio import locks
+from datetime import datetime
 from os.path import abspath
-from urllib.parse import urljoin
+from urlparse import urljoin
 
-from guoku_crawler.common.storage import Storage, File
+from guoku_crawler import config
+from guoku_crawler.common.storage import locks
+from guoku_crawler.common.storage.file import File
 from guoku_crawler.common.storage._os import safe_join
 from guoku_crawler.common.storage.move import file_move_safe
-from guoku_crawler.common.storage.encoding import force_text, filepath_to_uri
-from guoku_crawler.common.storage.exceptions import (ImproperlyConfigured,
-                                                     SuspiciousFileOperation)
+from guoku_crawler.common.storage.encoding import filepath_to_uri, force_unicode
+from guoku_crawler.common.storage.exceptions import (SuspiciousFileOperation,
+                                                     RemovedInDjango110Warning,
+                                                     ImproperlyConfigured)
+from guoku_crawler.common.storage.encoding import get_valid_filename, force_unicode, \
+    force_unicode
+
+
+class Storage(object):
+    """
+    A base storage class, providing some default behaviors that all other
+    storage systems can inherit or override, as necessary.
+    """
+
+    # The following methods represent a public interface to private methods.
+    # These shouldn't be overridden by subclasses unless absolutely necessary.
+
+    def open(self, name, mode='rb'):
+        """
+        Retrieves the specified file from storage.
+        """
+        return self._open(name, mode)
+
+    def save(self, name, content):
+        """
+        Saves new content to the file specified by name. The content should be
+        a proper File object or any python file-like object, ready to be read
+        from the beginning.
+        """
+        # Get the proper name for the file, as it will actually be saved.
+        if name is None:
+            name = content.name
+
+        if not hasattr(content, 'chunks'):
+            content = File(content)
+
+        name = self.get_available_name(name)
+        name = self._save(name, content)
+
+        # Store filenames with forward slashes, even on Windows
+        return force_unicode(name.replace('\\', '/'))
+
+    # These methods are part of the public API, with default implementations.
+
+    def get_valid_name(self, name):
+        """
+        Returns a filename, based on the provided filename, that's suitable for
+        use in the target storage system.
+        """
+        return get_valid_filename(name)
+
+    def get_available_name(self, name):
+        """
+        Returns a filename that's free on the target storage system, and
+        available for new content to be written to.
+        """
+        dir_name, file_name = os.path.split(name)
+        file_root, file_ext = os.path.splitext(file_name)
+        # If the filename already exists, add an underscore and a number (before
+        # the file extension, if one exists) to the filename until the generated
+        # filename doesn't exist.
+        count = itertools.count(1)
+        while self.exists(name):
+            # file_ext includes the dot.
+            name = os.path.join(dir_name, "%s_%s%s" % (file_root, next(count), file_ext))
+
+        return name
+
+    def path(self, name):
+        """
+        Returns a local filesystem path where the file can be retrieved using
+        Python's built-in open() function. Storage systems that can't be
+        accessed using open() should *not* implement this method.
+        """
+        raise NotImplementedError("This backend doesn't support absolute paths.")
+
+    # The following methods form the public API for storage systems, but with
+    # no default implementations. Subclasses must implement *all* of these.
+
+    def delete(self, name):
+        """
+        Deletes the specified file from the storage system.
+        """
+        raise NotImplementedError()
+
+    def exists(self, name):
+        """
+        Returns True if a file referened by the given name already exists in the
+        storage system, or False if the name is available for a new file.
+        """
+        raise NotImplementedError()
+
+    def listdir(self, path):
+        """
+        Lists the contents of the specified path, returning a 2-tuple of lists;
+        the first item being directories, the second item being files.
+        """
+        raise NotImplementedError()
+
+    def size(self, name):
+        """
+        Returns the total size, in bytes, of the file specified by name.
+        """
+        raise NotImplementedError()
+
+    def url(self, name):
+        """
+        Returns an absolute URL where the file's contents can be accessed
+        directly by a Web browser.
+        """
+        raise NotImplementedError()
+
+    def accessed_time(self, name):
+        """
+        Returns the last accessed time (as datetime object) of the file
+        specified by name.
+        """
+        raise NotImplementedError()
+
+    def created_time(self, name):
+        """
+        Returns the creation time (as datetime object) of the file
+        specified by name.
+        """
+        raise NotImplementedError()
+
+    def modified_time(self, name):
+        """
+        Returns the last modified time (as datetime object) of the file
+        specified by name.
+        """
+        raise NotImplementedError()
 
 
 class FileSystemStorage(Storage):
@@ -23,19 +155,30 @@ class FileSystemStorage(Storage):
     Standard filesystem storage
     """
 
-    def __init__(self, location=None, base_url=None):
+    def __init__(self, location=None, base_url=None, file_permissions_mode=None,
+                 directory_permissions_mode=None):
         if location is None:
             location = config.MEDIA_ROOT
         self.base_location = location
         self.location = abspath(self.base_location)
         if base_url is None:
             base_url = config.MEDIA_URL
+        elif not base_url.endswith('/'):
+            base_url += '/'
         self.base_url = base_url
+        self.file_permissions_mode = (
+            file_permissions_mode if file_permissions_mode is not None
+            else config.FILE_UPLOAD_PERMISSIONS
+        )
+        self.directory_permissions_mode = (
+            directory_permissions_mode if directory_permissions_mode is not None
+            else config.FILE_UPLOAD_DIRECTORY_PERMISSIONS
+        )
 
     def _open(self, name, mode='rb'):
         return File(open(self.path(name), mode))
 
-    def _save(self, name, content):
+    def save(self, name, content):
         full_path = self.path(name)
 
         # Create any intermediate directories that do not exist.
@@ -45,7 +188,16 @@ class FileSystemStorage(Storage):
         directory = os.path.dirname(full_path)
         if not os.path.exists(directory):
             try:
-                os.makedirs(directory)
+                if self.directory_permissions_mode is not None:
+                    # os.makedirs applies the global umask, so we reset it,
+                    # for consistency with file_permissions_mode behavior.
+                    old_umask = os.umask(0)
+                    try:
+                        os.makedirs(directory, self.directory_permissions_mode)
+                    finally:
+                        os.umask(old_umask)
+                else:
+                    os.makedirs(directory)
             except OSError as e:
                 if e.errno != errno.EEXIST:
                     raise
@@ -63,7 +215,6 @@ class FileSystemStorage(Storage):
                 # This file has a file path that we can move.
                 if hasattr(content, 'temporary_file_path'):
                     file_move_safe(content.temporary_file_path(), full_path)
-                    content.close()
 
                 # This is a normal uploadedfile that we can stream.
                 else:
@@ -99,8 +250,8 @@ class FileSystemStorage(Storage):
                 # OK, the file save worked. Break out of the loop.
                 break
 
-        if config.FILE_UPLOAD_PERMISSIONS is not None:
-            os.chmod(full_path, config.FILE_UPLOAD_PERMISSIONS)
+        if self.file_permissions_mode is not None:
+            os.chmod(full_path, self.file_permissions_mode)
 
         return name
 
@@ -118,8 +269,8 @@ class FileSystemStorage(Storage):
                 if e.errno != errno.ENOENT:
                     raise
 
-    def exists(self, name):
-        return os.path.exists(self.path(name))
+    def exists(self, file_name):
+        return os.path.exists(self.path(file_name))
 
     def listdir(self, path):
         path = self.path(path)
@@ -132,12 +283,7 @@ class FileSystemStorage(Storage):
         return directories, files
 
     def path(self, name):
-        try:
-            path = safe_join(self.location, name)
-        except ValueError:
-            raise SuspiciousFileOperation(
-                "Attempted access to '%s' denied." % name)
-        return os.path.normpath(path)
+        return safe_join(self.location, name)
 
     def size(self, name):
         return os.path.getsize(self.path(name))
@@ -159,7 +305,6 @@ class FileSystemStorage(Storage):
 
 class MogileFSStorage(Storage):
     """MogileFS filesystem storage"""
-
     def __init__(self, base_url=config.MEDIA_URL):
 
         # the MOGILEFS_MEDIA_URL overrides MEDIA_URL
@@ -170,65 +315,97 @@ class MogileFSStorage(Storage):
 
         for var in ('MOGILEFS_TRACKERS', 'MOGILEFS_DOMAIN',):
             if not hasattr(config, var):
-                raise ImproperlyConfigured(
-                    "You must define %s to use the MogileFS backend." % var)
+                raise ImproperlyConfigured, "You must define %s to use the MogileFS backend." % var
 
         self.trackers = config.MOGILEFS_TRACKERS
         self.domain = config.MOGILEFS_DOMAIN
         self.client = pymogile.Client(self.domain, self.trackers)
 
-    def get_mogile_paths(self, filename):
-        return self.client.get_paths(filename)
+    def get_mogile_paths(self, file_name):
+        return self.client.get_paths(file_name)
 
         # The following methods define the Backend API
 
-    def filesize(self, filename):
+    def filesize(self, file_name):
         raise NotImplemented
-        # return os.path.getsize(self._get_absolute_path(filename))
+        #return os.path.getsize(self._get_absolute_path(file_name))
 
-    def path(self, filename):
-        paths = self.get_mogile_paths(filename)
+    def path(self, file_name):
+        paths = self.get_mogile_paths(file_name)
         if paths:
-            return self.get_mogile_paths(filename)[0]
+            return self.get_mogile_paths(file_name)[0]
         else:
             return None
 
-    def url(self, filename):
-        return urljoin(self.base_url, filename).replace('\\', '/')
+    def url(self, file_name):
+        return urljoin(self.base_url, file_name).replace('\\', '/')
 
-        # def open(self, filename, mode='rb'):
+        # def open(self, file_name, mode='rb'):
 
         # raise NotImplemented
-        # return open(self._get_absolute_path(filename), mode)
-
-    def _open(self, filename, mode='rb'):
-        f = self.client.read_file(filename)
+        #return open(self._get_absolute_path(file_name), mode)
+    def _open(self, file_name, mode='rb'):
+        f = self.client.read_file(file_name)
         # f.closed = False
         # print f
-        return File(file=f, name=filename)
+        return File(file=f, name=file_name)
         # return f
 
-    def exists(self, filename):
-        return bool(self.client.get_paths(filename))
-        # return filename in self.client
+    def exists(self, file_name):
+        return bool(self.client.get_paths(file_name))
+        # return file_name in self.client
 
-    def save(self, filename, raw_contents):
-        filename = self.get_available_name(filename)
+    def save(self, file_name, raw_contents):
+        file_name = self.get_available_name(file_name)
 
         if not hasattr(self, 'mogile_class'):
             self.mogile_class = None
 
         # Write the file to mogile
-        success = self.client.store_file(filename, raw_contents,
-                                         cls=self.mogile_class)
+        success = self.client.store_file(file_name, raw_contents, cls=self.mogile_class)
         if success:
-            print("Wrote file to key %s, %s@%s" % (
-            filename, self.domain, self.trackers[0]))
+            print "Wrote file to key %s, %s@%s" % (file_name, self.domain, self.trackers[0])
         else:
-            print("FAILURE writing file %s" % (filename))
+            print "FAILURE writing file %s" % (file_name)
 
-        return force_text(filename.replace('\\', '/'))
+        return force_unicode(file_name.replace('\\', '/'))
 
-    def delete(self, filename):
-        print(filename)
-        return self.client.delete(filename)
+    def delete(self, file_name):
+        print file_name
+        return self.client.delete(file_name)
+
+#
+# def serve_mogilefs_file(request, key=None):
+#     """
+#     Called when a user requests an image.
+#     Either reproxy the path to perlbal, or serve the image outright
+#     """
+#     # not the best way to do this, since we create a client each time
+#     mimetype = mimetypes.guess_type(key)[0] or "application/x-octet-stream"
+#     client = pymogile.Client(config.MOGILEFS_DOMAIN, config.MOGILEFS_TRACKERS)
+#     if hasattr(config, "SERVE_WITH_PERLBAL") and config.SERVE_WITH_PERLBAL:
+#         # we're reproxying with perlbal
+#
+#         # check the path cache
+#
+#         path = cache.get(key)
+#
+#         if not path:
+#             path = client.get_paths(key)
+#             cache.set(key, path, 60)
+#
+#         if path:
+#             response = HttpResponse(content_type=mimetype)
+#             response['X-REPROXY-URL'] = path[0]
+#         else:
+#             response = HttpResponseNotFound()
+#
+#     else:
+#         # we don't have perlbal, let's just serve the image via django
+#         file_data = client[key]
+#         if file_data:
+#             response = HttpResponse(file_data, mimetype=mimetype)
+#         else:
+#             response = HttpResponseNotFound()
+#
+#     return response

@@ -1,14 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import sys
-import gc
-import unicodedata
 
 from bs4 import BeautifulSoup
-
-
-tbl = dict.fromkeys(i for i in range(sys.maxunicode) if
-                    unicodedata.category(chr(i)).startswith('P'))
 
 
 def parse_article_link(result_json):
@@ -24,24 +17,16 @@ def parse_article_link(result_json):
 
 def clean_xml(xml_str):
     xml_str = xml_str.rstrip('\n')
+    start_index = xml_str.find('<DOCUMENT>')
+    xml_str = xml_str[start_index:]
+
     replaces = (
-        ('<?xml version="1.0" encoding="gbk"?>',
-         '<xml version="1.0" encoding="gbk">'),
-        ('\\', ''),)
+        ('?>', '>'),
+        ('\\', ''),
+        ('\n', '')
+    )
 
     for from_str, to_str in replaces:
         xml_str = xml_str.replace(from_str, to_str)
 
-    if not xml_str.endswith('</xml>'):
-        xml_str += '</xml>'
-
     return xml_str
-
-
-def clean_title(article_title):
-    if not article_title:
-        return
-    article_title = str(article_title, 'utf-8')
-    article_title = article_title.strip()
-    article_title = article_title.translate(tbl)
-    return article_title
