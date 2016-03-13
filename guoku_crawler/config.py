@@ -15,7 +15,6 @@ DATABASES = {
 }
 
 # Image
-# IMAGE_LOCAL = False
 IMAGE_HOST = 'http://imgcdn.guoku.com/'
 IMAGE_LOCAL = True
 IMAGE_PATH = 'images/'
@@ -27,6 +26,10 @@ MOGILEFS_MEDIA_URL = 'images/'
 FILE_UPLOAD_DIRECTORY_PERMISSIONS = ''
 FILE_UPLOAD_PERMISSIONS = ''
 MEDIA_URL = 'images/'
+STATIC_URL = 'http://static.guoku.com/static/v4/dafb5059ae45f18b0eff711a38de3d59b95bad4c/'
+DEFAULT_ARTICLE_COVER = "%s%s" % (
+    STATIC_URL, 'images/article/default_cover.jpg'
+)
 
 # System
 DEBUG = True
@@ -44,7 +47,7 @@ CELERY = dict(
     CELERY_IMPORTS=(
         'guoku_crawler.article.tasks',
         'guoku_crawler.article.weixin',
-                    ),
+    ),
 )
 REQUEST_INTERVAL = 30
 

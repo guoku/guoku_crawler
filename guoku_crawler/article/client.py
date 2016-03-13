@@ -21,7 +21,50 @@ from guoku_crawler.exceptions import ToManyRequests, Expired, Retry
 faker = Faker()
 
 
-class WeiXinClient(requests.Session):
+class BaseClient(requests.Session):
+    def request(self, method, url,
+                params=None,
+                data=None,
+                headers=None,
+                cookies=None,
+                files=None,
+                auth=None,
+                timeout=None,
+                allow_redirects=True,
+                proxies=None,
+                hooks=None,
+                stream=None,
+                verify=None,
+                cert=None,
+                json=None):
+        resp = None
+        try:
+            resp = super(BaseClient, self).request(method, url, params, data,
+                                                   headers, cookies, files,
+                                                   auth, timeout,
+                                                   allow_redirects, proxies,
+                                                   hooks, stream, verify,
+                                                   cert, json)
+
+        except ConnectionError as e:
+            raise Retry(message=u'ConnectionError. %s' % e)
+        except ReadTimeout as e:
+            raise Retry(message=u'ReadTimeout. %s' % e)
+        except BaseException as e:
+            logging.ERROR(e)
+        if stream:
+            return resp
+        resp.utf8_content = resp.content.decode('utf-8')
+        resp.utf8_content = resp.utf8_content.rstrip('\n')
+        sleep(config.REQUEST_INTERVAL)
+        return resp
+
+
+class RSSClient(BaseClient):
+    pass
+
+
+class WeiXinClient(BaseClient):
     def __init__(self):
         super(WeiXinClient, self).__init__()
         self._sg_user = None
@@ -46,27 +89,14 @@ class WeiXinClient(requests.Session):
                 cert=None,
                 json=None,
                 jsonp_callback=None):
-        resp = None
-        try:
-            resp = super(WeiXinClient, self).request(method, url, params, data,
-                                                     headers, cookies, files,
-                                                     auth, timeout,
-                                                     allow_redirects, proxies,
-                                                     hooks, stream, verify,
-                                                     cert, json)
-
-        except ConnectionError as e:
-            raise Retry(message=u'ConnectionError. %s' % e)
-        except ReadTimeout as e:
-            raise Retry(message=u'ReadTimeout. %s' % e)
-        except BaseException as e:
-            print(e)
-            logging.ERROR(e)
+        resp = super(WeiXinClient, self).request(method, url, params, data,
+                                                 headers, cookies, files,
+                                                 auth, timeout,
+                                                 allow_redirects, proxies,
+                                                 hooks, stream, verify,
+                                                 cert, json)
         if stream:
             return resp
-
-        resp.utf8_content = resp.content.decode('utf-8')
-        resp.utf8_content = resp.utf8_content.rstrip('\n')
 
         # catch exceptions
         if resp.utf8_content.find(u'您的访问过于频繁') >= 0:
@@ -123,9 +153,5 @@ def update_sogou_cookie(sg_user):
     get_url = urljoin(config.PHANTOM_SERVER, '_sg_cookie')
     resp = requests.post(get_url, data={'email': sg_user})
     cookie = resp.json()['sg_cookie']
-    print('-'*80, '\r\n')
-    print('got cookie for %s: ', sg_user)
-    print(cookie)
-    print('-'*80, '\r\n')
     key = 'sogou.cookie.%s' % sg_user
     r.set(key, cookie)

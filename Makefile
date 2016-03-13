@@ -49,13 +49,7 @@ clean-test:
 	rm -fr htmlcov/
 
 lint:
-	flake8 guoku_crawler tests
-
-test:
-	python setup.py test
-
-test-all:
-	tox
+	flake8 guoku_crawler
 
 coverage:
 	coverage run --source guoku_crawler setup.py test

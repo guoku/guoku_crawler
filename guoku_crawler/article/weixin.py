@@ -9,18 +9,17 @@ import requests
 from datetime import datetime
 from urlparse import urljoin
 from bs4 import BeautifulSoup
-from wand.exceptions import WandException
 from sqlalchemy.orm.exc import NoResultFound
 
 from guoku_crawler import config
-from guoku_crawler.db import session
-from guoku_crawler.celery import RequestsTask, app
-from guoku_crawler.common.image import HandleImage
-from guoku_crawler.common.parse import clean_xml
-from guoku_crawler.exceptions import ToManyRequests, Expired
-from guoku_crawler.models import CoreArticle, CoreMedia
-from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
 from guoku_crawler.article.client import WeiXinClient, update_sogou_cookie
+from guoku_crawler.celery import RequestsTask, app
+from guoku_crawler.common.image import fetch_image
+from guoku_crawler.common.parse import clean_xml
+from guoku_crawler.db import session
+from guoku_crawler.exceptions import ToManyRequests, Expired
+from guoku_crawler.models import CoreArticle
+from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
 
 
 SEARCH_API = 'http://weixin.sogou.com/weixinjs'
@@ -102,11 +101,12 @@ def crawl_weixin_list(authorized_user_id, page=1):
     if go_next:
         logging.info('prepare to get next page: %d', page)
         crawl_weixin_list.delay(authorized_user_id=authorized_user.id,
-                                  page=page)
+                                page=page)
 
 
 @app.task(base=RequestsTask, name='weixin.crawl_weixin_article')
-def crawl_weixin_article(article_link, authorized_user_id, article_data, sg_cookie,
+def crawl_weixin_article(article_link, authorized_user_id, article_data,
+                         sg_cookie,
                          page):
     identity_code = article_data.get('identity_code')
     cover = article_data.get('cover')
@@ -120,7 +120,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data, sg_cook
         # if too frequent error, re-crawl the page the current article is on
         logging.warning("too many requests or request expired. %s", e.message)
         crawl_weixin_list.delay(authorized_user_id=authorized_user.id,
-                                  page=page)
+                                page=page)
         return
 
     article_soup = BeautifulSoup(resp.utf8_content, from_encoding='utf8',
@@ -153,7 +153,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data, sg_cook
     logging.info("created article id: %s. title: %s. identity_code: %s",
                  article.id, title, identity_code)
 
-    cover = fetch_image(article.cover)
+    cover = fetch_image(article.cover, weixin_client)
     if cover:
         article.cover = cover
         session.commit()
@@ -168,7 +168,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data, sg_cook
             if img_src:
                 logging.info('fetch_image for article %d: %s', article.id,
                              img_src)
-                gk_img_rc = fetch_image(img_src, full=False)
+                gk_img_rc = fetch_image(img_src, weixin_client, full=False)
                 if gk_img_rc:
                     full_path = "%s%s" % (image_host, gk_img_rc)
                     image_tag['src'] = full_path
@@ -209,34 +209,6 @@ def get_sogou_tokens(weixin_id):
         return None, None, None
 
 
-def fetch_image(image_url, full=True):
-    logging.info('fetch_image %s', image_url)
-    if not image_url:
-        logging.info('empty image url; skip')
-        return
-    if (not image_url.find('mmbiz.qpic.cn') >= 0 and
-            not image_url.find('mp.weixin.qq.com') >= 0):
-        logging.info('image url is not from mmbiz.qpic.cn; skip: %s', image_url)
-        return
-    r = weixin_client.get(url=image_url, stream=True)
-    try:
-        try:
-            content_type = r.headers['Content-Type']
-        except KeyError:
-            content_type = 'image/jpeg'
-        image = HandleImage(r.raw)
-        image_name = image.save()
-        media = CoreMedia(file_path=image_name, content_type=content_type)
-        session.add(media)
-        session.commit()
-        if full:
-            return "%s%s" % (image_host, image_name)
-        return image_name
-
-    except (AttributeError, WandException) as e:
-        logging.error('handle image(%s) Error: %s', image_url, e.message)
-
-
 def parse_qr_code_url(article_soup):
     scripts = article_soup.select('script')
     biz = ''
@@ -257,7 +229,7 @@ def parse_qr_code_url(article_soup):
 def get_qr_code(authorized_user_id, qr_code_url):
     authorized_user = session.query(Profile).get(authorized_user_id)
     if not authorized_user.weixin_qrcode_img:
-        qr_code_image = fetch_image(qr_code_url)
+        qr_code_image = fetch_image(qr_code_url, weixin_client)
         authorized_user.weixin_qrcode_img = qr_code_image
         session.commit()
 

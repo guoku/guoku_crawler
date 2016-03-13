@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from guoku_crawler.celery import RequestsTask, app
 from guoku_crawler.db import session
-from guoku_crawler.model_back import AuthGroup
-from guoku_crawler.models import CoreGkuser
-from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
-from guoku_crawler.article.weixin import crawl_weixin_list
+from guoku_crawler.celery import RequestsTask, app
 from guoku_crawler.article.rss import crawl_rss_list
+from guoku_crawler.models import CoreGkuser, AuthGroup
+from guoku_crawler.article.weixin import crawl_weixin_list
+from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
 
 
 @app.task(base=RequestsTask, name='sogou.crawl_articles')

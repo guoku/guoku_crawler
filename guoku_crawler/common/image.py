@@ -3,14 +3,20 @@
 
 import logging
 
-from wand.image import Image as WandImage
 from hashlib import md5
+from wand.exceptions import WandException
+from wand.image import Image as WandImage
 
 from guoku_crawler import config
+from guoku_crawler.db import session
+from guoku_crawler.models import CoreMedia
 from guoku_crawler.common.file import ContentFile
-from guoku_crawler.common.storage.storage import FileSystemStorage, MogileFSStorage
+from guoku_crawler.common.storage.storage import FileSystemStorage
+from guoku_crawler.common.storage.storage import MogileFSStorage
+
 
 image_path = getattr(config, 'MOGILEFS_MEDIA_URL', 'images/')
+image_host = getattr(config, 'IMAGE_HOST', None)
 
 
 def get_storage_class():
@@ -23,21 +29,21 @@ default_storage = get_storage_class()
 class HandleImage(object):
     path = image_path
 
-    def __init__(self, file):
-        self.content_type = self.get_content_type(file)
+    def __init__(self, image_file):
+        self.content_type = self.get_content_type(image_file)
         self._name = None
-        if hasattr(file, 'chunks'):
-            self._image_data = ''.join(chuck for chuck in file.chunks())
+        if hasattr(image_file, 'chunks'):
+            self._image_data = ''.join(chuck for chuck in image_file.chunks())
         else:
-            self._image_data = file.read()
+            self._image_data = image_file.read()
         self.ext_name = self.get_ext_name()
-        file.close()
+        image_file.close()
         logging.info('init HandleImage obj.')
         try:
             self.img = WandImage(blob=self._image_data)
         except BaseException as e:
             logging.error(e)
-            self.img = WandImage(file=file)
+            self.img = WandImage(file=image_file)
 
     @property
     def image_data(self):
@@ -49,9 +55,9 @@ class HandleImage(object):
         return self._name
 
     @staticmethod
-    def get_content_type(file):
+    def get_content_type(image_file):
         try:
-            content_type = file.content_type
+            content_type = image_file.content_type
         except AttributeError:
             content_type = None
         if content_type is None:
@@ -103,3 +109,30 @@ class HandleImage(object):
             pass
 
         return file_name
+
+
+def fetch_image(image_url, client, full=True):
+    logging.info('fetch_image %s', image_url)
+    if not image_url:
+        logging.info('empty image url; skip')
+        return
+    if image_url.find('guoku') >= 0:
+        logging.info('image url is from guoku; skip: %s', image_url)
+        return
+    r = client.get(url=image_url, stream=True)
+    try:
+        try:
+            content_type = r.headers['Content-Type']
+        except KeyError:
+            content_type = 'image/jpeg'
+        image = HandleImage(r.raw)
+        image_name = image.save()
+        media = CoreMedia(file_path=image_name, content_type=content_type)
+        session.add(media)
+        session.commit()
+        if full:
+            return "%s%s" % (image_host, image_name)
+        return image_name
+
+    except (AttributeError, WandException) as e:
+        logging.error('handle image(%s) Error: %s', image_url, e.message)

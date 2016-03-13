@@ -11,19 +11,6 @@ from guoku_crawler.db import session
 
 Base = declarative_base()
 
-#
-# class CoreGkuserGroup(Base):
-#     __tablename__ = 'core_gkuser_groupss'
-#     __table_args__ = (
-#         Index('gkuser_id', 'gkuser_id', 'group_id', unique=True),
-#     )
-#
-#     id = Column(Integer, primary_key=True)
-#     gkuser_id = Column(ForeignKey('core_gkuser.id'), nullable=False, index=True)
-#     group_id = Column(ForeignKey('auth_group.id'), nullable=False, index=True)
-#
-#     gkuser = relationship('CoreGkuser')
-#     group = relationship('AuthGroup')
 
 core_gkuser_groups = Table(
     'core_gkuser_groups', Base.metadata,
@@ -90,7 +77,7 @@ class CoreArticle(Base):
     publish = Column(Integer, nullable=False)
     created_datetime = Column(DateTime, index=True)
     updated_datetime = Column(DateTime, index=True)
-    cover = Column(String(255), nullable=False)
+    cover = Column(String(255), nullable=True)
     showcover = Column(Integer, server_default=text("'0'"))
     read_count = Column(Integer, server_default=text("'0000000000'"))
     feed_read_count = Column(Integer, server_default=text("'0000000000'"))
