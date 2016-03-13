@@ -2,16 +2,14 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import absolute_import
-
 from celery import Celery
 from celery import Task
-
 from guoku_crawler import config
 
 import requests
 
 app = Celery('guoku_crawler')
-app.conf.update(config.CELERY)
+app.config_from_object(config)
 
 
 class RequestsTask(Task):

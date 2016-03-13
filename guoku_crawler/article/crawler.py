@@ -8,7 +8,7 @@ from guoku_crawler.article.weixin import crawl_weixin_list
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
 
 
-@app.task(base=RequestsTask, name='sogou.crawl_articles')
+@app.task(base=RequestsTask, name='weixin.crawl_articles')
 def crawl_articles():
     users = session.query(CoreGkuser).filter(
         CoreGkuser.authorized_profile.any(

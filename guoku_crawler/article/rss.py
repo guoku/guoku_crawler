@@ -56,7 +56,7 @@ def crawl_rss_list(authorized_user_id, page=1):
             )
             session.add(article)
             session.commit()
-            crawl_images.delay(article.content, article.id)
+            crawl_rss_images.delay(article.content, article.id)
 
         logging.info('article %s finished.', article.id)
 
@@ -71,8 +71,8 @@ def crawl_rss_list(authorized_user_id, page=1):
                              page=page)
 
 
-@app.task(base=RequestsTask, name='rss.crawl_images')
-def crawl_images(content_string, article_id):
+@app.task(base=RequestsTask, name='rss.crawl_rss_images')
+def crawl_rss_images(content_string, article_id):
     if not content_string:
         return
     article = session.query(CoreArticle).get(article_id)

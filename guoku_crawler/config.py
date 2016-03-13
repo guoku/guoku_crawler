@@ -8,15 +8,14 @@ from guoku_crawler.utils import config_from_env
 # Database
 DATABASES = {
     'DB_NAME': 'core',
-    'USER': 'root',
-    'PASSWORD': '',
-    'HOST': 'localhost',
-    'PORT': '3306',
+    'USER': 'guoku',
+    'PASSWORD': 'guoku!@#',
+    'HOST': '10.0.2.90',
+    'PORT': '',
 }
 
 # Image
 IMAGE_HOST = 'http://imgcdn.guoku.com/'
-IMAGE_LOCAL = True
 IMAGE_PATH = 'images/'
 LOCAL_FILE_STORAGE = False
 MEDIA_ROOT = ''
@@ -37,17 +36,14 @@ CONNECTION_POOL = ''
 PHANTOM_SERVER = 'http://192.168.99.100:5000/'
 
 # Celery
-CELERY = dict(
-    BROKER_URL='redis://localhost:6379/0',
-    CELERY_RESULT_BACKEND='redis://localhost:6379/0',
-    CELERYD_CONCURRENCY=3,
-    CELERY_DISABLE_RATE_LIMITS=False,
-    CELERY_EAGER_PROPAGATES_EXCEPTIONS=True,
-    CELERY_ALWAYS_EAGER=False,
-    CELERY_IMPORTS=(
-        'guoku_crawler.article.tasks',
-        'guoku_crawler.article.weixin',
-    ),
+BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERYD_CONCURRENCY = 3
+CELERY_DISABLE_RATE_LIMITS = False
+CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
+CELERY_ALWAYS_EAGER = False
+CELERY_IMPORTS = (
+    'guoku_crawler.article',
 )
 REQUEST_INTERVAL = 30
 
@@ -86,3 +82,4 @@ def load_config():
     env_config = config_from_env('GK_')
     for k, v in env_config.items():
         setattr(sys.modules[__name__], k, v)
+load_config()
