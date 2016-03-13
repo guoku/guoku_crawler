@@ -1,3 +1,6 @@
 .idea
-guoku_crawler/__pycache__
-guoku_crawler/article/__pycache__
+*.rdb
+*.pid
+*.db
+*.pyc
+__pycache__
