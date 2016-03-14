@@ -11,7 +11,7 @@ DATABASES = {
     'USER': 'guoku',
     'PASSWORD': 'guoku!@#',
     'HOST': '10.0.2.90',
-    'PORT': '',
+    'PORT': '3306',
 }
 
 # Image
@@ -33,7 +33,7 @@ DEFAULT_ARTICLE_COVER = "%s%s" % (
 # System
 DEBUG = True
 CONNECTION_POOL = ''
-PHANTOM_SERVER = 'http://192.168.99.100:5000/'
+PHANTOM_SERVER = 'http://10.0.2.49:5000/'
 
 # Celery
 BROKER_URL = 'redis://localhost:6379/0'
@@ -42,6 +42,8 @@ CELERYD_CONCURRENCY = 3
 CELERY_DISABLE_RATE_LIMITS = False
 CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 CELERY_ALWAYS_EAGER = False
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_ACCEPT_CONTENT = ['json']
 CELERY_IMPORTS = (
     'guoku_crawler.article',
 )

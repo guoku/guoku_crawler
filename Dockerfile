@@ -10,8 +10,8 @@ RUN mkdir /usr/app
 WORKDIR /usr/app
 ADD requirements.txt ./
 RUN pip install -r requirements.txt
-ADD . .
+COPY . /usr/app/
 RUN pip install -e .
 
-ENTRYPOINT ['/usr/app/entry.sh']
-CMD ['/bin/bash']
+ENTRYPOINT ["/usr/app/entry.sh"]
+CMD ["/bin/bash"]

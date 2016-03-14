@@ -81,6 +81,7 @@ def crawl_weixin_list(authorized_user_id, page=1):
         logging.info('some items on the page already exists in db; '
                      'no need to go to next page')
         go_next = False
+
     item_dict = {key: value for key, value
                  in item_dict.items() if key not in existed}
     for identity_code, article_item in item_dict.items():
@@ -134,6 +135,17 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
     content = article_soup.find('div', id='js_content')
     creator = authorized_user.user
 
+    ##
+    existed_article = session.query(CoreArticle).filter_by(
+        title=title,
+        creator=creator
+    )
+    if existed_article:
+        article = existed_article[0]
+        article.identity_code = identity_code
+        session.commit()
+        return
+    ##
     try:
         article = session.query(CoreArticle).filter_by(
             identity_code=identity_code,
@@ -245,3 +257,6 @@ def prepare_sogou_cookies():
             update_sogou_cookie.delay(sg_user=sg_email)
     else:
         logging.error("phantom web server is unavailable!")
+
+if __name__ == '__main__':
+    prepare_sogou_cookies.delay()
