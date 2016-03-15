@@ -13,6 +13,6 @@ class Expired(Exception):
         self.message = message
 
 
-class ToManyRequests(Exception):
+class TooManyRequests(Exception):
     def __init__(self, message=u''):
         self.message = message

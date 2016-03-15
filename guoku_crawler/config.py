@@ -47,7 +47,27 @@ CELERY_ACCEPT_CONTENT = ['json']
 CELERY_IMPORTS = (
     'guoku_crawler.article',
 )
-REQUEST_INTERVAL = 30
+CELERY_ANNOTATIONS = {
+    'rss.crawl_list': {
+        'rate_limit': '3/m',
+    },
+    'weixin.crawl_articles': {
+        'rate_limit': '1/m',
+    },
+    'weixin.crawl_list': {
+        'rate_limit': '1/m',
+    },
+    'weixin.crawl_weixin_article': {
+        'rate_limit': '1/m',
+    },
+    'weixin.prepare_sogou_cookies': {
+        'rate_limit': '1/m',
+    },
+    'weixin.update_sogou_cookie': {
+        'rate_limit': '1/m',
+    },
+}
+REQUEST_INTERVAL = 20
 
 # Redis
 CONFIG_REDIS_HOST = 'localhost'
@@ -84,4 +104,6 @@ def load_config():
     env_config = config_from_env('GK_')
     for k, v in env_config.items():
         setattr(sys.modules[__name__], k, v)
+
+
 load_config()

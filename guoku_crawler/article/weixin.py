@@ -9,6 +9,7 @@ import requests
 from datetime import datetime
 from urlparse import urljoin
 from bs4 import BeautifulSoup
+from celery import current_task
 from sqlalchemy import and_
 from sqlalchemy.orm.exc import NoResultFound
 
@@ -18,7 +19,7 @@ from guoku_crawler.celery import RequestsTask, app
 from guoku_crawler.common.image import fetch_image
 from guoku_crawler.common.parse import clean_xml
 from guoku_crawler.db import session
-from guoku_crawler.exceptions import ToManyRequests, Expired, Retry
+from guoku_crawler.exceptions import TooManyRequests, Expired
 from guoku_crawler.models import CoreArticle
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
 
@@ -37,11 +38,11 @@ def crawl_weixin_list(authorized_user_id, page=1):
     authorized_user = session.query(Profile).get(authorized_user_id)
     try:
         open_id, ext, sg_cookie = get_sogou_tokens(authorized_user.weixin_id)
-    except (ToManyRequests, Expired) as e:
+    except (TooManyRequests, Expired) as e:
         # if too frequent error, re-crawl the page the current article is on
         logging.warning("too many requests or request expired. %s", e.message)
         weixin_client.refresh_cookies(True)
-        raise Retry(message=u'ToManyRequests. %s' % e)
+        raise current_task.retry(exc=e)
 
     if not open_id:
         logging.warning("skip user %s: cannot find open_id. "
@@ -127,7 +128,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
     try:
         resp = weixin_client.get(
             url=url, headers={'Cookie': sg_cookie})
-    except (ToManyRequests, Expired) as e:
+    except (TooManyRequests, Expired) as e:
         # if too frequent error, re-crawl the page the current article is on
         logging.warning("too many requests or request expired. %s", e.message)
         crawl_weixin_list.delay(authorized_user_id=authorized_user.id,

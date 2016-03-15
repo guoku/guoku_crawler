@@ -15,7 +15,7 @@ from requests.exceptions import ConnectionError
 from guoku_crawler.db import r
 from guoku_crawler import config
 from guoku_crawler.celery import RequestsTask, app
-from guoku_crawler.exceptions import ToManyRequests, Expired, Retry
+from guoku_crawler.exceptions import TooManyRequests, Expired, Retry
 
 
 faker = Faker()
@@ -102,7 +102,7 @@ class WeiXinClient(BaseClient):
         if resp.utf8_content.find(u'您的访问过于频繁') >= 0:
             message = u'too many requests. user: s, url: %s' % self.sg_user, url
             logging.warning(message)
-            raise ToManyRequests(message)
+            raise TooManyRequests(message)
         if resp.utf8_content.find(u'当前请求已过期') >= 0:
             message = 'link expired: %s' % url
             logging.warning(message)
