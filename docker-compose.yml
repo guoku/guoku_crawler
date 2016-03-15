@@ -1,6 +1,7 @@
 worker:
   build: .
   environment:
+    GK_CONFIG_REDIS_HOST: 'redis'
     GK_BROKER_URL: 'redis://redis:6379/0'
     GK_CELERY_RESULT_BACKEND: 'redis://redis:6379/0'
     GK_PHANTOM_SERVER: 'http://10.0.2.49:5000/'
@@ -11,6 +12,7 @@ worker:
 beat:
   build: .
   environment:
+    GK_CONFIG_REDIS_HOST: 'redis'
     GK_BROKER_URL: 'redis://redis:6379/0'
     GK_CELERY_RESULT_BACKEND: 'redis://redis:6379/0'
     GK_PHANTOM_SERVER: 'http://10.0.2.49:5000/'
@@ -23,6 +25,7 @@ flower:
   ports:
     - "10.0.2.49:5555:5000"
   environment:
+    GK_CONFIG_REDIS_HOST: 'redis'
     GK_BROKER_URL: 'redis://redis:6379/0'
     GK_CELERY_RESULT_BACKEND: 'redis://redis:6379/0'
     GK_PHANTOM_SERVER: 'http://10.0.2.49:5000/'

@@ -17,7 +17,7 @@ from guoku_crawler.celery import RequestsTask, app
 from guoku_crawler.common.image import fetch_image
 from guoku_crawler.common.parse import clean_xml
 from guoku_crawler.db import session
-from guoku_crawler.exceptions import ToManyRequests, Expired
+from guoku_crawler.exceptions import ToManyRequests, Expired, Retry
 from guoku_crawler.models import CoreArticle
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
 
@@ -34,7 +34,14 @@ image_host = getattr(config, 'IMAGE_HOST', None)
 @app.task(base=RequestsTask, name='weixin.crawl_list')
 def crawl_weixin_list(authorized_user_id, page=1):
     authorized_user = session.query(Profile).get(authorized_user_id)
-    open_id, ext, sg_cookie = get_sogou_tokens(authorized_user.weixin_id)
+    try:
+        open_id, ext, sg_cookie = get_sogou_tokens(authorized_user.weixin_id)
+    except (ToManyRequests, Expired) as e:
+        # if too frequent error, re-crawl the page the current article is on
+        logging.warning("too many requests or request expired. %s", e.message)
+        weixin_client.refresh_cookies(True)
+        raise Retry(message=u'ToManyRequests. %s' % e)
+
     if not open_id:
         logging.warning("skip user %s: cannot find open_id. "
                         "Is weixin_id correct?",
@@ -146,6 +153,8 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
         session.commit()
         return
     ##
+
+
     try:
         article = session.query(CoreArticle).filter_by(
             identity_code=identity_code,
@@ -195,6 +204,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
 
 
 def get_sogou_tokens(weixin_id):
+    weixin_id = weixin_id.strip()
     logging.info('get open_id for %s', weixin_id)
     open_id = None
     ext = None
