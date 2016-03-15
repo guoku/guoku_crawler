@@ -6,7 +6,8 @@ Crawler of Guoku.
 Features
 --------
 
-* TODO
+* SqlAlchemy与数据库自动匹配,不需要手动改model.
+
 
 Credits
 -------
