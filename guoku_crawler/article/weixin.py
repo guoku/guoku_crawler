@@ -9,6 +9,7 @@ import requests
 from datetime import datetime
 from urlparse import urljoin
 from bs4 import BeautifulSoup
+from sqlalchemy import and_
 from sqlalchemy.orm.exc import NoResultFound
 
 from guoku_crawler import config
@@ -76,8 +77,10 @@ def crawl_weixin_list(authorized_user_id, page=1):
     existed = []
     for item in item_dict.keys():
         article = session.query(CoreArticle.title).filter(
-            CoreArticle.creator == authorized_user.user,
-            CoreArticle.identity_code == item
+            and_(
+                CoreArticle.creator_id == authorized_user.user.id,
+                CoreArticle.identity_code == item
+            )
         )
         logging.info("filter sql is: %s", article)
         if article.all():
@@ -147,8 +150,8 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
         title=title,
         creator=creator
     )
-    if existed_article:
-        article = existed_article[0]
+    if existed_article.all():
+        article = existed_article.all()[0]
         article.identity_code = identity_code
         session.commit()
         return
@@ -267,6 +270,7 @@ def prepare_sogou_cookies():
             update_sogou_cookie.delay(sg_user=sg_email)
     else:
         logging.error("phantom web server is unavailable!")
+
 
 if __name__ == '__main__':
     prepare_sogou_cookies.delay()
