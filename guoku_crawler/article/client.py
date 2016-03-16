@@ -153,10 +153,9 @@ def update_sogou_cookie(sg_user):
     get_url = urljoin(config.PHANTOM_SERVER, '_sg_cookie')
     resp = requests.post(get_url, data={'email': sg_user})
     cookie = resp.json()['sg_cookie']
-    print('-'*80, '\r\n')
-    print('got cookie for %s: ', sg_user)
+    print('-'*80)
+    print('got cookie for %s: ' % sg_user)
     print(cookie)
-    print('-'*80, '\r\n')
-
+    print('-'*80)
     key = 'sogou.cookie.%s' % sg_user
     r.set(key, cookie)
