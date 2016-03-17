@@ -3,7 +3,13 @@
 
 import sys
 from guoku_crawler.utils import config_from_env
+from guoku_crawler.logging_conf import LOGGING
+import logging.config
+import logging
 
+
+logging.config.dictConfig(LOGGING)
+logger = logging.getLogger("request")
 
 # Database
 DATABASES = {
@@ -96,6 +102,11 @@ SOGOU_USERS = [
     'duad1937@jourrapide.com',
     'alat1981@jourrapide.com',
     'paboy1973@superrito.com',
+
+    # 'saind1974@gustr.com',
+    # 'forry1978@superrito.com',
+    # 'wassiriour49@teleworm.us',
+
 ]
 SOGOU_PASSWORD = 'guoku1@#'
 
@@ -107,3 +118,5 @@ def load_config():
 
 
 load_config()
+
+

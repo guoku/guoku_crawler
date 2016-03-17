@@ -1,0 +1,49 @@
+[16/03/17 14:39:28.328] INFO [crawler:<module>:50]- just a test
+[16/03/17 14:39:28.332] DEBUG [crawler:<module>:51]- debug haha
+[16/03/17 14:40:02.662] INFO [crawler:<module>:50]- just a test
+[16/03/17 14:40:02.663] DEBUG [crawler:<module>:51]- debug haha
+[16/03/17 15:05:28.231] INFO [weixin:crawl_weixin_list:91]- those articles are existed: [u'ab735a258a90e8e1-6bee54fcbd896b2a-1d4be7e0330e254e6cbb39d3cf1898f3', u'ab735a258a90e8e1-6bee54fcbd896b2a-2bf6cac91c20f023660ff34d514bacc5', u'ab735a258a90e8e1-6bee54fcbd896b2a-998717348867fbc1005bc59a5834b115', u'ab735a258a90e8e1-6bee54fcbd896b2a-29ce54de6ffbe507adcf100c9d218ada', u'ab735a258a90e8e1-6bee54fcbd896b2a-20fbc5ee14b6cad2817d07f3524f5f91', u'ab735a258a90e8e1-6bee54fcbd896b2a-0d27da2d2a02fa40f4f217c4008ed778', u'ab735a258a90e8e1-6bee54fcbd896b2a-8070cea531d9b06b296071b451449f4b']
+[16/03/17 15:05:38.920] INFO [weixin:crawl_weixin_list:92]- just a info
+[16/03/17 15:14:39.960] INFO [client:refresh_cookies:131]- get cookie from redis
+[16/03/17 15:16:08.50] INFO [weixin:crawl_weixin_list:91]- those articles are existed: [u'ab735a258a90e8e1-6bee54fcbd896b2a-1d4be7e0330e254e6cbb39d3cf1898f3', u'ab735a258a90e8e1-6bee54fcbd896b2a-2bf6cac91c20f023660ff34d514bacc5', u'ab735a258a90e8e1-6bee54fcbd896b2a-998717348867fbc1005bc59a5834b115', u'ab735a258a90e8e1-6bee54fcbd896b2a-29ce54de6ffbe507adcf100c9d218ada', u'ab735a258a90e8e1-6bee54fcbd896b2a-20fbc5ee14b6cad2817d07f3524f5f91', u'ab735a258a90e8e1-6bee54fcbd896b2a-0d27da2d2a02fa40f4f217c4008ed778', u'ab735a258a90e8e1-6bee54fcbd896b2a-8070cea531d9b06b296071b451449f4b', u'ab735a258a90e8e1-6bee54fcbd896b2a-5543b7374308fb4e95fa560bb0eab012', u'ab735a258a90e8e1-6bee54fcbd896b2a-99f48d76cc6853a545a51e7d5dbf3eef']
+[16/03/17 15:16:12.821] INFO [weixin:crawl_weixin_list:92]- just a info
+[16/03/17 15:16:31.6] INFO [crawler:<module>:46]- just a test
+[16/03/17 15:16:31.7] DEBUG [crawler:<module>:47]- debug haha
+[16/03/17 15:41:15.250] INFO [weixin:get_sogou_tokens:215]- get open_id for toodaylab
+[16/03/17 15:41:22.551] INFO [weixin:get_sogou_tokens:215]- get open_id for toodaylab
+[16/03/17 15:41:28.901] INFO [weixin:get_sogou_tokens:215]- get open_id for toodaylab
+[16/03/17 15:41:36.317] INFO [weixin:get_sogou_tokens:215]- get open_id for toodaylab
+[16/03/17 15:42:14.860] INFO [weixin:get_sogou_tokens:215]- get open_id for toodaylab
+[16/03/17 15:42:14.862] INFO [client:refresh_cookies:130]- get cookie from redis
+[16/03/17 15:43:35.444] INFO [weixin:crawl_weixin_list:85]- filter sql is: SELECT core_article.title AS core_article_title 
+FROM core_article 
+WHERE core_article.creator_id = :creator_id_1 AND core_article.identity_code = :identity_code_1
+[16/03/17 15:43:35.453] INFO [weixin:crawl_weixin_list:85]- filter sql is: SELECT core_article.title AS core_article_title 
+FROM core_article 
+WHERE core_article.creator_id = :creator_id_1 AND core_article.identity_code = :identity_code_1
+[16/03/17 15:43:35.460] INFO [weixin:crawl_weixin_list:85]- filter sql is: SELECT core_article.title AS core_article_title 
+FROM core_article 
+WHERE core_article.creator_id = :creator_id_1 AND core_article.identity_code = :identity_code_1
+[16/03/17 15:43:35.467] INFO [weixin:crawl_weixin_list:85]- filter sql is: SELECT core_article.title AS core_article_title 
+FROM core_article 
+WHERE core_article.creator_id = :creator_id_1 AND core_article.identity_code = :identity_code_1
+[16/03/17 15:43:35.474] INFO [weixin:crawl_weixin_list:85]- filter sql is: SELECT core_article.title AS core_article_title 
+FROM core_article 
+WHERE core_article.creator_id = :creator_id_1 AND core_article.identity_code = :identity_code_1
+[16/03/17 15:43:35.481] INFO [weixin:crawl_weixin_list:85]- filter sql is: SELECT core_article.title AS core_article_title 
+FROM core_article 
+WHERE core_article.creator_id = :creator_id_1 AND core_article.identity_code = :identity_code_1
+[16/03/17 15:43:35.488] INFO [weixin:crawl_weixin_list:85]- filter sql is: SELECT core_article.title AS core_article_title 
+FROM core_article 
+WHERE core_article.creator_id = :creator_id_1 AND core_article.identity_code = :identity_code_1
+[16/03/17 15:43:35.496] INFO [weixin:crawl_weixin_list:85]- filter sql is: SELECT core_article.title AS core_article_title 
+FROM core_article 
+WHERE core_article.creator_id = :creator_id_1 AND core_article.identity_code = :identity_code_1
+[16/03/17 15:43:35.502] INFO [weixin:crawl_weixin_list:85]- filter sql is: SELECT core_article.title AS core_article_title 
+FROM core_article 
+WHERE core_article.creator_id = :creator_id_1 AND core_article.identity_code = :identity_code_1
+[16/03/17 15:43:41.670] INFO [weixin:crawl_weixin_list:89]- those articles are existed: [u'ab735a258a90e8e1-6bee54fcbd896b2a-1d4be7e0330e254e6cbb39d3cf1898f3', u'ab735a258a90e8e1-6bee54fcbd896b2a-2bf6cac91c20f023660ff34d514bacc5', u'ab735a258a90e8e1-6bee54fcbd896b2a-998717348867fbc1005bc59a5834b115', u'ab735a258a90e8e1-6bee54fcbd896b2a-29ce54de6ffbe507adcf100c9d218ada', u'ab735a258a90e8e1-6bee54fcbd896b2a-20fbc5ee14b6cad2817d07f3524f5f91', u'ab735a258a90e8e1-6bee54fcbd896b2a-0d27da2d2a02fa40f4f217c4008ed778', u'ab735a258a90e8e1-6bee54fcbd896b2a-8070cea531d9b06b296071b451449f4b', u'ab735a258a90e8e1-6bee54fcbd896b2a-5543b7374308fb4e95fa560bb0eab012', u'ab735a258a90e8e1-6bee54fcbd896b2a-99f48d76cc6853a545a51e7d5dbf3eef']
+[16/03/17 15:43:43.823] INFO [weixin:crawl_weixin_list:90]- just a info
+[16/03/17 15:44:59.275] INFO [weixin:crawl_weixin_list:92]- some items on the page already exists in db; no need to go to next page
+[16/03/17 15:44:59.277] INFO [crawler:<module>:40]- just a test
+[16/03/17 15:44:59.278] DEBUG [crawler:<module>:41]- debug haha

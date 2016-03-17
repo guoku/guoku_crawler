@@ -3,13 +3,13 @@
 
 import re
 import random
-import logging
 import requests
 
 from datetime import datetime
 from urlparse import urljoin
 from bs4 import BeautifulSoup
 from celery import current_task
+from guoku_crawler.config import logger
 from sqlalchemy import and_
 from sqlalchemy.orm.exc import NoResultFound
 
@@ -22,7 +22,6 @@ from guoku_crawler.db import session
 from guoku_crawler.exceptions import TooManyRequests, Expired
 from guoku_crawler.models import CoreArticle
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
-
 
 SEARCH_API = 'http://weixin.sogou.com/weixinjs'
 ARTICLE_LIST_API = 'http://weixin.sogou.com/gzhjs'
@@ -40,12 +39,12 @@ def crawl_weixin_list(authorized_user_id, page=1):
         open_id, ext, sg_cookie = get_sogou_tokens(authorized_user.weixin_id)
     except (TooManyRequests, Expired) as e:
         # if too frequent error, re-crawl the page the current article is on
-        logging.warning("too many requests or request expired. %s", e.message)
+        logger.warning("too many requests or request expired. %s", e.message)
         weixin_client.refresh_cookies(True)
         raise current_task.retry(exc=e)
 
     if not open_id:
-        logging.warning("skip user %s: cannot find open_id. "
+        logger.warning("skip user %s: cannot find open_id. "
                         "Is weixin_id correct?",
                         authorized_user.weixin_id)
         return
@@ -83,13 +82,13 @@ def crawl_weixin_list(authorized_user_id, page=1):
                 CoreArticle.identity_code == item
             )
         )
-        logging.info("filter sql is: %s", article)
+        logger.info("filter sql is: %s", article)
         if article.all():
             existed.append(item)
 
-    logging.info("those articles are existed: %s", existed)
+    logger.info("those articles are existed: %s", existed)
     if existed:
-        logging.info('some items on the page already exists in db; '
+        logger.info('some items on the page already exists in db; '
                      'no need to go to next page')
         go_next = False
 
@@ -107,11 +106,11 @@ def crawl_weixin_list(authorized_user_id, page=1):
 
     page += 1
     if int(response.jsonp['totalPages']) < page:
-        logging.info('current page is the last page; will not go next page')
+        logger.info('current page is the last page; will not go next page')
         go_next = False
 
     if go_next:
-        logging.info('prepare to get next page: %d', page)
+        logger.info('prepare to get next page: %d', page)
         crawl_weixin_list.delay(authorized_user_id=authorized_user.id,
                                 page=page)
 
@@ -130,7 +129,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
             url=url, headers={'Cookie': sg_cookie})
     except (TooManyRequests, Expired) as e:
         # if too frequent error, re-crawl the page the current article is on
-        logging.warning("too many requests or request expired. %s", e.message)
+        logger.warning("too many requests or request expired. %s", e.message)
         crawl_weixin_list.delay(authorized_user_id=authorized_user.id,
                                 page=page)
         return
@@ -175,7 +174,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
         )
         session.add(article)
         session.commit()
-    logging.info("created article id: %s. title: %s. identity_code: %s",
+    logger.info("created article id: %s. title: %s. identity_code: %s",
                  article.id, title, identity_code)
 
     cover = fetch_image(article.cover, weixin_client)
@@ -191,7 +190,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
                 image_tag.attrs.get('src') or image_tag.attrs.get('data-src')
             )
             if img_src:
-                logging.info('fetch_image for article %d: %s', article.id,
+                logger.info('fetch_image for article %d: %s', article.id,
                              img_src)
                 gk_img_rc = fetch_image(img_src, weixin_client, full=False)
                 if gk_img_rc:
@@ -203,13 +202,13 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
             content_html = article_soup.decode_contents(formatter="html")
             article.content = content_html
             session.commit()
-    logging.info('article %s finished.', article.id)
+    logger.info('article %s finished.', article.id)
     print('-' * 80)
 
 
 def get_sogou_tokens(weixin_id):
     weixin_id = weixin_id.strip()
-    logging.info('get open_id for %s', weixin_id)
+    logger.info('get open_id for %s', weixin_id)
     open_id = None
     ext = None
     params = dict(type='1', ie='utf8', query=weixin_id)
@@ -231,7 +230,7 @@ def get_sogou_tokens(weixin_id):
     if open_id:
         return open_id, ext, sg_cookie
     else:
-        logging.warning('cannot find open_id for weixin_id: %s.', weixin_id)
+        logger.warning('cannot find open_id for weixin_id: %s.', weixin_id)
         return None, None, None
 
 
@@ -270,7 +269,7 @@ def prepare_sogou_cookies():
         for sg_email in emails:
             update_sogou_cookie.delay(sg_user=sg_email)
     else:
-        logging.error("phantom web server is unavailable!")
+        logger.error("phantom web server is unavailable!")
 
 
 if __name__ == '__main__':
