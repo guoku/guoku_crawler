@@ -3,12 +3,13 @@
 
 import json
 import random
-import logging
 import requests
 
 from time import sleep
 from faker import Faker
 from urlparse import urljoin
+
+from guoku_crawler.config import logger
 from requests.exceptions import ReadTimeout
 from requests.exceptions import ConnectionError
 
@@ -51,7 +52,7 @@ class BaseClient(requests.Session):
         except ReadTimeout as e:
             raise Retry(message=u'ReadTimeout. %s' % e)
         except BaseException as e:
-            logging.ERROR(e)
+            logger.ERROR(e)
         if stream:
             return resp
         resp.utf8_content = resp.content.decode('utf-8')
@@ -101,11 +102,11 @@ class WeiXinClient(BaseClient):
         # catch exceptions
         if resp.utf8_content.find(u'您的访问过于频繁') >= 0:
             message = u'too many requests. user: s, url: %s' % self.sg_user, url
-            logging.warning(message)
+            logger.warning(message)
             raise TooManyRequests(message)
         if resp.utf8_content.find(u'当前请求已过期') >= 0:
             message = 'link expired: %s' % url
-            logging.warning(message)
+            logger.warning(message)
             raise Expired(message)
 
         if jsonp_callback:
@@ -145,7 +146,7 @@ class WeiXinClient(BaseClient):
                 # for example, "cb({"a": 1})", where callback is "cb"
                 return json.loads(utf8_content[len(callback) + 1:-1])
             except ValueError:
-                logging.error("Json decode error %s", utf8_content)
+                logger.error("Json decode error %s", utf8_content)
                 raise
 
 

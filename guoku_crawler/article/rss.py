@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import logging
 from hashlib import md5
 
 import datetime
@@ -15,6 +14,7 @@ from guoku_crawler.common.image import fetch_image
 from guoku_crawler.db import session
 from guoku_crawler.models import CoreArticle
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
+from guoku_crawler.config import logger
 
 
 rss_client = RSSClient()
@@ -43,7 +43,7 @@ def crawl_rss_list(authorized_user_id, page=1):
                 identity_code=identity_code,
             ).one()
             go_next = False
-            logging.info('some items on the page already exists in db; '
+            logger.info('some items on the page already exists in db; '
                          'no need to go to next page')
         except NoResultFound:
             article = CoreArticle(
@@ -60,15 +60,15 @@ def crawl_rss_list(authorized_user_id, page=1):
             session.commit()
             crawl_rss_images.delay(article.content, article.id)
 
-        logging.info('article %s finished.', article.id)
+        logger.info('article %s finished.', article.id)
 
     if len(item_list) < 10:
         go_next = False
-        logging.info('current page is the last page; will not go next page')
+        logger.info('current page is the last page; will not go next page')
 
     page += 1
     if go_next:
-        logging.info('prepare to get next page: %d', page)
+        logger.info('prepare to get next page: %d', page)
         crawl_rss_list.delay(authorized_user_id=authorized_user.id,
                              page=page)
 
@@ -86,7 +86,7 @@ def crawl_rss_images(content_string, article_id):
                 image_tag.attrs.get('src') or image_tag.attrs.get('data-src')
             )
             if img_src:
-                logging.info('fetch_image for article %d: %s', article.id,
+                logger.info('fetch_image for article %d: %s', article.id,
                              img_src)
                 gk_img_rc = fetch_image(img_src, rss_client, full=False)
                 if gk_img_rc:

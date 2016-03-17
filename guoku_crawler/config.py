@@ -3,7 +3,13 @@
 
 import sys
 from guoku_crawler.utils import config_from_env
+from guoku_crawler.logging_conf import LOGGING
+import logging.config
+import logging
 
+
+logging.config.dictConfig(LOGGING)
+logger = logging.getLogger("request")
 
 # Database
 DATABASES = {
