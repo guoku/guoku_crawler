@@ -124,11 +124,14 @@ class WeiXinClient(BaseClient):
         sg_users = list(config.SOGOU_USERS)
         if self.sg_user:
             sg_users.remove(self.sg_user)
+
         sg_user = random.choice(sg_users)
-        sg_cookie = r.get('sogou.cookie.%s' % sg_user).decode()
+        sg_cookie = r.get('sogou.cookie.%s' % sg_user)
         if not sg_cookie:
             update_sogou_cookie.delay(sg_user)
             sg_cookie = r.get('sogou.cookie.%s' % sg_user).decode()
+        else:
+            sg_cookie = sg_cookie.decode()
         self._sg_user = sg_user
         self.headers['Cookie'] = sg_cookie
         self.headers['User-Agent'] = faker.user_agent()

@@ -38,7 +38,7 @@ PHANTOM_SERVER = 'http://10.0.2.49:5000/'
 # Celery
 BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERYD_CONCURRENCY = 3
+CELERYD_CONCURRENCY = 1
 CELERY_DISABLE_RATE_LIMITS = False
 CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 CELERY_ALWAYS_EAGER = False
@@ -48,6 +48,12 @@ CELERYD_PREFETCH_MULTIPLIER = 1
 CELERY_IMPORTS = (
     'guoku_crawler.article',
 )
+CELERY_ROUTES = {
+    'weixin.update_sogou_cookie':
+    {
+        'queue': 'cookies'
+    }
+}
 CELERY_ANNOTATIONS = {
     'rss.crawl_list': {
         'rate_limit': '3/m',

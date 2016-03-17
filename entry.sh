@@ -5,6 +5,10 @@ case $1 in
     exec celery -A guoku_crawler worker -l info
     ;;
 
+    cookie_worker)
+    exec celery -A guoku_crawler worker -l info -Q cookies
+    ;;
+
     beat)
 	exec celery -A guoku_crawler beat -l info
     ;;
