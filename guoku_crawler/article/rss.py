@@ -3,6 +3,7 @@
 import logging
 from hashlib import md5
 
+import datetime
 from bs4 import BeautifulSoup
 from dateutil import parser
 from sqlalchemy.orm.exc import NoResultFound
@@ -50,6 +51,7 @@ def crawl_rss_list(authorized_user_id, page=1):
                 identity_code=identity_code,
                 title=item.title.text,
                 content=item.encoded.string,
+                updated_datetime=datetime.datetime.now(),
                 created_datetime=parser.parse(item.pubDate.text),
                 publish=CoreArticle.published,
                 cover=config.DEFAULT_ARTICLE_COVER

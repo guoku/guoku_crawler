@@ -170,6 +170,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
             title=title,
             content=content.decode_contents(formatter="html"),
             created_datetime=published_time,
+            updated_datetime=datetime.now(),
             publish=CoreArticle.published,
             cover=cover,
         )
@@ -271,7 +272,3 @@ def prepare_sogou_cookies():
             update_sogou_cookie.delay(sg_user=sg_email)
     else:
         logging.error("phantom web server is unavailable!")
-
-
-if __name__ == '__main__':
-    prepare_sogou_cookies.delay()
