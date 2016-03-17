@@ -44,6 +44,7 @@ CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 CELERY_ALWAYS_EAGER = False
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['json']
+CELERYD_PREFETCH_MULTIPLIER = 1
 CELERY_IMPORTS = (
     'guoku_crawler.article',
 )
@@ -96,6 +97,14 @@ SOGOU_USERS = [
     'duad1937@jourrapide.com',
     'alat1981@jourrapide.com',
     'paboy1973@superrito.com',
+    'fuly1964@cuvox.de',
+    'nelf1946@cuvox.de',
+    'offam1939@cuvox.de',
+    'norne1981@dayrep.com',
+    'monce1934@teleworm.us',
+    'overniseents93@einrot.com',
+    'gavis1978@einrot.com',
+    'harmuden1974@superrito.com'
 ]
 SOGOU_PASSWORD = 'guoku1@#'
 
