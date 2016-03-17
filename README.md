@@ -30,8 +30,14 @@ Commonds
 #####查看docker现在在跑的东西:
     sudo docker ps
     
-#####stop a container
-    sudo docker stop CONTAINER ID(上一条命令的结果中第一列)
+#####查看docker-compose正在跑的东西
+    sudo docker-compose ps
+    
+#####stop a container defined in compose
+    sudo docke-compose stop CONTAINER ID(上一条命令的结果中第一列)
+    
+#####stop a container otherwise
+    sudo docker stop CONTAINER ID
 
 #####更新后记得要先build
     sudo docker build -t phantom-webserver .
