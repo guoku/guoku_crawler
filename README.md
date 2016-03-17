@@ -6,11 +6,22 @@ Crawler of Guoku.
 Features
 --------
 
+TODO
+--------
+
 * SqlAlchemy与数据库自动匹配,不需要手动改model.
 
 
-Credits
--------
+How to run locally
+--------
+
+    cd guoku_crawler
+    
+    sudo docker-compose build
+    
+    sudo docker-compose up  # 把worker、flower、beat全都启动
+    
+    sudo docker-compose run worker/flower/beat 指定启动
 
 
 Commonds
