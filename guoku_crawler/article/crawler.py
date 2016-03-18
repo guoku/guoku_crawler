@@ -47,6 +47,7 @@ def getUserUpdateNum(user):
                                                          CoreArticle.creator_id == authorized_user.user.id).all())
     return yesterday_finish
 
+@app.task(base=RequestsTask, name='crawlResultAnalysis')
 def getYesterdayDetail():
     users = getAuthUsers()
     yesterday_detail = {}
