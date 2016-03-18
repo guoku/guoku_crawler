@@ -13,9 +13,9 @@ logger = logging.getLogger("request")
 # Database
 DATABASES = {
     'DB_NAME': 'core',
-    'USER': 'root',
-    'PASSWORD': '',
-    'HOST': '127.0.0.1',
+    'USER': 'guoku',
+    'PASSWORD': 'guoku!@#',
+    'HOST': '10.0.2.90',
     'PORT': '3306',
 }
 
