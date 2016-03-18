@@ -7,16 +7,15 @@ from guoku_crawler.logging_conf import LOGGING
 import logging.config
 import logging
 
-
 logging.config.dictConfig(LOGGING)
 logger = logging.getLogger("request")
 
 # Database
 DATABASES = {
     'DB_NAME': 'core',
-    'USER': 'guoku',
-    'PASSWORD': 'guoku!@#',
-    'HOST': '10.0.2.90',
+    'USER': 'root',
+    'PASSWORD': '',
+    'HOST': '127.0.0.1',
     'PORT': '3306',
 }
 
@@ -116,9 +115,58 @@ SOGOU_USERS = [
     'monce1934@teleworm.us',
     'overniseents93@einrot.com',
     'gavis1978@einrot.com',
-    'harmuden1974@superrito.com'
+    'harmuden1974@superrito.com',
+
+    # local
+    # 'saind1974@gustr.com',
+    # 'forry1978@superrito.com',
+    # 'wassiriour49@teleworm.us',
+
 ]
 SOGOU_PASSWORD = 'guoku1@#'
+
+NICKNAME_DICT = {
+    'laohan':'不要阿耀的',
+    'haruru':'haruru',
+    'affordable':'够得到的B格',
+    'colorkk':'克勒kk',
+    'xjvary':'鲜见VARY',
+    'intuition':'植觉先生',
+    'smartwoodhouse':'木智工坊',
+    'theblackwizard':'黑法师',
+    'vintagedesign':'无尘车间设计室',
+    'zhaijiang':'宅匠 ',
+    'joyhowine':'酒狐米酒',
+    'yinjewelry':'YIN设计金饰',
+    'ntmy2010':'NTMY',
+    'zumushow':'祖母秀堂',
+    'yuanye':'丨元也丨',
+    'zjyfz':'真假舆服志',
+    'cabinet':'Cabinet',
+    'ddzdqncf':'丹丹朱的青年厨房',
+    'meetaste':'一山半海食味铺',
+    'neufstudio':'NEUF弗',
+    'tldchina':'TLD“毒质”原创品牌',
+    'pidan':'PIDAN_STUDIO',
+    'jiazazhi':'假杂志',
+    'idlebeats':'IdleBeats爱豆笔此',
+    'tadadada':'大大儿童商店',
+    'wkupbike':'wkup',
+    'paperplay':'PaperPlay',
+    'talkaboutshoes':'别人的鞋',
+    'rinkle':'Rinkle',
+    'jijianzhi':'极简志Lynn',
+    'toodaylab':'理想生活实验室',
+    'aixieruming':'爱鞋如命',
+    'fireblue':'fireblues',
+    'juelab':'Fete',
+    'mumolife':'MUMO木墨',
+    'wmemory':'木忆',
+    'folofolo':'福禄商店',
+    'angenise':'angelinamyz',
+    'rumohome':'如茉',
+
+}
 
 
 def load_config():
