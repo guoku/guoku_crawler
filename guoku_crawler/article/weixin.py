@@ -82,13 +82,13 @@ def crawl_weixin_list(authorized_user_id, page=1):
                 CoreArticle.identity_code == item
             )
         )
-        logger.info("filter sql is: %s", article)
+        # logger.info("filter sql is: %s", article)
         if article.all():
             existed.append(item)
 
-    logger.info("those articles are existed: %s", existed)
+    # logger.info("those articles are existed: %s", existed)
     if existed:
-        logger.info('some items on the page already exists in db; '
+        logger.info('those articles are existed: %s' % existed,
                      'no need to go to next page')
         go_next = False
 
