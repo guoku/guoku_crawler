@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+from __future__ import absolute_import
 import sys
+from celery.schedules import crontab
 from guoku_crawler.utils import config_from_env
 from guoku_crawler.logging_conf import LOGGING
 import logging.config
@@ -80,6 +81,14 @@ CELERY_ANNOTATIONS = {
     },
 }
 REQUEST_INTERVAL = 20
+CELERYBEAT_SCHEDULE = {
+    'crawlResultAnalysis': {
+        'task': 'crawlResultAnalysis',
+        'schedule': crontab(minute=0, hour=3)
+    },
+
+}
+
 
 # Redis
 CONFIG_REDIS_HOST = 'localhost'

@@ -54,7 +54,7 @@ def getYesterdayDetail():
     for user in users:
         yesterday_detail[NICKNAME_DICT[user.profile.personal_domain_name]] =getUserUpdateNum(user)
     yesterday_detail['all'] = sum(yesterday_detail.values())
-    with open('../../logs/crawlResults.csv', 'a') as f:
+    with open('logs/crawlResults.csv', 'a') as f:
         f = csv.writer(f)
         f.writerow(('起始时间', '结束时间'))
         f.writerow((str(yesterday_start), str(today_start)))
@@ -66,4 +66,5 @@ def getYesterdayDetail():
 
 if __name__ == '__main__':
 
-    yesterday_detail = getYesterdayDetail()
+    pass
+
