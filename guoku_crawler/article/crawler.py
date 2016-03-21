@@ -1,19 +1,32 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from guoku_crawler.db import session
-from guoku_crawler.celery import RequestsTask, app
-from guoku_crawler.article.rss import crawl_rss_list
-from guoku_crawler.config import logger, NICKNAME_DICT
-from guoku_crawler.models import CoreGkuser, AuthGroup, CoreArticle
-from guoku_crawler.article.weixin import crawl_weixin_list, prepare_sogou_cookies
-from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
-from sqlalchemy import or_
 import datetime
 import csv
 
+from sqlalchemy import or_
+
+from guoku_crawler.db import session
+from guoku_crawler.config import NICKNAME_DICT
+from guoku_crawler.celery import RequestsTask, app
+from guoku_crawler.article.rss import crawl_rss_list
+from guoku_crawler.article.weixin import crawl_weixin_list
+from guoku_crawler.models import CoreGkuser, AuthGroup, CoreArticle
+from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
+
+
+yesterday_start = datetime.datetime.combine(
+    datetime.date.today() - datetime.timedelta(days=1),
+    datetime.time.min
+)
+today_start = datetime.datetime.combine(
+    datetime.date.today(),
+    datetime.time.min
+)
+
+
 @app.task(base=RequestsTask, name='weixin.crawl_articles')
 def crawl_articles():
-    users = getAuthUsers()
+    users = get_auth_users()
     for user in users:
         crawl_user_articles(user.profile.id)
 
@@ -28,31 +41,32 @@ def crawl_user_articles(authorized_user_id):
     else:
         crawl_weixin_list.delay(authorized_user_id)
 
-def getAuthUsers():
+
+def get_auth_users():
     users = session.query(CoreGkuser).filter(
         CoreGkuser.authorized_profile.any(or_(
-            Profile.weixin_id.isnot(None), Profile.rss_url.isnot( None))),
+            Profile.weixin_id.isnot(None), Profile.rss_url.isnot(None))),
         CoreGkuser.groups.any(AuthGroup.name == 'Author')
     ).all()
     return users
 
-yesterday_start = datetime.datetime.combine(datetime.date.today()-datetime.timedelta(days=1), datetime.time.min)
-today_start = datetime.datetime.combine(datetime.date.today(), datetime.time.min)
 
-def getUserUpdateNum(user):
-
+def get_user_update_num(user):
     authorized_user = session.query(Profile).get(user.profile.id)
-    yesterday_finish = len(session.query(CoreArticle).filter(CoreArticle.updated_datetime >= yesterday_start,
-                                                         CoreArticle.updated_datetime < today_start,
-                                                         CoreArticle.creator_id == authorized_user.user.id).all())
+    yesterday_finish = len(session.query(CoreArticle).filter(
+        CoreArticle.updated_datetime >= yesterday_start,
+        CoreArticle.updated_datetime < today_start,
+        CoreArticle.creator_id == authorized_user.user.id).all())
     return yesterday_finish
 
-@app.task(base=RequestsTask, name='crawlResultAnalysis')
-def getYesterdayDetail():
-    users = getAuthUsers()
+
+@app.task(base=RequestsTask, name='crawl_result_analysis')
+def get_yesterday_detail():
+    users = get_auth_users()
     yesterday_detail = {}
     for user in users:
-        yesterday_detail[NICKNAME_DICT[user.profile.personal_domain_name]] =getUserUpdateNum(user)
+        yesterday_detail[NICKNAME_DICT[
+            user.profile.personal_domain_name]] = get_user_update_num(user)
     yesterday_detail['all'] = sum(yesterday_detail.values())
     with open('logs/crawlResults.csv', 'a') as f:
         f = csv.writer(f)
@@ -62,9 +76,3 @@ def getYesterdayDetail():
         f.writerows(yesterday_detail.items())
         f.writerow(('', ''))
     return yesterday_detail
-
-
-if __name__ == '__main__':
-
-    pass
-

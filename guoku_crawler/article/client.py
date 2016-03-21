@@ -129,7 +129,8 @@ class WeiXinClient(BaseClient):
         sg_user = random.choice(sg_users)
         sg_cookie = r.get('sogou.cookie.%s' % sg_user)
         if not sg_cookie:
-            update_sogou_cookie.delay(sg_user)
+            result = update_sogou_cookie.delay(sg_user)
+            result.get()
             sg_cookie = r.get('sogou.cookie.%s' % sg_user).decode()
         else:
             sg_cookie = sg_cookie.decode()

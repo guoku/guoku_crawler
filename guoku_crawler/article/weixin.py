@@ -268,6 +268,7 @@ def prepare_sogou_cookies():
     if ready:
         emails = config.SOGOU_USERS
         for sg_email in emails:
-            update_sogou_cookie.delay(sg_user=sg_email)
+            result = update_sogou_cookie.delay(sg_user=sg_email)
+            result.get()
     else:
         logger.error("phantom web server is unavailable!")
