@@ -5,6 +5,7 @@ EXPOSE 5000
 ENV GC_DEBUG=False
 ENV WORKERS=2
 ENV PIP_INDEX_URL=https://pypi.mirrors.ustc.edu.cn/simple
+ENV TZ "Asia/Shanghai"
 
 RUN mkdir /usr/app
 WORKDIR /usr/app
