@@ -8,6 +8,7 @@ from guoku_crawler.logging_conf import LOGGING
 import logging.config
 import logging
 
+
 logging.config.dictConfig(LOGGING)
 logger = logging.getLogger("request")
 
@@ -57,16 +58,16 @@ CELERY_IMPORTS = (
 )
 CELERY_ROUTES = {
     'weixin.update_sogou_cookie':
-    {
-        'queue': 'cookies'
-    }
+        {
+            'queue': 'cookies'
+        }
 }
 CELERY_ANNOTATIONS = {
+    'crawl_articles': {
+        'rate_limit': '1/m',
+    },
     'rss.crawl_list': {
         'rate_limit': '3/m',
-    },
-    'weixin.crawl_articles': {
-        'rate_limit': '1/m',
     },
     'weixin.crawl_list': {
         'rate_limit': '1/m',
@@ -83,13 +84,17 @@ CELERY_ANNOTATIONS = {
 }
 REQUEST_INTERVAL = 20
 CELERYBEAT_SCHEDULE = {
-    'crawlResultAnalysis': {
-        'task': 'crawlResultAnalysis',
-        'schedule': crontab(minute=0, hour=3)
+    'crawl_result_analysis': {
+        'task': 'crawl_result_analysis',
+        'schedule': crontab(minute=0, hour=6)
     },
 
-}
+    'crawl_articles': {
+        'task': 'crawl_articles',
+        'schedule': crontab(minute=1, hour=1)
+    }
 
+}
 
 # Redis
 CONFIG_REDIS_HOST = 'localhost'
@@ -136,45 +141,45 @@ SOGOU_USERS = [
 SOGOU_PASSWORD = 'guoku1@#'
 
 NICKNAME_DICT = {
-    'laohan':'不要阿耀的',
-    'haruru':'haruru',
-    'affordable':'够得到的B格',
-    'colorkk':'克勒kk',
-    'xjvary':'鲜见VARY',
-    'intuition':'植觉先生',
-    'smartwoodhouse':'木智工坊',
-    'theblackwizard':'黑法师',
-    'vintagedesign':'无尘车间设计室',
-    'zhaijiang':'宅匠 ',
-    'joyhowine':'酒狐米酒',
-    'yinjewelry':'YIN设计金饰',
-    'ntmy2010':'NTMY',
-    'zumushow':'祖母秀堂',
-    'yuanye':'丨元也丨',
-    'zjyfz':'真假舆服志',
-    'cabinet':'Cabinet',
-    'ddzdqncf':'丹丹朱的青年厨房',
-    'meetaste':'一山半海食味铺',
-    'neufstudio':'NEUF弗',
-    'tldchina':'TLD“毒质”原创品牌',
-    'pidan':'PIDAN_STUDIO',
-    'jiazazhi':'假杂志',
-    'idlebeats':'IdleBeats爱豆笔此',
-    'tadadada':'大大儿童商店',
-    'wkupbike':'wkup',
-    'paperplay':'PaperPlay',
-    'talkaboutshoes':'别人的鞋',
-    'rinkle':'Rinkle',
-    'jijianzhi':'极简志Lynn',
-    'toodaylab':'理想生活实验室',
-    'aixieruming':'爱鞋如命',
-    'fireblue':'fireblues',
-    'juelab':'Fete',
-    'mumolife':'MUMO木墨',
-    'wmemory':'木忆',
-    'folofolo':'福禄商店',
-    'angenise':'angelinamyz',
-    'rumohome':'如茉',
+    'laohan': '不要阿耀的',
+    'haruru': 'haruru',
+    'affordable': '够得到的B格',
+    'colorkk': '克勒kk',
+    'xjvary': '鲜见VARY',
+    'intuition': '植觉先生',
+    'smartwoodhouse': '木智工坊',
+    'theblackwizard': '黑法师',
+    'vintagedesign': '无尘车间设计室',
+    'zhaijiang': '宅匠 ',
+    'joyhowine': '酒狐米酒',
+    'yinjewelry': 'YIN设计金饰',
+    'ntmy2010': 'NTMY',
+    'zumushow': '祖母秀堂',
+    'yuanye': '丨元也丨',
+    'zjyfz': '真假舆服志',
+    'cabinet': 'Cabinet',
+    'ddzdqncf': '丹丹朱的青年厨房',
+    'meetaste': '一山半海食味铺',
+    'neufstudio': 'NEUF弗',
+    'tldchina': 'TLD“毒质”原创品牌',
+    'pidan': 'PIDAN_STUDIO',
+    'jiazazhi': '假杂志',
+    'idlebeats': 'IdleBeats爱豆笔此',
+    'tadadada': '大大儿童商店',
+    'wkupbike': 'wkup',
+    'paperplay': 'PaperPlay',
+    'talkaboutshoes': '别人的鞋',
+    'rinkle': 'Rinkle',
+    'jijianzhi': '极简志Lynn',
+    'toodaylab': '理想生活实验室',
+    'aixieruming': '爱鞋如命',
+    'fireblue': 'fireblues',
+    'juelab': 'Fete',
+    'mumolife': 'MUMO木墨',
+    'wmemory': '木忆',
+    'folofolo': '福禄商店',
+    'angenise': 'angelinamyz',
+    'rumohome': '如茉',
 
 }
 

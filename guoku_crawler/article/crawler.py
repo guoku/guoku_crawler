@@ -24,7 +24,7 @@ today_start = datetime.datetime.combine(
 )
 
 
-@app.task(base=RequestsTask, name='weixin.crawl_articles')
+@app.task(base=RequestsTask, name='crawl_articles')
 def crawl_articles():
     users = get_auth_users()
     for user in users:

@@ -23,6 +23,7 @@ from guoku_crawler.exceptions import TooManyRequests, Expired
 from guoku_crawler.models import CoreArticle
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
 
+
 SEARCH_API = 'http://weixin.sogou.com/weixinjs'
 ARTICLE_LIST_API = 'http://weixin.sogou.com/gzhjs'
 weixin_client = WeiXinClient()
@@ -45,8 +46,8 @@ def crawl_weixin_list(authorized_user_id, page=1):
 
     if not open_id:
         logger.warning("skip user %s: cannot find open_id. "
-                        "Is weixin_id correct?",
-                        authorized_user.weixin_id)
+                       "Is weixin_id correct?",
+                       authorized_user.weixin_id)
         return
     if not authorized_user.weixin_openid:
         # save open_id if it's not set already
@@ -82,14 +83,12 @@ def crawl_weixin_list(authorized_user_id, page=1):
                 CoreArticle.identity_code == item
             )
         )
-        # logger.info("filter sql is: %s", article)
         if article.all():
             existed.append(item)
 
-    # logger.info("those articles are existed: %s", existed)
     if existed:
         logger.info('those articles are existed: %s' % existed,
-                     'no need to go to next page')
+                    'no need to go to next page')
         go_next = False
 
     item_dict = {key: value for key, value
@@ -145,18 +144,12 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
     content = article_soup.find('div', id='js_content')
     creator = authorized_user.user
 
-    ##
     existed_article = session.query(CoreArticle).filter_by(
         title=title,
         creator=creator
-    )
-    if existed_article.all():
-        article = existed_article.all()[0]
-        article.identity_code = identity_code
-        session.commit()
+    ).all()
+    if existed_article:
         return
-    ##
-
 
     try:
         article = session.query(CoreArticle).filter_by(
@@ -176,7 +169,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
         session.add(article)
         session.commit()
     logger.info("created article id: %s. title: %s. identity_code: %s",
-                 article.id, title, identity_code)
+                article.id, title, identity_code)
 
     cover = fetch_image(article.cover, weixin_client)
     if cover:
@@ -192,7 +185,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
             )
             if img_src:
                 logger.info('fetch_image for article %d: %s', article.id,
-                             img_src)
+                            img_src)
                 gk_img_rc = fetch_image(img_src, weixin_client, full=False)
                 if gk_img_rc:
                     full_path = "%s%s" % (image_host, gk_img_rc)
