@@ -14,8 +14,17 @@ TODO
 
 How to run locally
 --------
+    cd guoku_crawler 
+    
+    sudo docker-machine create --driver virtualbox [MACHINE NAME]# 如果没有machine
 
-    cd guoku_crawler
+    sudo docker-machine ls  # 列出目前可用的machine
+    
+    sudo docker-machine start [MACHINE NAME] # 启动一台machine，如果上一条命令列出它的state是running，则不需要再启动
+    
+    docker-machine env [MACHINE NAME]
+    
+    eval "$(docker-machine env [MACHINE NAME])"
     
     sudo docker-compose build
     
@@ -26,6 +35,7 @@ How to run locally
 
 Commonds
 --------
+*所有docker的命令 都需要sudo*
 
 #####查看docker现在在跑的东西:
     sudo docker ps
