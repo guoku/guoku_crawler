@@ -58,7 +58,7 @@ Commonds
 
 #####启动chrome-driver
 
-    sudo docker run --privileged -p 10.0.2.49:4444:4444 --rm selenium/standalone-chrome -d
+    sudo docker run --privileged -p 10.0.2.49:4444:4444 -d selenium/standalone-chrome
     
 #####启动phantom-webserver
     sudo docker run -p 10.0.2.49:5000:5000 -d phantom-webserver
