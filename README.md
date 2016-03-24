@@ -14,6 +14,9 @@ TODO
 
 How to run locally
 --------
+
+##### guoku_crawler:
+
     cd guoku_crawler 
     
     sudo docker-machine create --driver virtualbox [MACHINE NAME]# 如果没有machine
@@ -28,46 +31,60 @@ How to run locally
     
     sudo docker-compose build
     
-    sudo docker-compose up  # 把worker、flower、beat全都启动
+    sudo docker-compose up  # 把worker、flower、beat全都启动 加 -d 会在后台运行
     
     sudo docker-compose run worker/flower/beat 指定启动
 
+##### phantom-webserver:
+    cd phantom-webserver
+    
+    sudo docker-compose build
+    
+    sudo docker-compose up -d
+    
+    sudo docker logs phantomwebserver_selenium_1 查看chrom-driver日志
+    
+    sudo docker logs phantomwebserver_web_1 查看phantom-webserver日志
 
 Commonds
 --------
-*所有docker的命令 都需要sudo*
+
+
+*所有docker的命令 都需要sudo mac下除外*
 
 #####查看docker现在在跑的东西:
     sudo docker ps
     
 #####查看docker-compose正在跑的东西
+    cd [PROJECT DIR]
     sudo docker-compose ps
     
 #####stop a container defined in compose
-    sudo docke-compose stop CONTAINER ID(上一条命令的结果中第一列)
+    sudo docke-compose stop [CONTAINER NAME](上一条命令的结果中第一列)
     
 #####stop a container otherwise
-    sudo docker stop CONTAINER ID
+    sudo docker stop [CONTAINER ID]
 
 #####更新后记得要先build
     sudo docker build -t phantom-webserver .
     guoku_crawler同理
 
 #####查看日志
-    sudo docker logs -f CONTAINER ID
-
-#####启动chrome-driver
-
-    sudo docker run --privileged -p 10.0.2.49:4444:4444 -d selenium/standalone-chrome
+    sudo docker logs -f [CONTAINER ID]
+    sudo docker-compose logs [CONTAINER NAME]
     
-#####启动phantom-webserver
-    sudo docker run -p 10.0.2.49:5000:5000 -d phantom-webserver
-    
-#####启动guoku-crawler
+#####启动guoku-crawler和phantom-webserver
+    cd [PROJECT DIR]
     sudo docker-compose up -d
     
 #####如何进bash
     sudo docker-compose run worker bash
+    
+#####如何更新guoku_crawler和phantom-webserver
+    cd [PROJECT DIR]    
+    sudo docker-compose stop   
+    sudo docker-compose build   
+    sudo docker-compose up -d
     
     
 ---    
