@@ -87,8 +87,7 @@ def crawl_weixin_list(authorized_user_id, page=1):
             existed.append(item)
 
     if existed:
-        logger.info('those articles are existed: %s' % existed,
-                    'no need to go to next page')
+        logger.info('those articles are existed: %s, no need to go to next page' % existed)
         go_next = False
 
     item_dict = {key: value for key, value
