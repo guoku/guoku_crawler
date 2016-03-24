@@ -91,17 +91,18 @@ def crawl_weixin_list(authorized_user_id, page=1):
                     'no need to go to next page')
         go_next = False
 
-    item_dict = {key: value for key, value
-                 in item_dict.items() if key not in existed}
-    for identity_code, article_item in item_dict.items():
-        crawl_weixin_article.delay(
-            article_link=article_item.url.string,
-            authorized_user_id=authorized_user.id,
-            article_data=dict(cover=article_item.imglink.string,
-                              identity_code=identity_code),
-            sg_cookie=sg_cookie,
-            page=page,
-        )
+    article_list = {key: value for key, value
+                    in item_dict.items() if key not in existed}
+    if article_list:
+        for identity_code, article_item in article_list.items():
+            crawl_weixin_article.delay(
+                article_link=article_item.url.string,
+                authorized_user_id=authorized_user.id,
+                article_data=dict(cover=article_item.imglink.string,
+                                  identity_code=identity_code),
+                sg_cookie=sg_cookie,
+                page=page,
+            )
 
     page += 1
     if int(response.jsonp['totalPages']) < page:
@@ -146,14 +147,23 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
 
     existed_article = session.query(CoreArticle).filter_by(
         title=title,
-        creator=creator
+        creator_id=creator.id
     ).all()
     if existed_article:
+        existed_article[0].identity_code = identity_code
+        session.commit()
+        return
+
+    if session.query(CoreArticle).filter_by(
+        identity_code=identity_code,
+        creator_id=creator.id
+    ).all():
         return
 
     try:
         article = session.query(CoreArticle).filter_by(
             identity_code=identity_code,
+            creator_id=creator.id
         ).one()
     except NoResultFound:
         article = CoreArticle(

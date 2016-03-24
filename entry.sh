@@ -10,7 +10,7 @@ case $1 in
     ;;
 
     beat)
-	exec celery -A guoku_crawler beat -l info
+	exec celery -A guoku_crawler beat -l debug
     ;;
 
     flower)
