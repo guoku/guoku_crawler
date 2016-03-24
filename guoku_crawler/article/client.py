@@ -101,7 +101,8 @@ class WeiXinClient(BaseClient):
 
         # catch exceptions
         if resp.utf8_content.find(u'您的访问过于频繁') >= 0:
-            message = u'too many requests. user: s, url: %s' % self.sg_user, url
+            message = u'too many requests. user: %s, url: %s' % (
+                self.sg_user, url)
             logger.warning(message)
             raise TooManyRequests(message)
         if resp.utf8_content.find(u'当前请求已过期') >= 0:
@@ -158,9 +159,9 @@ def update_sogou_cookie(sg_user):
     get_url = urljoin(config.PHANTOM_SERVER, '_sg_cookie')
     resp = requests.post(get_url, data={'email': sg_user})
     cookie = resp.json()['sg_cookie']
-    print('-'*80)
+    print('-' * 80)
     print('got cookie for %s: ' % sg_user)
     print(cookie)
-    print('-'*80)
+    print('-' * 80)
     key = 'sogou.cookie.%s' % sg_user
     r.set(key, cookie)
