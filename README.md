@@ -51,6 +51,7 @@ Commonds
 
 
 *所有docker的命令 都需要sudo mac下除外*
+*所有docker-compose命令 都要进入相对应的项目目录再执行*
 
 #####查看docker现在在跑的东西:
     sudo docker ps
@@ -72,6 +73,8 @@ Commonds
 #####查看日志
     sudo docker logs -f [CONTAINER ID]
     sudo docker-compose logs [CONTAINER NAME]
+    eg. sudo docker-compose logs beat 查看beat的日志
+        sudo docker-compose logs worker 查看worker的日志
     
 #####启动guoku-crawler和phantom-webserver
     cd [PROJECT DIR]
