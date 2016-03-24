@@ -49,6 +49,8 @@ CELERYD_CONCURRENCY = 1
 CELERY_DISABLE_RATE_LIMITS = False
 CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 CELERY_ALWAYS_EAGER = False
+CELERY_ENABLE_UTC = False
+CELERY_TIMEZONE = 'Asia/Shanghai'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['json']
@@ -84,16 +86,14 @@ CELERY_ANNOTATIONS = {
 }
 REQUEST_INTERVAL = 20
 CELERYBEAT_SCHEDULE = {
-    'crawl_result_analysis': {
-        'task': 'crawl_result_analysis',
-        'schedule': crontab(minute=0, hour=6)
-    },
-
-    'crawl_articles': {
+    'crawl_all_articles': {
         'task': 'crawl_articles',
-        'schedule': crontab(minute=1, hour=1)
+        'schedule': crontab(minute=59, hour=23)
+    },
+    'crawl_result_analysis': {
+        'task': 'guoku_crawler.crawl_result_analysis',
+        'schedule': crontab(minute=0, hour=6)
     }
-
 }
 
 # Redis
@@ -103,18 +103,18 @@ CONFIG_REDIS_DB = 0
 
 # Sogou
 SOGOU_USERS = [
-    'waser1959@gustr.com',
+    # 'waser1959@gustr.com',
     'asortafairytale@fleckens.hu',
     'adisaid@jourrapide.com',
     'rathe1981@rhyta.com',
-    'andurn@fleckens.hu',
-    'sanyuanmilk@fleckens.hu',
+    # 'andurn@fleckens.hu',
+    # 'sanyuanmilk@fleckens.hu',
     'yundaexpress@rhyta.com',
     'sunstarorabreathfine@jourrapide.com',
     'indonesiamandheling@einrot.com',
     'charlottewalkforshame@dayrep.com',
     'shoemah55@superrito.com',
-    'monan1977@fleckens.hu',
+    # 'monan1977@fleckens.hu',
     'obsomed1977@jourrapide.com',
     'finighboy78@superrito.com',
     'artimessill1959@einrot.com',
