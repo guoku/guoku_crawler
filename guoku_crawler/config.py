@@ -103,18 +103,18 @@ CONFIG_REDIS_DB = 0
 
 # Sogou
 SOGOU_USERS = [
-    # 'waser1959@gustr.com',
+    'waser1959@gustr.com',
     'asortafairytale@fleckens.hu',
     'adisaid@jourrapide.com',
     'rathe1981@rhyta.com',
-    # 'andurn@fleckens.hu',
-    # 'sanyuanmilk@fleckens.hu',
+    'andurn@fleckens.hu',
+    'sanyuanmilk@fleckens.hu',
     'yundaexpress@rhyta.com',
     'sunstarorabreathfine@jourrapide.com',
     'indonesiamandheling@einrot.com',
     'charlottewalkforshame@dayrep.com',
     'shoemah55@superrito.com',
-    # 'monan1977@fleckens.hu',
+    'monan1977@fleckens.hu',
     'obsomed1977@jourrapide.com',
     'finighboy78@superrito.com',
     'artimessill1959@einrot.com',

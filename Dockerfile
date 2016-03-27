@@ -3,7 +3,7 @@ MAINTAINER judy.programmer@gmail.com
 EXPOSE 5000
 
 ENV GC_DEBUG=False
-ENV WORKERS=2
+ENV WORKERS=1
 ENV PIP_INDEX_URL=https://pypi.mirrors.ustc.edu.cn/simple
 ENV TZ "Asia/Shanghai"
 

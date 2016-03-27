@@ -9,6 +9,8 @@ from datetime import datetime
 from urlparse import urljoin
 from bs4 import BeautifulSoup
 from celery import current_task
+from pymysql.err import InternalError, DatabaseError
+
 from guoku_crawler.config import logger
 from sqlalchemy import and_
 from sqlalchemy.orm.exc import NoResultFound
@@ -34,14 +36,17 @@ image_host = getattr(config, 'IMAGE_HOST', None)
 
 
 @app.task(base=RequestsTask, name='weixin.crawl_list')
-def crawl_weixin_list(authorized_user_id, page=1):
+def crawl_weixin_list(authorized_user_id, page=1, update_cookie=False):
     authorized_user = session.query(Profile).get(authorized_user_id)
     try:
-        open_id, ext, sg_cookie = get_sogou_tokens(authorized_user.weixin_id)
+        open_id, ext, sg_cookie = get_sogou_tokens(
+            weixin_id=authorized_user.weixin_id,
+            update_cookie=update_cookie)
     except (TooManyRequests, Expired) as e:
         # if too frequent error, re-crawl the page the current article is on
+        update_cookie = True
         logger.warning("too many requests or request expired. %s", e.message)
-        weixin_client.refresh_cookies(True)
+        weixin_client.refresh_cookies(update_cookie)
         raise current_task.retry(exc=e)
 
     if not open_id:
@@ -126,11 +131,10 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
     try:
         resp = weixin_client.get(
             url=url, headers={'Cookie': sg_cookie})
-    except (TooManyRequests, Expired) as e:
+    except (TooManyRequests, Expired):
         # if too frequent error, re-crawl the page the current article is on
-        logger.warning("too many requests or request expired. %s", e.message)
         crawl_weixin_list.delay(authorized_user_id=authorized_user.id,
-                                page=page)
+                                page=page, update_cookie=True)
         return
 
     article_soup = BeautifulSoup(resp.utf8_content, from_encoding='utf8',
@@ -144,10 +148,15 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
     content = article_soup.find('div', id='js_content')
     creator = authorized_user.user
 
-    existed_article = session.query(CoreArticle).filter_by(
-        title=title,
-        creator_id=creator.id
-    ).all()
+    try:
+        existed_article = session.query(CoreArticle).filter_by(
+            title=title,
+            creator_id=creator.id
+        ).all()
+    except BaseException as e:
+        logger.error(e.message)
+        return
+
     if existed_article:
         existed_article[0].identity_code = identity_code
         session.commit()
@@ -209,13 +218,13 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
     print('-' * 80)
 
 
-def get_sogou_tokens(weixin_id):
+def get_sogou_tokens(weixin_id, update_cookie=False):
     weixin_id = weixin_id.strip()
     logger.info('get open_id for %s', weixin_id)
     open_id = None
     ext = None
     params = dict(type='1', ie='utf8', query=weixin_id)
-    weixin_client.refresh_cookies()
+    weixin_client.refresh_cookies(update_cookie)
     sg_cookie = weixin_client.headers.get('Cookie')
     response = weixin_client.get(url=SEARCH_API,
                                  params=params,
