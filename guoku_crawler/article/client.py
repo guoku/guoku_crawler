@@ -52,7 +52,7 @@ class BaseClient(requests.Session):
         except ReadTimeout as e:
             raise Retry(message=u'ReadTimeout. %s' % e)
         except BaseException as e:
-            logger.ERROR(e)
+            logger.error(e)
         if stream:
             return resp
         resp.utf8_content = resp.content.decode('utf-8')
