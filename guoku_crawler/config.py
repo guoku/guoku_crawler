@@ -91,7 +91,7 @@ CELERYBEAT_SCHEDULE = {
         'schedule': crontab(minute=59, hour=23)
     },
     'crawl_result_analysis': {
-        'task': 'guoku_crawler.crawl_result_analysis',
+        'task': 'crawl_result_analysis',
         'schedule': crontab(minute=0, hour=6)
     }
 }
