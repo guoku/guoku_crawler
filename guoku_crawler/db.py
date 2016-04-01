@@ -12,7 +12,7 @@ SQLALCHEMY_DATABASE_URI = ('mysql+pymysql://{USER}:{PASSWORD}@'
                            '{HOST}:{PORT}/{DB_NAME}?charset=utf8'.
                            format(**DATABASES))
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URI)
+    SQLALCHEMY_DATABASE_URI, pool_recycle=3600)
 
 session = Session(engine)
 

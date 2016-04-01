@@ -93,8 +93,8 @@ def crawl_rss_images(content_string, article_id):
                     full_path = "%s%s" % (image_host, gk_img_rc)
                     image_tag['src'] = full_path
                     image_tag['data-src'] = full_path
-                    if not article.cover and i == 0:
-                        article.cover = gk_img_rc
+                    if i == 0:
+                        article.cover = full_path
             content_html = article_soup.decode_contents(formatter="html")
             article.content = content_html
             session.commit()
