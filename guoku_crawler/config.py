@@ -8,6 +8,9 @@ from guoku_crawler.logging_conf import LOGGING
 import logging.config
 import logging
 
+data_base_ip = '192.168.1.117'
+phantom_server_ip = 'http://192.168.99.100:5000/'
+
 
 logging.config.dictConfig(LOGGING)
 logger = logging.getLogger("request")
@@ -17,14 +20,14 @@ DATABASES = {
     'DB_NAME': 'core',
     'USER': 'guoku',
     'PASSWORD': 'guoku!@#',
-    'HOST': '10.0.2.90',
+    'HOST': data_base_ip,
     'PORT': '3306',
 }
 
 # Image
 IMAGE_HOST = 'http://imgcdn.guoku.com/'
 IMAGE_PATH = 'images/'
-LOCAL_FILE_STORAGE = False
+LOCAL_FILE_STORAGE = True
 MEDIA_ROOT = ''
 MOGILEFS_DOMAIN = 'prod'
 MOGILEFS_TRACKERS = ['10.0.2.50:7001']
@@ -40,7 +43,7 @@ DEFAULT_ARTICLE_COVER = "%s%s" % (
 # System
 DEBUG = True
 CONNECTION_POOL = ''
-PHANTOM_SERVER = 'http://10.0.2.49:5000/'
+PHANTOM_SERVER = phantom_server_ip
 
 # Celery
 BROKER_URL = 'redis://localhost:6379/0'
@@ -48,7 +51,7 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERYD_CONCURRENCY = 1
 CELERY_DISABLE_RATE_LIMITS = False
 CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
-CELERY_ALWAYS_EAGER = False
+CELERY_ALWAYS_EAGER = True
 CELERY_ENABLE_UTC = False
 CELERY_TIMEZONE = 'Asia/Shanghai'
 CELERY_RESULT_SERIALIZER = 'json'

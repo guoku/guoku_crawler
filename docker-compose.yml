@@ -4,7 +4,7 @@ worker:
     GK_CONFIG_REDIS_HOST: 'redis'
     GK_BROKER_URL: 'redis://redis:6379/0'
     GK_CELERY_RESULT_BACKEND: 'redis://redis:6379/0'
-    GK_PHANTOM_SERVER: 'http://10.0.2.49:5000/'
+    GK_PHANTOM_SERVER: 'http://192.168.99.100:5000/'
     GK_CELERYD_CONCURRENCY: 1
   links:
     - redis
@@ -16,7 +16,7 @@ cookie_worker:
     GK_CONFIG_REDIS_HOST: 'redis'
     GK_BROKER_URL: 'redis://redis:6379/0'
     GK_CELERY_RESULT_BACKEND: 'redis://redis:6379/0'
-    GK_PHANTOM_SERVER: 'http://10.0.2.49:5000/'
+    GK_PHANTOM_SERVER: 'http://192.168.99.100:5000/'
   links:
     - redis
   command: cookie_worker
@@ -27,7 +27,7 @@ beat:
     GK_CONFIG_REDIS_HOST: 'redis'
     GK_BROKER_URL: 'redis://redis:6379/0'
     GK_CELERY_RESULT_BACKEND: 'redis://redis:6379/0'
-    GK_PHANTOM_SERVER: 'http://10.0.2.49:5000/'
+    GK_PHANTOM_SERVER: 'http://192.168.99.100:5000/'
   links:
     - redis
   command: beat
@@ -35,12 +35,12 @@ beat:
 flower:
   build: .
   ports:
-    - "10.0.2.49:5555:5000"
+    - "192.168.99.100:5555:5000"
   environment:
     GK_CONFIG_REDIS_HOST: 'redis'
     GK_BROKER_URL: 'redis://redis:6379/0'
     GK_CELERY_RESULT_BACKEND: 'redis://redis:6379/0'
-    GK_PHANTOM_SERVER: 'http://10.0.2.49:5000/'
+    GK_PHANTOM_SERVER: 'http://192.168.99.100:5000/'
   links:
     - redis
   command: flower

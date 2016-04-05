@@ -158,7 +158,13 @@ def update_sogou_cookie(sg_user):
         return
     get_url = urljoin(config.PHANTOM_SERVER, '_sg_cookie')
     resp = requests.post(get_url, data={'email': sg_user})
-    cookie = resp.json()['sg_cookie']
+    try :
+        cookie = resp.json()['sg_cookie']
+    except ValueError as e :
+        logger.error("Cookie Getting Failed, no json returned")
+    except Exception as e :
+        logger.error("Cookie Getting Failed, other error")
+
     print('-' * 80)
     print('got cookie for %s: ' % sg_user)
     print(cookie)

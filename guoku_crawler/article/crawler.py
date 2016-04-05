@@ -51,6 +51,9 @@ def get_auth_users():
 
 
 
+if __name__ == '__main__':
+    crawl_articles()
+
 
 
 
