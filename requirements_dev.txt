@@ -40,3 +40,4 @@ tornado==4.2
 traitlets==4.1.0
 wsgiref==0.1.2
 flake8==2.5.4
+fabric

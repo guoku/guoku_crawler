@@ -35,6 +35,8 @@ def crawl_rss_list(authorized_user_id, page=1):
                               params=params
                               )
     xml_content = BeautifulSoup(response.utf8_content, 'xml')
+    # REFACTOR HERE
+    # TODO :  parser
     item_list = xml_content.find_all('item')
     for item in item_list:
         identity_code = md5(item.link.text).hexdigest()
@@ -46,6 +48,7 @@ def crawl_rss_list(authorized_user_id, page=1):
             logger.info('some items on the page already exists in db; '
                          'no need to go to next page')
         except NoResultFound:
+
             article = CoreArticle(
                 creator=authorized_user.user,
                 identity_code=identity_code,
