@@ -10,6 +10,8 @@ TODO
 --------
 
 * SqlAlchemy与数据库自动匹配,不需要手动改model.
+* 有的文章中有视频，但是直接抓来的不会显示，可能需要处理一下。比如：
+  [这篇文章](http://www.guoku.com/articles/4553/)。可能需要安老师协助。
 
 
 How to run locally
