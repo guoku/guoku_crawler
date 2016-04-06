@@ -90,7 +90,20 @@ Commonds
     sudo docker-compose stop   
     sudo docker-compose build   
     sudo docker-compose up -d
+
+#####如何清理image
+
+    sudo docker ps -a   查看所有container
+    sudo docker rm [[CONTAINER ID]    删除无用的container
+    sudo sudo docker stop [CONTAINER ID] 停止正在跑的container
+    sudo docker images 显示所有image
+    sudo docker rmi [image id] 删除image
+    sudo docker rmi -f [image id] 强制删除image
+
     
+    
+
+
     
 ---    
 This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
