@@ -47,6 +47,7 @@ def crawl_weixin_list(authorized_user_id, page=1, update_cookie=False):
         update_cookie = True
         logger.warning("too many requests or request expired. %s", e.message)
         weixin_client.refresh_cookies(update_cookie)
+        # restart_browser()      # TODO
         raise current_task.retry(exc=e)
 
     if not open_id:
@@ -186,7 +187,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
         )
         session.add(article)
         session.commit()
-    logger.info("created article id: %s. title: %s. identity_code: %s",
+        logger.info("created article id: %s. title: %s. identity_code: %s",
                 article.id, title, identity_code)
 
     cover = fetch_image(article.cover, weixin_client)
@@ -215,7 +216,7 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
             article.content = content_html
             session.commit()
     logger.info('article %s finished.', article.id)
-    print('-' * 80)
+    logger.info('-' * 120)
 
 
 def get_sogou_tokens(weixin_id, update_cookie=False):
