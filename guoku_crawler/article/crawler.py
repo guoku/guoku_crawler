@@ -42,8 +42,11 @@ def crawl_user_articles(authorized_user_id):
 
 def get_auth_users():
     users = session.query(CoreGkuser).filter(
-        CoreGkuser.authorized_profile.any(or_(
-            Profile.weixin_id.isnot(None), Profile.rss_url.isnot(None))),
+        CoreGkuser.authorized_profile.any(
+            or_(
+                Profile.weixin_id.isnot(None),
+                Profile.rss_url.isnot(None)
+            )),
         CoreGkuser.groups.any(AuthGroup.name == 'Author')
     ).all()
     return users

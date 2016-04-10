@@ -178,14 +178,20 @@ def crawl_weixin_article(article_link, authorized_user_id, article_data,
             creator=creator,
             identity_code=identity_code,
             title=title,
-            content=content.decode_contents(formatter="html"),
+            content=content.prettify().encode('utf-8'),
             created_datetime=published_time,
             updated_datetime=datetime.now(),
             publish=CoreArticle.published,
             cover=cover,
         )
         session.add(article)
-        session.commit()
+
+        try:
+            session.commit()
+        except Exception as e :
+            article.content = 'ant_test_content'
+            session.commit()
+
     logger.info("created article id: %s. title: %s. identity_code: %s",
                 article.id, title, identity_code)
 

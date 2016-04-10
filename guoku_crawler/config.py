@@ -8,7 +8,7 @@ from guoku_crawler.logging_conf import LOGGING
 import logging.config
 import logging
 
-data_base_ip = '192.168.1.117'
+data_base_ip = '127.0.0.1'
 phantom_server_ip = 'http://192.168.99.100:5000/'
 
 
@@ -32,8 +32,8 @@ MEDIA_ROOT = ''
 MOGILEFS_DOMAIN = 'prod'
 MOGILEFS_TRACKERS = ['10.0.2.50:7001']
 MOGILEFS_MEDIA_URL = 'images/'
-FILE_UPLOAD_DIRECTORY_PERMISSIONS = ''
-FILE_UPLOAD_PERMISSIONS = ''
+FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o777
+FILE_UPLOAD_PERMISSIONS = 0o777
 MEDIA_URL = 'images/'
 STATIC_URL = 'http://static.guoku.com/static/v4/dafb5059ae45f18b0eff711a38de3d59b95bad4c/'
 DEFAULT_ARTICLE_COVER = "%s%s" % (
@@ -69,25 +69,25 @@ CELERY_ROUTES = {
 }
 CELERY_ANNOTATIONS = {
     'crawl_articles': {
-        'rate_limit': '1/m',
+        'rate_limit': '30/m',
     },
     'rss.crawl_list': {
-        'rate_limit': '3/m',
+        'rate_limit': '30/m',
     },
     'weixin.crawl_list': {
-        'rate_limit': '1/m',
+        'rate_limit': '30/m',
     },
     'weixin.crawl_weixin_article': {
-        'rate_limit': '1/m',
+        'rate_limit': '10/m',
     },
     'weixin.prepare_sogou_cookies': {
-        'rate_limit': '1/m',
+        'rate_limit': '10/m',
     },
     'weixin.update_sogou_cookie': {
-        'rate_limit': '1/m',
+        'rate_limit': '10/m',
     },
 }
-REQUEST_INTERVAL = 20
+REQUEST_INTERVAL = 2
 CELERYBEAT_SCHEDULE = {
     'crawl_all_articles': {
         'task': 'crawl_articles',

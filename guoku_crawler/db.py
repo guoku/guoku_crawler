@@ -9,10 +9,10 @@ from guoku_crawler.config import DATABASES
 
 
 SQLALCHEMY_DATABASE_URI = ('mysql+pymysql://{USER}:{PASSWORD}@'
-                           '{HOST}:{PORT}/{DB_NAME}?charset=utf8'.
+                           '{HOST}:{PORT}/{DB_NAME}?charset=utf8mb4'.
                            format(**DATABASES))
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URI, pool_recycle=3600)
+    SQLALCHEMY_DATABASE_URI, pool_recycle=3600,convert_unicode=True,encoding='utf-8')
 
 session = Session(engine)
 
