@@ -92,12 +92,14 @@ def crawl_weixin_list(authorized_user_id, page=1, update_cookie=False):
         if article.all():
             existed.append(item)
 
+    article_list = {key: value for key, value
+                    in item_dict.items() if key not in existed}
+
     if existed:
         logger.info('some articles are existed, no need to go to next page.')
         go_next = False
 
-    article_list = {key: value for key, value
-                    in item_dict.items() if key not in existed}
+
     if article_list:
         for identity_code, article_item in article_list.items():
             crawl_weixin_article.delay(
@@ -111,7 +113,8 @@ def crawl_weixin_list(authorized_user_id, page=1, update_cookie=False):
 
     page += 1
     if int(response.jsonp['totalPages']) < page:
-        logger.info('current page is the last page; will not go next page')
+        logger.info('some articles are existed, no need to go to next page.Next will crawl user %s %d articles.' % (
+                            authorized_user.weixin_id, len(article_list)))
         go_next = False
 
     if go_next:

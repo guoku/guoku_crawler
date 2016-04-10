@@ -21,12 +21,23 @@ today_start = datetime.datetime.combine(
     datetime.time.min
 )
 
+def get_auth_users():
+    users = session.query(CoreGkuser).filter(
+        CoreGkuser.authorized_profile.any(or_(
+            Profile.weixin_id.isnot(None), Profile.rss_url.isnot(None))),
+        CoreGkuser.groups.any(AuthGroup.name == 'Author')
+    ).all()
+    return users
+
+AUTH_USER_LIST = get_auth_users()
+
 
 @app.task(base=RequestsTask, name='crawl_articles')
 def crawl_articles():
-    users = get_auth_users()
-    for user in users:
-        crawl_user_articles(user.profile.id)
+    global AUTH_USER_LIST
+    if not AUTH_USER_LIST:
+        AUTH_USER_LIST = get_auth_users()
+    crawl_user_articles(AUTH_USER_LIST.pop().profile.id)
 
 
 def crawl_user_articles(authorized_user_id):
@@ -40,13 +51,7 @@ def crawl_user_articles(authorized_user_id):
         crawl_weixin_list.delay(authorized_user_id)
 
 
-def get_auth_users():
-    users = session.query(CoreGkuser).filter(
-        CoreGkuser.authorized_profile.any(or_(
-            Profile.weixin_id.isnot(None), Profile.rss_url.isnot(None))),
-        CoreGkuser.groups.any(AuthGroup.name == 'Author')
-    ).all()
-    return users
+
 
 
 

@@ -45,7 +45,7 @@ PHANTOM_SERVER = 'http://10.0.2.49:5000/'
 # Celery
 BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERYD_CONCURRENCY = 1
+CELERYD_CONCURRENCY = 2
 CELERY_DISABLE_RATE_LIMITS = False
 CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
 CELERY_ALWAYS_EAGER = False
@@ -88,7 +88,7 @@ REQUEST_INTERVAL = 20
 CELERYBEAT_SCHEDULE = {
     'crawl_all_articles': {
         'task': 'crawl_articles',
-        'schedule': crontab(minute=59, hour=23)
+        'schedule': crontab(minute='*/10')
     },
 }
 

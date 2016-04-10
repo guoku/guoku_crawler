@@ -18,7 +18,7 @@ class RequestsTask(Task):
 
     abstract = True
     compression = 'gzip'
-    default_retry_delay = 5
+    default_retry_delay = 45
     send_error_emails = True
     max_retries = 3
 

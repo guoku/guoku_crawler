@@ -138,6 +138,7 @@ class WeiXinClient(BaseClient):
         self._sg_user = sg_user
         self.headers['Cookie'] = sg_cookie
         self.headers['User-Agent'] = faker.user_agent()
+        logger.info("updated cookies for %s" % self.sg_user)
 
     @classmethod
     def parse_jsonp(cls, utf8_content, callback):
