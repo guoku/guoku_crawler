@@ -68,15 +68,17 @@ Commonds
 #####stop a container otherwise
     sudo docker stop [CONTAINER ID]
 
-#####更新后记得要先build
-    sudo docker build -t phantom-webserver .
-    guoku_crawler同理
+#####更新后记得要先build,目前使用docker-compose
+    sudo docker-compose build   需先进入相关项目的目录
+
 
 #####查看日志
     sudo docker logs -f [CONTAINER ID]
     sudo docker-compose logs [CONTAINER NAME]
     eg. sudo docker-compose logs beat 查看beat的日志
         sudo docker-compose logs worker 查看worker的日志
+        sudo docker-compose logs selenium 查看selenium-server的日志
+        sudo docker-compose logs web  查看selenium web日志
     
 #####启动guoku-crawler和phantom-webserver
     cd [PROJECT DIR]
@@ -87,7 +89,8 @@ Commonds
     
 #####如何更新guoku_crawler和phantom-webserver
     cd [PROJECT DIR]    
-    sudo docker-compose stop   
+    sudo docker-compose stop 
+    更新代码 然后重新build  
     sudo docker-compose build   
     sudo docker-compose up -d
 
@@ -99,6 +102,16 @@ Commonds
     sudo docker images 显示所有image
     sudo docker rmi [image id] 删除image
     sudo docker rmi -f [image id] 强制删除image
+    
+#####如何查看抓取系统是否正常运行
+1. 最直接的办法是看日志，主要看guoku_crawler中worker的日志（sudo docker-compose logs worker）和phantom-webserver中的web日志（sudo docker-compose logs web）
+2. 在公司连上VPN的话，可以在http://10.0.2.49:5000/_health这个链接查看phantom-webserver是否正常运行，正常的话会显示I am OK.
+3. 连上VPN，在浏览器打开http://10.0.2.49:5555/dashboard，这是flower对celery任务执行的监控，在这里可以看到celery任务执行的成功与否
+
+#####关于查看今天或者最近几小时的抓取情况
+1. 可以看worker的日志，每次抓取成功都会在日志显示
+2. 可以查看flower 监控celery任务,抓取文章的任务叫weixin.crawl_weixin_article, 状态未success的即为抓取成功的文章
+3. 可以写SQL直接查数据库，我稍后会提供一段查询语句
 
     
     
