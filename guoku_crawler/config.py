@@ -10,6 +10,7 @@ import logging
 
 data_base_ip = '127.0.0.1'
 phantom_server_ip = 'http://192.168.99.100:5000/'
+broker_ip = 'redis://localhost:6379/0'
 
 
 logging.config.dictConfig(LOGGING)
@@ -46,7 +47,7 @@ CONNECTION_POOL = ''
 PHANTOM_SERVER = phantom_server_ip
 
 # Celery
-BROKER_URL = 'redis://localhost:6379/0'
+BROKER_URL = broker_ip
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERYD_CONCURRENCY = 1
 CELERY_DISABLE_RATE_LIMITS = False
