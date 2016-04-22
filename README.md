@@ -115,7 +115,9 @@ Commonds
 
     
     
-
+#####Tips
+1. 本地调试时注意设置celery的CELERY_ALWAYS_EAGER为True
+2. 本地使用docker注意IP地址的转换，例如连接本机的mysql的IP的就不再是127.0.0.1
 
     
 ---    

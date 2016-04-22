@@ -20,7 +20,7 @@ class RequestsTask(Task):
     compression = 'gzip'
     default_retry_delay = 45
     send_error_emails = True
-    max_retries = 3
+    max_retries = 1
 
     def __call__(self, *args, **kwargs):
         try:

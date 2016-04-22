@@ -7,7 +7,7 @@ from sqlalchemy import or_
 from guoku_crawler.db import session
 from guoku_crawler.celery import RequestsTask, app
 from guoku_crawler.article.rss import crawl_rss_list
-from guoku_crawler.article.weixin import crawl_weixin_list
+from guoku_crawler.article.weixin import crawl_weixin_list, prepare_sogou_cookies
 from guoku_crawler.models import CoreGkuser, AuthGroup, CoreArticle
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
 
@@ -34,10 +34,12 @@ AUTH_USER_LIST = get_auth_users()
 
 @app.task(base=RequestsTask, name='crawl_articles')
 def crawl_articles():
+
     global AUTH_USER_LIST
     if not AUTH_USER_LIST:
         AUTH_USER_LIST = get_auth_users()
     crawl_user_articles(AUTH_USER_LIST.pop().profile.id)
+
 
 
 def crawl_user_articles(authorized_user_id):
@@ -54,7 +56,12 @@ def crawl_user_articles(authorized_user_id):
 
 
 
-
+if __name__ == '__main__':
+    # prepare_sogou_cookies()
+    # crawl_user_articles(25)
+    for i in range(10):
+        crawl_articles()
+    print '*'*100
 
 
 

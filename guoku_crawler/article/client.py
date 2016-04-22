@@ -90,12 +90,15 @@ class WeiXinClient(BaseClient):
                 cert=None,
                 json=None,
                 jsonp_callback=None):
+
         resp = super(WeiXinClient, self).request(method, url, params, data,
                                                  headers, cookies, files,
                                                  auth, timeout,
                                                  allow_redirects, proxies,
                                                  hooks, stream, verify,
                                                  cert, json)
+        logger.info('WeiXinClient().request: request url: %s, user: %s' % (url, self.sg_user))
+        logger.info(resp.request.headers)
         if stream:
             return resp
 
@@ -103,15 +106,19 @@ class WeiXinClient(BaseClient):
         if resp.utf8_content.find(u'您的访问过于频繁') >= 0:
             message = u'您的访问过于频繁,需要输入验证码. user: %s, url: %s' % (
                 self.sg_user, url)
-            logger.warning(message)
+            # logger.warning(message)
+            logger.warning(u'访问过于频繁, cookie: %s' % resp.request.headers)
             raise TooManyRequests(message)
         if resp.utf8_content.find(u'当前请求已过期') >= 0:
             message = u'当前请求已过期: %s' % url
-            logger.warning(message)
+            # logger.warning(message)
             raise Expired(message)
 
         if jsonp_callback:
             resp.jsonp = self.parse_jsonp(resp.utf8_content, jsonp_callback)
+            if resp.status_code > 400:
+                # raise Exception('404')
+                return resp
             if resp.jsonp.get('code') == 'needlogin':
                 self.refresh_cookies()
                 raise Retry(message=u'need login with %s.' % self.sg_user)
@@ -122,6 +129,7 @@ class WeiXinClient(BaseClient):
         self.cookies.clear()
         if update:
             update_sogou_cookie.delay(self.sg_user)
+            logger.info('WeiXinClient().refresh_cookies: call update_sogou_cookie.delay for user: %s' % self.sg_user)
 
         sg_users = list(config.SOGOU_USERS)
         if self.sg_user:
@@ -130,15 +138,32 @@ class WeiXinClient(BaseClient):
         sg_user = random.choice(sg_users)
         sg_cookie = r.get('sogou.cookie.%s' % sg_user)
         if not sg_cookie:
-            result = update_sogou_cookie.delay(sg_user)
-            result.get()
-            sg_cookie = r.get('sogou.cookie.%s' % sg_user).decode()
-        else:
-            sg_cookie = sg_cookie.decode()
+            update_sogou_cookie.delay(sg_user)
+            logger.info('WeiXinClient().refresh_cookies while loop: call update_sogou_cookie.delay for user: %s' % sg_user)
+            # sg_user = random.choice(sg_users)
+            try:
+                for sg_user in sg_users:
+                    try:
+                        sg_cookie = r.get('sogou.cookie.%s' % sg_user).decode()
+                        logger.info('WeiXinClient().refresh_cookies while loop: got cookie from redis, user: %s' % sg_user)
+                        break
+                    except:
+                        pass
+            except:
+                sg_user = random.choice(sg_users)
+                update_sogou_cookie(sg_user)
+
+
+            # except Exception as e:
+            #     logger.error('WeiXinClient().refresh_cookies while loop: %s' % e)
+            #     sleep(10)
+            #     pass
+
         self._sg_user = sg_user
         self.headers['Cookie'] = sg_cookie
         self.headers['User-Agent'] = faker.user_agent()
-        logger.info("updated cookies for %s" % self.sg_user)
+        logger.info("have updated cookies for %s" % self.sg_user)
+        logger.info("weixin_client.Cookie: %s" % self.headers['Cookie'])
 
     @classmethod
     def parse_jsonp(cls, utf8_content, callback):
@@ -160,6 +185,6 @@ def update_sogou_cookie(sg_user):
     get_url = urljoin(config.PHANTOM_SERVER, '_sg_cookie')
     resp = requests.post(get_url, data={'email': sg_user})
     cookie = resp.json()['sg_cookie']
-    logger.info('update cookie SUCCESS for %s: ' % sg_user)
     key = 'sogou.cookie.%s' % sg_user
     r.set(key, cookie)
+    logger.info('update_sogou_cookie: update cookie SUCCESS for %s: , have saved to redis.' % sg_user)
