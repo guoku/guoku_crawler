@@ -4,6 +4,7 @@
 import re
 import random
 import requests
+import json
 
 from datetime import datetime
 from urlparse import urljoin
@@ -16,7 +17,7 @@ from sqlalchemy import and_
 from sqlalchemy.orm.exc import NoResultFound
 
 from guoku_crawler import config
-from guoku_crawler.article.client import WeiXinClient, update_sogou_cookie
+from guoku_crawler.article.client import WeiXinClient, update_sogou_cookie, get_user_profile_link
 from guoku_crawler.celery import RequestsTask, app
 from guoku_crawler.common.image import fetch_image
 from guoku_crawler.common.parse import clean_xml
@@ -52,11 +53,11 @@ def crawl_weixin_list(authorized_user_id, page=1, update_cookie=False):
         # raise current_task.retry(exc=e)
         raise TooManyRequests
 
-    if not open_id:
-        logger.warning("skip user %s: cannot find open_id. "
-                       "Is weixin_id correct?",
-                       authorized_user.weixin_id)
-        return
+    # if not open_id:
+    #     logger.warning("skip user %s: cannot find open_id. "
+    #                    "Is weixin_id correct?",
+    #                    authorized_user.weixin_id)
+    #     return
     if not authorized_user.weixin_openid:
         # save open_id if it's not set already
         authorized_user.weixin_openid = open_id
@@ -107,7 +108,12 @@ def crawl_weixin_list(authorized_user_id, page=1, update_cookie=False):
             article_url = u'http://mp.weixin.qq.com' + re.findall(r'content_url:(.*),source_url', item)[0]
             article_list.append((cover, article_url, fileid))
     try:
-        crawl_weixin_article.delay(article_list[-2], authorized_user_id, sg_cookie)
+        for article in article_list:
+            try:
+                crawl_weixin_article.delay(article, authorized_user_id, sg_cookie)
+            except Exception as e:
+                logger.error(e)
+                logger.error('crawl_weixin_list: article %s failed' % article[1])
     except Exception as e:
         logger.info(str(authorized_user_id) + 'failed')
         logger.error(e)
@@ -218,7 +224,10 @@ def crawl_weixin_article(article_info, authorized_user_id, cookie):
         session.commit()
         logger.info("created article id: %s. title: %s. identity_code: %s",
                     article.id, title, identity_code)
-        crawl_image(article)
+        try:
+            crawl_image(article)
+        except Exception  as e:
+            logger.error(e)
         # logger.info('-'*100)
         # cover = fetch_image(article.cover, weixin_client)
         # if cover:
@@ -381,41 +390,61 @@ def get_sogou_tokens(weixin_id, update_cookie=False):
 
     weixin_id = weixin_id.strip()
     logger.info('getting open_id for %s', weixin_id)
-    open_id = None
+    # open_id = None
     # ext = None
     user_link = None
     params = dict(type='1', ie='utf8', query=weixin_id)
-    weixin_client.refresh_cookies(update_cookie)
-    sg_cookie = weixin_client.headers.get('Cookie')
+    # weixin_client.refresh_cookies(update_cookie)
+    # sg_cookie = weixin_client.headers.get('Cookie')
+    # sg_cookie = cookie_to_dict(sg_cookie)
     #Todo
-    if not sg_cookie:
-        for user in list(config.SOGOU_USERS):
-            sg_cookie = r.get('sogou.cookie.%s' % user)
-            if sg_cookie:
-                break
+    # if not sg_cookie:
+    #     for user in list(config.SOGOU_USERS):
+    #         sg_cookie = r.get('sogou.cookie.%s' % user)
+    #         if sg_cookie:
+    #             break
+    # sg_cookie['SNUID'] = 'B96B3A33BABC88B748F2CD31BAAFA909'
 
-    logger.info('get_sogou_tokens: request headers cookie: %s' % sg_cookie)
-    response = weixin_client.get(url=SEARCH_API,
-                                 params=params,
-                                 jsonp_callback='weixin',
-                                 headers={'Cookie': sg_cookie})
+    # logger.info('get_sogou_tokens: request headers cookie: %s' % sg_cookie)
+    try:
+        response = get_user_profile_link(weixin_id)
+        user_link = json.loads(response.content).get('user_link')
+        return '', '', user_link
+    except Exception as e:
+        logger.error(e)
 
-    for item in response.jsonp['items']:
-        item_xml = clean_xml(item)
-        item_xml = BeautifulSoup(item_xml, 'xml')
-        if item_xml.weixinhao.string.lower() == weixin_id.lower():
-            open_id = item_xml.id.string
-            # ext = item_xml.ext
-            user_link = item_xml.encGzhUrl.string
+    # response = weixin_client.get(url=SEARCH_API,
+    #                              params=params,
+    #                              jsonp_callback='weixin',
+    #                              headers={'Cookie': sg_cookie},
+    #                              cookies=sg_cookie
+    #                              )
+    #
+    # for item in response.jsonp['items']:
+    #     item_xml = clean_xml(item)
+    #     item_xml = BeautifulSoup(item_xml, 'xml')
+    #     if item_xml.weixinhao.string.lower() == weixin_id.lower():
+    #         open_id = item_xml.id.string
+    #         # ext = item_xml.ext
+    #         user_link = item_xml.encGzhUrl.string
+    #
+    #         break
+    #
+    # if open_id:
+    #     logger.info('got open_id and user profile link...')
+    #     return open_id,  sg_cookie, user_link
+    # else:
+    #     logger.warning('cannot find open_id for weixin_id: %s.', weixin_id)
+    #     return None, None, None
+# def cookie_to_dict(cookies):
+#     cookies_dict = {}
+#     items = cookies.split(';')
+#     for item in items:
+#         k, v = item.split('=')
+#         cookies_dict[k.strip()] = v
+#     return cookies_dict
 
-            break
 
-    if open_id:
-        logger.info('got open_id and user profile link...')
-        return open_id,  sg_cookie, user_link
-    else:
-        logger.warning('cannot find open_id for weixin_id: %s.', weixin_id)
-        return None, None, None
 
 
 def parse_qr_code_url(article_soup):

@@ -162,7 +162,7 @@ class WeiXinClient(BaseClient):
         self._sg_user = sg_user
         self.headers['Cookie'] = sg_cookie
         self.headers['User-Agent'] = faker.user_agent()
-        logger.info("have updated cookies for %s" % self.sg_user)
+        # logger.info("have updated cookies for %s" % self.sg_user)
         logger.info("weixin_client.Cookie: %s" % self.headers['Cookie'])
 
     @classmethod
@@ -187,4 +187,11 @@ def update_sogou_cookie(sg_user):
     cookie = resp.json()['sg_cookie']
     key = 'sogou.cookie.%s' % sg_user
     r.set(key, cookie)
-    logger.info('update_sogou_cookie: update cookie SUCCESS for %s: , have saved to redis.' % sg_user)
+    logger.info('update_sogou_cookie: update cookie SUCCESS for %s: , cookie: %s, have saved to redis.' % (sg_user, cookie))
+
+
+def get_user_profile_link(weixin_id):
+    get_url = urljoin(config.PHANTOM_SERVER, 'userlink')
+    params = dict(type='1', ie='utf8', query=weixin_id)
+    resp = requests.post(get_url, params=params)
+    return resp

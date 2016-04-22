@@ -193,7 +193,7 @@ class FileSystemStorage(Storage):
                     # for consistency with file_permissions_mode behavior.
                     old_umask = os.umask(0)
                     try:
-                        os.makedirs(directory, self.directory_permissions_mode)
+                        os.makedirs(directory)    #Todo
                     finally:
                         os.umask(old_umask)
                 else:
@@ -251,7 +251,8 @@ class FileSystemStorage(Storage):
                 break
 
         if self.file_permissions_mode is not None:
-            os.chmod(full_path, self.file_permissions_mode)
+            # os.chmod(full_path)      #Todo
+            pass
 
         return name
 
