@@ -26,9 +26,9 @@ today_start = datetime.datetime.combine(
 def crawl_articles():
     users = get_auth_users()
     for user in users:
-        crawl_user_articles(user.profile.id)
+        crawl_user_articles.delay(user.profile.id)
 
-
+@app.task(base=RequestsTask, name='crawl_user_articles')
 def crawl_user_articles(authorized_user_id):
     # crawl rss article if user has rss url,
     # else crawl weixin article from sogou.

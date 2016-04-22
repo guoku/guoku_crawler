@@ -354,3 +354,7 @@
 [16/04/07 20:35:54.86] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASkoaxf2QeWYxrq6SeuuHIzJKNia3b1Wnr7haN2xhDsf6Gbxa1wQMYhEg/0?wx_fmt=jpeg
 [16/04/07 20:35:57.28] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWAScm4AnWcmEQLMswns7ibiby7M0L7EWqLdRSLaLP3IDzKd0Ls2J558eIPQ/0?wx_fmt=jpeg
 [16/04/07 20:35:57.717] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASao241Lvk09nrqll0RgJ5wuEc7nkbPYr0hibDGmqGES8A9vSek3WYAWA/0?wx_fmt=jpeg
+[16/04/22 21:13:13.820] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/22 21:13:45.654] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/22 21:14:55.712] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/22 21:15:05.149] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
