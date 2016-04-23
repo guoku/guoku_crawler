@@ -27,7 +27,8 @@ DATABASES = {
 
 # Image
 IMAGE_HOST = 'http://127.0.0.1:9766/'
-IMAGE_PATH = '/media/upload/images/'
+IMAGE_PATH = 'images/'
+LOCAL_IMAGE_PATH = 'images/'
 LOCAL_FILE_STORAGE = True
 MEDIA_ROOT = ''
 MOGILEFS_DOMAIN = 'prod'

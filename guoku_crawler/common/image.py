@@ -14,8 +14,11 @@ from guoku_crawler.common.file import ContentFile
 from guoku_crawler.common.storage.storage import FileSystemStorage
 from guoku_crawler.common.storage.storage import MogileFSStorage
 
+if getattr(config, 'LOCAL_FILE_STORAGE') == True:
+    image_path = getattr(config, 'LOCAL_IMAGE_PATH', 'images/')
+else :
+    image_path = getattr(config, 'MOGILEFS_MEDIA_URL', 'images/')
 
-image_path = getattr(config, 'MOGILEFS_MEDIA_URL', getattr(config,'IMAGE_PATH','images/'))
 image_host = getattr(config, 'IMAGE_HOST', None)
 
 
