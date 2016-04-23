@@ -1,0 +1,367 @@
+[16/04/07 16:49:46.453] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/07 16:49:55.651] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:49:55.654] INFO [weixin:get_sogou_tokens:229]- get open_id for meetaste
+[16/04/07 16:50:03.836] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:50:03.836] INFO [weixin:crawl_weixin_list:113]- current page is the last page; will not go next page
+[16/04/07 16:50:03.838] INFO [weixin:get_sogou_tokens:229]- get open_id for mumolife
+[16/04/07 16:50:12.139] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:50:12.141] INFO [weixin:get_sogou_tokens:229]- get open_id for intuition77
+[16/04/07 16:50:20.407] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:50:22.437] WARNING [client:request:110]- link expired: http://weixin.sogou.com/websearch/art.jsp?sg=CBf80b2xkgbo4ReDa8jv8m7u698WT6YpZnpsV_LjW8KaXq0AW4Dedg1rmbbJVvAbOxyzpwS6T6E4UCXIBnUvK9WAN0w-jyGHcYqd-jiai_9eDSieyR1JGfwOulLf7C7mMcIhYOsOq_YQ0fePcADdn9KCYn25pfGQy6rGmVCuxuQ.&url=p0OVDH8R4SHyUySb8E88hkJm8GF_McJfBfynRTbN8wgRUiaPkmSddiU9a9NsGePWeKfUmFuyhAAMdkkaCea_Cf6uGV2rvEPL4zN_BxP9LV4EV7xvUGI6cG2FR4QsEz4NOTd4VlAjdHBjDSUMPUyXQXBa9UYQMyH9CIrAdue_p5cO734mk9jf5yMmTbQVj9Qd
+[16/04/07 16:50:22.438] INFO [weixin:get_sogou_tokens:229]- get open_id for intuition77
+[16/04/07 16:50:30.647] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:50:37.785] INFO [weixin:crawl_weixin_article:196]- created article id: 4882. title: 你们拉高了整个风扇界的颜值. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-83e3c38d2a7d4a08e5a7ba1ca31f30cb
+[16/04/07 16:50:39.82] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOEqIHUob8icLcE8Sp7rARlKEgwDVA7V1kOZa3ictLn0KgyWQyq7K5JBcNI6az4uZrZp4TzhmN7NfT1Q/0?wx_fmt=jpeg
+[16/04/07 16:50:39.313] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oDBibuQVJyt0VOyibyzjeP8ia8XyC0k9FCBHibC4xQjh2eGWTgdnN1LPtaA/0?wx_fmt=jpeg
+[16/04/07 16:50:39.748] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0ojmzCj8M4UdJYSKUWpzoDiaW5eWt53t17vyfVk3C2HRqLaqgJnatibH3g/0?wx_fmt=jpeg
+[16/04/07 16:50:40.9] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0or2Yqdv1HdCwET1RyicMiafdP2mLm1GJvibGlL7oXQYTY0ibiaEvWpYwZiaRQ/0?wx_fmt=jpeg
+[16/04/07 16:50:40.271] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0o9spExtNXgcGePLDZuLTuDWoicdI4IicAsVW2YcBFVyjh2GD3xAWwjSJQ/0?wx_fmt=jpeg
+[16/04/07 16:50:40.629] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oBmSA3MLr9BJicH0gov7xKfpPHhib42rYyFkx9DoDJAKAoJRr7HMry6wQ/0?wx_fmt=jpeg
+[16/04/07 16:50:40.922] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oKu8Z19sl8uiaLxNodrJMiavHq8pXib7ewM1IbsHv76485ljemFlXibm4Xg/0?wx_fmt=jpeg
+[16/04/07 16:50:41.263] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oeQwv5hdI90d470fCehrWTmPV9ssDuGqVtEe5LibhXxcialP7kI7eANvw/0?wx_fmt=jpeg
+[16/04/07 16:50:41.600] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oJ4jkyYcnVk3eia0icjqymgHRdApqDug8H6sEXiaGibmzZxNFm6JkKkSF8A/0?wx_fmt=jpeg
+[16/04/07 16:50:41.806] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oEP86fKaTboarFdowypKODPdyU7DBl4GXliavL7KpUdwf6ESYgoic82pg/0?wx_fmt=jpeg
+[16/04/07 16:50:42.240] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0ohSJgcXngo76aIbCjPoGD3BrN7F8jiasXUkGxV4cKPpQ8O72EugK65Uw/0?wx_fmt=jpeg
+[16/04/07 16:50:42.871] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0otLzHB1WolgFRRs7BMLEKS580ibMsPbb6ric6qx9cvYK8ualrd3ib1A2bg/0?wx_fmt=jpeg
+[16/04/07 16:50:43.381] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0ogWAUDEpQh6czUMuM55ao68ATibicdj8g13pQicCDibYmNYvUTRxbjBszzw/0?wx_fmt=jpeg
+[16/04/07 16:50:43.671] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oicrMiaBkHZDMk6GIIN8hooYicicxqkIVDcsI47m5QRg0tApwN9ZgRVhriaA/0?wx_fmt=jpeg
+[16/04/07 16:50:44.97] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0omNtuTT7eLWiaa3dgh1WLckEb0uryKzQS1bEC6Y01Dd4xrQHY3XHxELg/0?wx_fmt=jpeg
+[16/04/07 16:50:44.345] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0ob2uKqib96rm1xX0DoF0gSrbLicnGMFEhlZjMrCgD1Rx6U8CP6k8pnBCQ/0?wx_fmt=jpeg
+[16/04/07 16:50:44.778] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0o59h2aOs65e4ibLx6uQlvFa2XuclPyJyz8DOzP8fBXQskLdiciawCmNXwg/0?wx_fmt=jpeg
+[16/04/07 16:50:45.34] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oks62GlsKvUicS9ByT7aq6VibQwXRuyxov6Hzx6zZziaGL9fsFILCFdHOw/0?wx_fmt=jpeg
+[16/04/07 16:50:45.654] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0o2j1TiaiaiaR3FmuccrqHsDVCIQjSN9SgzqwAQspAv0HYINQArKibSGIaSQ/0?wx_fmt=jpeg
+[16/04/07 16:50:45.937] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0o9HXOYYOQ9dv3SMCJrEqE5DPHj8FUxnIepN4gutkM6zEeyHKqF15icBA/0?wx_fmt=jpeg
+[16/04/07 16:50:46.414] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oqBnXEfzvdZeeO9d17AAibfNx3iae1kNH4kmAYeiaCInLOcJvUwdjqel9A/0?wx_fmt=jpeg
+[16/04/07 16:50:46.845] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0o6cfM9iarI6a3OfbZKjPk1tz0UiazxFG9XMibyoqV4FeibxVaJmiazkQfP3A/0?wx_fmt=jpeg
+[16/04/07 16:50:47.193] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0obZbRcwxmc9c0cy6urUwacVkhyQJnnxcYUJzGlN4Eh7q3ic8rEjGIpiaA/0?wx_fmt=jpeg
+[16/04/07 16:50:47.576] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0okcseK9ziaX235icYnR28cR7xmcTQTHPULebgydbiaNXNh3NI8ebwayBow/0?wx_fmt=jpeg
+[16/04/07 16:50:47.909] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0o3Yrmb9yj05C0E8zFY50LTOSibsd9jPibR6tD7btVCGSQHwG8bVDF8cOw/0?wx_fmt=jpeg
+[16/04/07 16:50:48.241] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oJQFfPKEwCGjcRic1mDusXWX355PbIUIqHzmiaKmRptSm4C0NolEpg5jg/0?wx_fmt=jpeg
+[16/04/07 16:50:48.548] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0ofibtK0mPUMCIrQEjRia73lSarEhUCDDsictfyhQvyMtjf8k5icqWW23icPw/0?wx_fmt=jpeg
+[16/04/07 16:50:49.155] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oQqPib9sMQCYoZ1XiaibUdCKF3wut7W4eIgCPCH27x7MuPMp1eBddvIN0Q/0?wx_fmt=jpeg
+[16/04/07 16:50:49.635] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oPTZibVcb0obibHlvBic60O1e2nxd3icHJ9BuECkGUkMwiaeyWUdbX07IXRw/0?wx_fmt=jpeg
+[16/04/07 16:50:50.4] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0opBXia3vyEic4OAaJ8gbjxGHoSbGISLicqlVwhs5DDQVnLdN61NoiaJp3dg/0?wx_fmt=jpeg
+[16/04/07 16:50:50.691] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oiasV0XIQUJ3JHuXydiagfsE2N0ASEXN9W0m6GQp83nlbzib14LIsywYibQ/0?wx_fmt=jpeg
+[16/04/07 16:50:51.130] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0ozk2wHovw6TYNuZic6icG1qX3JFf1ORDZwT9z7BjZBLJ3uhzRkRaCgByg/0?wx_fmt=jpeg
+[16/04/07 16:50:51.989] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0oh75ibgfawqfCmBzNiaGUhiaWwbY8Fiatowgs2la54rw6icVj0WKa8clkRVA/0?wx_fmt=jpeg
+[16/04/07 16:50:52.273] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOETGibjcxga32o2SBIWwrt0o448FwzmjbhfSNlUlxnd3av0rLzNlicWyJZibaRzck1Bp7SIG1gYRrm9A/0?wx_fmt=jpeg
+[16/04/07 16:50:52.570] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4882: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOEqIHUob8icLcE8Sp7rARlKEI41kPcgEq4jVb0WZTkNLgAfyM7iaibqbTwJmhU8FiceGNo5gbNHPwvBIw/0?wx_fmt=jpeg
+[16/04/07 16:50:52.808] INFO [weixin:crawl_weixin_article:223]- article 4882 finished.
+[16/04/07 16:50:52.812] INFO [weixin:get_sogou_tokens:229]- get open_id for theBlackWizard
+[16/04/07 16:51:01.71] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:51:01.75] INFO [weixin:get_sogou_tokens:229]- get open_id for jiazazhi
+[16/04/07 16:51:09.439] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:51:09.443] INFO [weixin:get_sogou_tokens:229]- get open_id for fireblueswithyou
+[16/04/07 16:51:17.803] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:51:21.937] INFO [weixin:crawl_weixin_article:196]- created article id: 4883. title: 完熟桃的季节🍑. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-cb7bfa775c99de768ac4dc4f5b5fba4f
+[16/04/07 16:51:24.279] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4883: http://mmbiz.qpic.cn/mmbiz/omvnr34FK9knWkHRjnxXTQ4YRgAvlDibZ70RUNG5P7c1UWj6Iqg6VWUNbzvHtXEEVSsAsbnBqxvzOEh8zaBYgUQ/0?wx_fmt=jpeg
+[16/04/07 16:51:27.700] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4883: http://mmbiz.qpic.cn/mmbiz/omvnr34FK9knWkHRjnxXTQ4YRgAvlDibZDNCLosw3VzIDmWP9dnDu4Mjk4Yeaup2c9lSCF6OX9Toliazy9mJSqpg/0?wx_fmt=jpeg
+[16/04/07 16:51:30.396] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4883: http://mmbiz.qpic.cn/mmbiz/omvnr34FK9knWkHRjnxXTQ4YRgAvlDibZ2cicWnUbZo8d7WibqMNadHhkZoQIaFdSqibf47pbiaellcichY8ubFAmicfA/0?wx_fmt=jpeg
+[16/04/07 16:51:32.285] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4883: http://mmbiz.qpic.cn/mmbiz/omvnr34FK9knWkHRjnxXTQ4YRgAvlDibZpjzRjfkQm6hnLTITbIMVHHMMicKMcibL5Q0ZRZXjWJKrCkqSibTMPg0eA/0?wx_fmt=jpeg
+[16/04/07 16:51:32.823] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4883: http://mmbiz.qpic.cn/mmbiz/omvnr34FK9knWkHRjnxXTQ4YRgAvlDibZYbZuc2ZyOA88Qyq45WE0xHGDy1kOd1m6feNgxlFIOQicdTUsA8nj9QA/0?wx_fmt=jpeg
+[16/04/07 16:51:33.715] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4883: http://mmbiz.qpic.cn/mmbiz/omvnr34FK9mKj2iaCwhFL0K5mjuHdaE5ajWAzZp1fLONFgv3wPRY7PCf1bBh4Tm6StfbWEPoiaCg2KBA11PuEpMg/0?wx_fmt=jpeg
+[16/04/07 16:51:34.310] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4883: http://mmbiz.qpic.cn/mmbiz/omvnr34FK9knWkHRjnxXTQ4YRgAvlDibZhw6TuMggvd2R8cBYGWYxwicdUTO4icfEAyQOM4mPENVDLUWB7yDrtO8A/0?wx_fmt=jpeg
+[16/04/07 16:51:35.512] INFO [weixin:crawl_weixin_article:223]- article 4883 finished.
+[16/04/07 16:51:35.516] INFO [weixin:get_sogou_tokens:229]- get open_id for VintageDesign
+[16/04/07 16:51:44.736] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:51:44.737] INFO [weixin:crawl_weixin_list:113]- current page is the last page; will not go next page
+[16/04/07 16:51:44.740] INFO [weixin:get_sogou_tokens:229]- get open_id for wmemory-1
+[16/04/07 16:51:53.253] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:51:53.257] INFO [weixin:get_sogou_tokens:229]- get open_id for ZUMU_SHOW
+[16/04/07 16:52:01.716] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:52:01.716] INFO [weixin:crawl_weixin_list:113]- current page is the last page; will not go next page
+[16/04/07 16:52:01.721] INFO [weixin:get_sogou_tokens:229]- get open_id for joyhowine
+[16/04/07 16:52:09.983] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:52:09.983] INFO [weixin:crawl_weixin_list:113]- current page is the last page; will not go next page
+[16/04/07 16:52:09.989] INFO [weixin:get_sogou_tokens:229]- get open_id for rumohome
+[16/04/07 16:52:18.240] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:52:18.246] INFO [weixin:get_sogou_tokens:229]- get open_id for TACITURNLI
+[16/04/07 16:52:26.549] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:52:30.701] INFO [weixin:crawl_weixin_article:196]- created article id: 4884. title: 杨梅竹店公告：休业4天. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-3cc4801e23e3dbccd1dde54b472b0036
+[16/04/07 16:52:32.139] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4884: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRp5mzEbw14aulxShsZc7rwM8lI8v5y2jm1aIj1BPNpWp6qG2TMTPIBQRzPFZ3nI2WMnelk1wPtcbQ/0?wx_fmt=jpeg
+[16/04/07 16:52:32.726] INFO [weixin:crawl_weixin_article:223]- article 4884 finished.
+[16/04/07 16:52:36.839] INFO [weixin:crawl_weixin_article:196]- created article id: 4885. title: TACITURNLI AW 16 Showroom Lookbook. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-1918145530773f1f31f79bd35e8e2a4d
+[16/04/07 16:52:40.243] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5pxRRv32icInJic17UvKdiciawDr718Umn5TZk6hbjQaSE7PEeYbGFhG0Z6yw/0?wx_fmt=jpeg
+[16/04/07 16:52:42.680] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5pxjGMrR2sq5yamu535NWHSUj9daCM086ica9mGTibkJYibY2MhxbknibHxiaQ/0?wx_fmt=jpeg
+[16/04/07 16:52:46.266] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5pxibVYeqeibuw0sSQJdkdicUNgMiacIuuxJCTEG9fCqG8CUPlwgWNSk8Ox4w/0?wx_fmt=jpeg
+[16/04/07 16:52:47.100] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5pxKKAhxqzDcYfHBdlpB10Adrs6IwibZJXeerNa3nxDgOT7Z7ZsMAHzMZQ/0?wx_fmt=jpeg
+[16/04/07 16:52:47.611] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5pxT2xcr0QX3UFOH0XknsYP4jgm3275Dft8b7haNicEru9xyicFav9IrLrA/0?wx_fmt=jpeg
+[16/04/07 16:52:48.578] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5pxacmhKmf8jribkC0yVy1327yibvdWmuuECyBNdFjiazuibUib4rS0qhhJWIg/0?wx_fmt=jpeg
+[16/04/07 16:52:49.355] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5pxs7MFrFGGhtt8V7L14UWFFlxjh55AhVPsNKmStO5Wh3ofQgfR47UT0Q/0?wx_fmt=jpeg
+[16/04/07 16:52:50.395] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5px42NyUfAzV4yxsVJukYYicU4GLeSaYNZt26p4KcnF6hniaQ3wwlL6Ollg/0?wx_fmt=jpeg
+[16/04/07 16:52:51.109] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5pxzhWuic5oF806eMcv2ZEG5bsmq5hVBtPpRw0O7cSdl6BNTnCtlDOammQ/0?wx_fmt=jpeg
+[16/04/07 16:52:51.757] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4885: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRq1AurDZwFLOU34aUOgN5pxfzzM5AdKWHiaHFaj7BG4Z1N0F0ib9afLToDXQtUbWpwkDhOVhvdyBOGg/0?wx_fmt=jpeg
+[16/04/07 16:52:52.726] INFO [weixin:crawl_weixin_article:223]- article 4885 finished.
+[16/04/07 16:52:52.732] INFO [weixin:get_sogou_tokens:229]- get open_id for laohan
+[16/04/07 16:52:57.318] WARNING [weixin:get_sogou_tokens:251]- cannot find open_id for weixin_id: laohan.
+[16/04/07 16:52:57.319] WARNING [weixin:crawl_weixin_list:55]- skip user laohan: cannot find open_id. Is weixin_id correct?
+[16/04/07 16:52:57.323] INFO [weixin:get_sogou_tokens:229]- get open_id for yuanye798
+[16/04/07 16:53:06.699] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:53:11.498] INFO [weixin:crawl_weixin_article:196]- created article id: 4886. title: 好笋知时节. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-75a96524ad58a814239dcf96f51fa3e5
+[16/04/07 16:53:12.625] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4886: http://mmbiz.qpic.cn/mmbiz/ia6mv41sGVcxx36UnL97ZU3qCla8r8lNicyACvBAQJ5lV0yvy66kfGXwVIj57lH44I8OgtKYbxSMuicHaW39bOGLQ/0?wx_fmt=jpeg
+[16/04/07 16:53:13.28] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4886: http://mmbiz.qpic.cn/mmbiz/ADa4yogsEwTK0UCbwS3Uaw5FD7468P8GkOSZMZ1OeRJLDKF0udY7NhV1iaibYT1To6dZcLjs3FkdxyDLQHnDllKw/640?wx_fmt=jpeg
+[16/04/07 16:53:13.387] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4886: http://mmbiz.qpic.cn/mmbiz/ia6mv41sGVcxx36UnL97ZU3qCla8r8lNicfLqZ313dF8HwXauG6375PJHZ90vTwCFMQETUGxu15KCSbT8tKA9b1w/0?wx_fmt=gif
+[16/04/07 16:53:14.338] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4886: http://mmbiz.qpic.cn/mmbiz/ia6mv41sGVcxx36UnL97ZU3qCla8r8lNicibk54GRs6SLVEia0kd0UvCsLZtZe9HHYFvDSPaQmaegicmibOIzjJR3ZnA/0?wx_fmt=jpeg
+[16/04/07 16:53:14.907] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4886: http://mmbiz.qpic.cn/mmbiz/ADa4yogsEwTLTSgKkGumkQ7NPiczz3Wl0c8LulvGPvwIvl5kuCfpApA87HayvEjOBBJgNtCpAfy5fhKPJjK6w1g/640?wx_fmt=jpeg
+[16/04/07 16:53:15.275] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4886: http://mmbiz.qpic.cn/mmbiz/ia6mv41sGVcxx36UnL97ZU3qCla8r8lNicdCmJQ6ymks826ibUQhngY7aKAZNvxu3j42kicu9gzkMPvESBX8DibHY4A/0?wx_fmt=jpeg
+[16/04/07 16:53:15.680] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4886: http://mmbiz.qpic.cn/mmbiz/ADa4yogsEwTLTSgKkGumkQ7NPiczz3Wl0c8LulvGPvwIvl5kuCfpApA87HayvEjOBBJgNtCpAfy5fhKPJjK6w1g/640?wx_fmt=jpeg
+[16/04/07 16:53:15.857] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4886: http://mmbiz.qpic.cn/mmbiz/ia6mv41sGVcxx36UnL97ZU3qCla8r8lNicLW5dLE36p7ybAMK20Z8kXmicdJ9amuFbryubFPuZNgoRPr5q04CdiaLw/0?wx_fmt=jpeg
+[16/04/07 16:53:16.323] INFO [weixin:crawl_weixin_article:223]- article 4886 finished.
+[16/04/07 16:53:25.591] INFO [weixin:crawl_weixin_article:196]- created article id: 4887. title: 清明·寒食. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-dced624caac17649c38d38935760d04d
+[16/04/07 16:53:28.41] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4887: http://mmbiz.qpic.cn/mmbiz/ia6mv41sGVcxx36UnL97ZU3qCla8r8lNicyACvBAQJ5lV0yvy66kfGXwVIj57lH44I8OgtKYbxSMuicHaW39bOGLQ/0?wx_fmt=jpeg
+[16/04/07 16:53:29.14] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4887: http://mmbiz.qpic.cn/mmbiz/ia6mv41sGVcxV6FMxVnNtia4KUPlnf9sX1w61C7RcPwCnd10G2AFKTaGl01EnibjicwW4FrW9tibdnQHYHxicDWJS0Og/0?wx_fmt=jpeg
+[16/04/07 16:53:31.399] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4887: http://mmbiz.qpic.cn/mmbiz/ADa4yogsEwTLTSgKkGumkQ7NPiczz3Wl0c8LulvGPvwIvl5kuCfpApA87HayvEjOBBJgNtCpAfy5fhKPJjK6w1g/640?wx_fmt=jpeg
+[16/04/07 16:53:32.95] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4887: http://mmbiz.qpic.cn/mmbiz/ADa4yogsEwTK0UCbwS3Uaw5FD7468P8GkOSZMZ1OeRJLDKF0udY7NhV1iaibYT1To6dZcLjs3FkdxyDLQHnDllKw/640?wx_fmt=jpeg
+[16/04/07 16:53:32.775] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4887: http://mmbiz.qpic.cn/mmbiz/ia6mv41sGVcxx36UnL97ZU3qCla8r8lNicLW5dLE36p7ybAMK20Z8kXmicdJ9amuFbryubFPuZNgoRPr5q04CdiaLw/0?wx_fmt=jpeg
+[16/04/07 16:53:33.606] INFO [weixin:crawl_weixin_article:223]- article 4887 finished.
+[16/04/07 16:53:33.610] INFO [weixin:get_sogou_tokens:229]- get open_id for XJvary
+[16/04/07 16:53:42.449] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 16:53:46.641] INFO [weixin:crawl_weixin_article:196]- created article id: 4888. title: 绝对不会撞包的小众工匠系皮包（壹）. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-c2d6ac155de365df0339a0edae80eabf
+[16/04/07 16:53:48.362] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofibRKyCauib4BicF9Oz8Aad9LLKqtM1cbuGegAswuhJricQ3e0ibNbnp24ALK6zcFxRY0aG6jZpesPyhHQ/0?wx_fmt=jpeg
+[16/04/07 16:53:49.91] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofibkHAdLjwjYJAcaKODJQoKL9WrwWibUQW3UiaeU1C5eQFFNbVAR6AKKGospLqsk58icLHlOgib1mMVKqw/0?wx_fmt=jpeg
+[16/04/07 16:53:49.453] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofibRKyCauib4BicF9Oz8Aad9LLSWqaib0ibjicp7KTFmsBZFFVziaXRFTVGZFnCMECMpsNzyo6BFBE6wAR2w/0?wx_fmt=png
+[16/04/07 16:53:49.822] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaakUib4iaNSjDXSYXxiczVAGPzL2ibMTX5XesqZR7sOuP89XCPDhMEWgDVUA/0?wx_fmt=jpeg
+[16/04/07 16:53:50.339] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaChSMbsPTC7VxcwdYdH64PV6gbu2NawnkXiaRqhGY8t3uSbdOZkrHa7g/0?wx_fmt=jpeg
+[16/04/07 16:53:50.869] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaatWAWLnrjA8LTBuyibhZdfm1UzIjcnVPfFQo3JHHDIqGZnbZEOgx1B4w/0?wx_fmt=jpeg
+[16/04/07 16:53:51.576] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaauARib5XnuctSs9hgXTI87MCBGLsaeA2Iw2vO31SIwAGBeEQ6ic4T9KBw/0?wx_fmt=jpeg
+[16/04/07 16:53:52.90] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaabvLtIfkyGoiaMjR288VZvBGjzC7jsibyKOTicSONWIOQzo8aziaW8KcNug/0?wx_fmt=jpeg
+[16/04/07 16:53:52.603] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaflPeVXBdHA8zxCrDbHRiaOg8yZb7BugyfjGvpGcQ0dvmmoF8BzIzd5w/0?wx_fmt=jpeg
+[16/04/07 16:53:53.127] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaavlib0AdMRlQthwK3icsHorZyia8W4kFzJSRyupjBZAYRV7Jxpib22R9Ujw/0?wx_fmt=jpeg
+[16/04/07 16:53:53.637] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaddO0uRfhHprGiciamPqia59QOR8aN0l96SL1XzKlRVG3RjbPKnUicaKLmw/0?wx_fmt=jpeg
+[16/04/07 16:53:54.298] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaxqibFWq7O7sObG25icIuASoKxVxW4HTEHGt0D0abnoic4iaEOKJH7qRHFA/0?wx_fmt=jpeg
+[16/04/07 16:53:55.41] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaBat1L7azZgFFZCNoqvbRUjZpyoA6z4C5DeNXr8e2Iia67UEDVRTDarw/0?wx_fmt=jpeg
+[16/04/07 16:53:55.682] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaT10wfd1u480LXcRBKn1WgLgoLiatPCbpjPZicJASwuzB8kibOabCOYWibg/0?wx_fmt=jpeg
+[16/04/07 16:53:56.646] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86of8b9TKdibraoILXo4OpI7PnIgTXrbVdY30RgzJnuFFqLEFDuSsArM7NOvv8qveo9tO3icIzTIUqV6JQ/0?wx_fmt=png
+[16/04/07 16:53:57.59] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaGM3PribtYicwkibmto5yRdiabUOV9lbVU4mE3fwDLYmTt6o0Y0L6n775iaw/0?wx_fmt=jpeg
+[16/04/07 16:53:57.685] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofibRKyCauib4BicF9Oz8Aad9LLYjEr6u7icJhh4BvXyYA8g8N5CRAYjQFjEPic1cehB1FNYjnawAiandOaA/0?wx_fmt=jpeg
+[16/04/07 16:53:57.979] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaatialUBnqpSu0BwoSkxKJiadGJOYPYugr1pF1xscuAzRkCEVHyONPvYxQ/0?wx_fmt=jpeg
+[16/04/07 16:53:58.655] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaT1PZIicsDibfmA42m7q4YZiaIlThuDjr8g5y3octLBaLwtl963B04nIIw/0?wx_fmt=jpeg
+[16/04/07 16:53:59.203] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaacbOYfJDl6q7nQjSjYfdZcTY8qBicicjnicTJnWUj0mpoWvG1ia4dm6R4Gg/0?wx_fmt=jpeg
+[16/04/07 16:53:59.898] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaoxSibWj4wQE0G8DiazEiaC5WO3sbzpzkZ4K9Fgl515IjqVubfia5WmRbGA/0?wx_fmt=jpeg
+[16/04/07 16:54:00.497] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaasPMux95tQx2ia88bVia6YWfqyQYjhL0Uxiajnus3vVpJ6MWWSK032Q43g/0?wx_fmt=jpeg
+[16/04/07 16:54:01.203] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaVb33AzcnKdiaSZAkv0UHJwI06L1PUFC7PeGxGJ0OO3GOVsCltLYkakw/0?wx_fmt=jpeg
+[16/04/07 16:54:01.692] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaGU0t9JtziaUmHOmQRwUBOGDeAr9o55Q9qg3PicvKSvUr1ib43FLJDAWUA/0?wx_fmt=jpeg
+[16/04/07 16:54:02.320] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaacorexOxSxkYeVRbfFwHqrrTAZuneZ5aO2R06Ut68V1DI7LvVPqS12w/0?wx_fmt=jpeg
+[16/04/07 16:54:02.871] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaadicn73GsNQkW4K3DSMoyavoicCWOiaB2mDcykGyPtia96ibKT03icrqZzRLg/0?wx_fmt=jpeg
+[16/04/07 16:54:03.499] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaa9V2nt4qZ9HHEGA73CFF2bia0GtIoGfPnMADeYicVm4BtBzwqU4GW3jQQ/0?wx_fmt=jpeg
+[16/04/07 16:54:04.82] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaahw9mRCuJ3Qh5uudPy3NuuaPZS8zwIm151HGITLL7icV5cXxejDx492g/0?wx_fmt=jpeg
+[16/04/07 16:54:04.773] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86of8b9TKdibraoILXo4OpI7PnIhl6T0ada5u6LMB62s5GeS85KqosxmJRQEVF9HicWeZPUosTCH9pqQlg/0?wx_fmt=png
+[16/04/07 16:54:05.128] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaFYeccpspiaWMOTHBGGgwYoA1mtYn4ibRH5pgFn50icM1DckuFYhKicWUmA/0?wx_fmt=jpeg
+[16/04/07 16:54:06.26] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaWFn3BHC1iaSmsNrcTO0KuB2Uwy04djp4Y2uH4IfQLMkAbo4xBhJGK6A/0?wx_fmt=jpeg
+[16/04/07 16:54:07.470] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaaURWPBCF2mIb9gfeBPe4PNQrVEEN2InZ3XFI7MyXpfV87HtAeFiacvw/0?wx_fmt=jpeg
+[16/04/07 16:54:08.487] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaazwRY77hBfX7nZ0baPFDdCLK6ZgTdRudTiaLn3RPqS9Dv8OO7ibIgnziag/0?wx_fmt=jpeg
+[16/04/07 16:54:09.1] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofibRKyCauib4BicF9Oz8Aad9LLf0H19z8GMCicSKiaoCxIdUyVsdXaunGqzRzicYgsyzpmZY80huaicudWRw/0?wx_fmt=png
+[16/04/07 16:54:09.355] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaa8GT7jey67z5RDAR42j4pRvVRLLOv2iadNicy9icj61boZxhpYcOqDHm8Q/0?wx_fmt=jpeg
+[16/04/07 16:54:09.878] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaC2EGTWciavBibZvfQj538QwPwz1YXeCfrfX8MzVuoblN9eBaW3BMRvcA/0?wx_fmt=jpeg
+[16/04/07 16:54:10.272] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaJSOWtzWicpgNlug7Y4XTmayVFA5a8IT1IsysuaAgcBn35kZU5LR8GlA/0?wx_fmt=jpeg
+[16/04/07 16:54:10.793] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaQNdYpn4bgunkO7oB7DYwVQOaVQsdxgI0sNwCezv89pw4yBmibn9AHgw/0?wx_fmt=jpeg
+[16/04/07 16:54:11.337] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaibBRx7yfE2hfwEibicLWjojcJfQ1eHJeYmncLJGlvKdFxwibLUGxzbicRiaQ/0?wx_fmt=jpeg
+[16/04/07 16:54:11.927] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaUr8uRZz3mBROtEz1cBz1EC4urcW3RaG8KiaVgiad49RticYzLpic1bV2uA/0?wx_fmt=jpeg
+[16/04/07 16:54:12.481] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofibRKyCauib4BicF9Oz8Aad9LL5bodajiaBPsIFFHicL7mcSFRLTN5pWvYqVebux8E4CP82OibHFcRkfe7w/0?wx_fmt=png
+[16/04/07 16:54:12.901] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaauN3fsWtHsIj1VlWqSAAayafaysU0tyPSO8UcPmzOZjjLGjJPXI6gbw/0?wx_fmt=jpeg
+[16/04/07 16:54:13.309] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaiaVBjYj3mXAFuNhWxK2KvQg33jmAhVze5PYTnn7XJGib4JcdTHbmfBibg/0?wx_fmt=jpeg
+[16/04/07 16:54:13.715] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaa8GDib2bNuIB1P85JQafNPwd8QcMpWNHPficxjOthFofsNxsCPw0NO21w/0?wx_fmt=jpeg
+[16/04/07 16:54:14.109] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaBeicyTiazVjTIQgQgB1PCkgDuFEGYMRniaHa9APV5sbhz8eemdlRoe7ag/0?wx_fmt=jpeg
+[16/04/07 16:54:14.616] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaa9TVNePXBdoiaUn3n0VXBhE1LOeBUSM6MHx4MicVWhEKY3eib5QicH2Ie4Q/0?wx_fmt=jpeg
+[16/04/07 16:54:15.73] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaa3wpgic1q9WEvZR7ZcxLO6iaicRaibAlJ6BKCicamXIG0ZhW450fRMJJbp8w/0?wx_fmt=jpeg
+[16/04/07 16:54:15.470] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86of8b9TKdibraoILXo4OpI7PnIX8bLTqBTdicfnCvWWVa7ve7cvTOe34gEhy06kWgNlQicQFTWUcRW6AKw/0?wx_fmt=png
+[16/04/07 16:54:15.822] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaE2SmJY4rkwOFg1z3E1VC2OkoKmKjL7ibDO8K9Eqiakp7DQ3X5ZxlExFw/0?wx_fmt=jpeg
+[16/04/07 16:54:16.272] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaVicPico6pP72IXo1c0kIkOSpNo9q0Tqluhb07ribHxs3ibiaETEZeuy50Tw/0?wx_fmt=jpeg
+[16/04/07 16:54:17.0] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaa5KZo4YYU2EbkgIm7icYaZQrWZQ6NFNupw3s45bcdVFcTPNbby0PhfuQ/0?wx_fmt=jpeg
+[16/04/07 16:54:17.397] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaa4Gwo0rmkhKiaNKprP621lVazxjQrjgGiaWbMl9tNL0tbKlgNydibHjuqA/0?wx_fmt=jpeg
+[16/04/07 16:54:17.812] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaTcIWksappqThtUUMprbj5wyJpMsMvUJO2qs995EmKNegXFCzeGneIA/0?wx_fmt=jpeg
+[16/04/07 16:54:18.219] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4888: http://mmbiz.qpic.cn/mmbiz/iatCwTO86ofic3diaMpk6wAT0qaTM84h7iaaibmHYL4rcXibmft8hbib5HmKnrN9FS3jQb8BhMljQSkjOjT35xRy7VJkA/0?wx_fmt=jpeg
+[16/04/07 20:28:43.262] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/07 20:28:52.591] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:28:52.594] INFO [weixin:get_sogou_tokens:229]- get open_id for meetaste
+[16/04/07 20:29:02.407] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:29:02.407] INFO [weixin:crawl_weixin_list:113]- current page is the last page; will not go next page
+[16/04/07 20:29:02.410] INFO [weixin:get_sogou_tokens:229]- get open_id for mumolife
+[16/04/07 20:29:10.791] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:29:10.794] INFO [weixin:get_sogou_tokens:229]- get open_id for intuition77
+[16/04/07 20:29:19.282] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:29:25.983] INFO [weixin:crawl_weixin_article:196]- created article id: 4889. title: 街头拐卖儿童试验，中国VS美国，结果？. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-8d84aa863f50f5eb14fdae67ec46ca83
+[16/04/07 20:29:27.679] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4889: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOEqIHUob8icLcE8Sp7rARlKEgwDVA7V1kOZa3ictLn0KgyWQyq7K5JBcNI6az4uZrZp4TzhmN7NfT1Q/0?wx_fmt=jpeg
+[16/04/07 20:29:27.885] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4889: http://mmbiz.qpic.cn/mmbiz/uTxrV7wiaIOEqIHUob8icLcE8Sp7rARlKEI41kPcgEq4jVb0WZTkNLgAfyM7iaibqbTwJmhU8FiceGNo5gbNHPwvBIw/0?wx_fmt=jpeg
+[16/04/07 20:29:28.512] INFO [weixin:crawl_weixin_article:223]- article 4889 finished.
+[16/04/07 20:29:28.516] INFO [weixin:get_sogou_tokens:229]- get open_id for theBlackWizard
+[16/04/07 20:29:38.114] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:29:38.117] INFO [weixin:get_sogou_tokens:229]- get open_id for jiazazhi
+[16/04/07 20:29:46.718] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:29:46.723] INFO [weixin:get_sogou_tokens:229]- get open_id for fireblueswithyou
+[16/04/07 20:29:55.66] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:29:55.69] INFO [weixin:get_sogou_tokens:229]- get open_id for VintageDesign
+[16/04/07 20:30:03.482] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:30:03.483] INFO [weixin:crawl_weixin_list:113]- current page is the last page; will not go next page
+[16/04/07 20:30:03.488] INFO [weixin:get_sogou_tokens:229]- get open_id for wmemory-1
+[16/04/07 20:30:11.839] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:30:11.843] INFO [weixin:get_sogou_tokens:229]- get open_id for ZUMU_SHOW
+[16/04/07 20:30:20.375] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:30:20.375] INFO [weixin:crawl_weixin_list:113]- current page is the last page; will not go next page
+[16/04/07 20:30:20.379] INFO [weixin:get_sogou_tokens:229]- get open_id for joyhowine
+[16/04/07 20:30:28.750] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:30:28.750] INFO [weixin:crawl_weixin_list:113]- current page is the last page; will not go next page
+[16/04/07 20:30:28.756] INFO [weixin:get_sogou_tokens:229]- get open_id for rumohome
+[16/04/07 20:30:37.296] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:30:37.299] INFO [weixin:get_sogou_tokens:229]- get open_id for TACITURNLI
+[16/04/07 20:30:45.799] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:30:50.784] INFO [weixin:crawl_weixin_article:196]- created article id: 4890. title: 今日上架新品：蓝染高线衬衫  TACITURNLI® new items. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-10d4ad35fd4449557fc968243a9a3d5e
+[16/04/07 20:30:55.819] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4890: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRoZINOrThN6sWrHHaicuO6IibAdPrcjmc0SL0wL8rj2oyxEticANj20kFrZNelSPh5E1fSibvUgXnBaHA/0?wx_fmt=jpeg
+[16/04/07 20:30:59.909] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4890: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRoZINOrThN6sWrHHaicuO6IibB60kZkQMU9NOqSpr29dEwib9Biau2QtXtBbkLJwaMmvmA8Ng3muQ6icjA/0?wx_fmt=jpeg
+[16/04/07 20:31:05.79] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4890: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRoZINOrThN6sWrHHaicuO6IibIZajw846ylx7YHArZdu6bY47xh6F4qhXM4FGiaL3MTXVbpAeTN2HVOA/0?wx_fmt=jpeg
+[16/04/07 20:31:10.560] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4890: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRoZINOrThN6sWrHHaicuO6Iib8rT61I1Pj515HiamDvKAHRl1QtOZ1wMQRT7Y5k96zWlTmUNu0ciaDwkA/0?wx_fmt=jpeg
+[16/04/07 20:31:15.203] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4890: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRoCaNfo8GTIgvzhC9pWLcYwJUH7QVf5YuVMWTvYiajXEPGtFmR64SicTrNa1cEIExDFveNuR2H62WDA/0?wx_fmt=jpeg
+[16/04/07 20:31:30.326] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4890: http://mmbiz.qpic.cn/mmbiz/iccf0pteVQRp5mzEbw14aulxShsZc7rwM8lI8v5y2jm1aIj1BPNpWp6qG2TMTPIBQRzPFZ3nI2WMnelk1wPtcbQ/0?wx_fmt=jpeg
+[16/04/07 20:31:59.525] INFO [weixin:crawl_weixin_article:223]- article 4890 finished.
+[16/04/07 20:31:59.530] INFO [weixin:get_sogou_tokens:229]- get open_id for laohan
+[16/04/07 20:32:08.904] WARNING [weixin:get_sogou_tokens:251]- cannot find open_id for weixin_id: laohan.
+[16/04/07 20:32:08.905] WARNING [weixin:crawl_weixin_list:55]- skip user laohan: cannot find open_id. Is weixin_id correct?
+[16/04/07 20:32:08.910] INFO [weixin:get_sogou_tokens:229]- get open_id for yuanye798
+[16/04/07 20:32:17.469] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:32:17.472] INFO [weixin:get_sogou_tokens:229]- get open_id for XJvary
+[16/04/07 20:32:26.53] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:32:26.57] INFO [weixin:get_sogou_tokens:229]- get open_id for color_kk
+[16/04/07 20:32:34.485] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:32:34.488] INFO [weixin:get_sogou_tokens:229]- get open_id for ha-ru-ru
+[16/04/07 20:32:42.743] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:32:49.241] INFO [weixin:crawl_weixin_article:196]- created article id: 4891. title: 「脱盐减肥法」 3天瘦4斤. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-a6c8a59dd04fbb1ab76226acc4a06101
+[16/04/07 20:32:50.401] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZRlk35WrNUOdOyjgIrScHWz6pcm0Tt5DCyfWxULTf0Q9whxsMg0RQB3qxfHbSQ37BDsAOcByb4Fw/0?wx_fmt=png
+[16/04/07 20:32:50.628] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZPu38bxAiawib2PiazicdUiaRegt2z9anFicGO36Rm5hSFibRicbbFmlvNq2rlxrbDZXISjINwuFV9rduR9A/0?wx_fmt=gif
+[16/04/07 20:32:50.978] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFSF3qJQxGxrevvoyfAFrnHXWVxpl4lNibU1wWZmPthJV4R5ztiadfAkiaQ/0?wx_fmt=jpeg
+[16/04/07 20:32:51.507] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFj6X9Os3j7H61eEPDC55jdo6c2RLIw3Nb59kTictrwuOX9CiaicjcurjKg/0?wx_fmt=png
+[16/04/07 20:32:53.347] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFquDxCVhW9N4P3ia9A8hH1eFq1q83HGzjW0Fz5EibnqmjLOHAIF9WDp6w/0?wx_fmt=png
+[16/04/07 20:32:54.648] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFU3d8ClXowRV9VlqeAOYjYky0O5FFz4V3CRERW3giaZswLdscdA08scA/0?wx_fmt=png
+[16/04/07 20:32:55.446] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFm9rTkahW2TayHdJguMadG7ItCePdz3jAvXt6EMsBZ669YL4kyC3VKQ/0?wx_fmt=jpeg
+[16/04/07 20:32:55.966] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFjQCAl8z9iaibmeIicqQZqaeHJnubKPI5L0LX9gzlEh3Ux0ictCJYD1h5Og/0?wx_fmt=jpeg
+[16/04/07 20:32:56.227] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZPu38bxAiawib2PiazicdUiaRegt2z9anFicGO36Rm5hSFibRicbbFmlvNq2rlxrbDZXISjINwuFV9rduR9A/0?wx_fmt=gif
+[16/04/07 20:32:56.438] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZYYnb4CrWtS4sOlvp130nXmpE9LLJ04xic4ckjibWcuXticDHFdibb7bIjZ4CTOq07SjLOYh6yGr1tLxQ/0?wx_fmt=jpeg
+[16/04/07 20:32:56.619] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4891: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZbmRpl5l5fh3dFrZiazFL1MNq2SBvy0o42ic3vysv3OhUT3TGpzqnT1pqjs3N1u9vTbLniazqiatGibpcw/0?wx_fmt=png
+[16/04/07 20:32:56.792] INFO [weixin:crawl_weixin_article:223]- article 4891 finished.
+[16/04/07 20:33:01.600] INFO [weixin:crawl_weixin_article:196]- created article id: 4892. title: 黑木明纱 × ESCADA | 春の衣橱. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-d85739a6e5304856fc2796818bac7bd9
+[16/04/07 20:33:02.152] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFRibbUX2HzbAwa89ajU7oI94jM4C3rQr8Sobj2j6A4xSmuZ0cE8xibjUQ/0?wx_fmt=jpeg
+[16/04/07 20:33:03.376] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFUNibaQALdvtHebic9e3OqQuHPJsA3yChqpkwrrLdMBuY2bIuTLia6rPgw/0?wx_fmt=jpeg
+[16/04/07 20:33:04.491] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFS0DXib3nZicJ6zzEaS2Mdlx6oicws7YLQeTY2TmWYuSkwIw9jVmpZ3Msg/0?wx_fmt=jpeg
+[16/04/07 20:33:05.808] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFlxmWPTIeeVZ0P1B74JxQRjtpbMRg7Ox2q6FjXOHFFf5FjibwM1r1NuA/0?wx_fmt=jpeg
+[16/04/07 20:33:06.865] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFQj2EBrWhfjMUhhaARqicHSjr1h5X2mO89vyAR8z8SVWqZBMTVFeRVPA/0?wx_fmt=jpeg
+[16/04/07 20:33:08.115] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFbZEnHMG2SUxlIO1f1uRBfmSvK40gVHorAu2FswJgSUq9ibWxW2fSZKA/0?wx_fmt=jpeg
+[16/04/07 20:33:09.592] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFRQQmpzS2KurbHNhjqSH8sQKFg3hwYWR9gvyRiaI6vKbjlD15OOwQTOQ/0?wx_fmt=jpeg
+[16/04/07 20:33:10.913] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOF28OnJ5QbpKDAc3ibveYXrgpt9bQnAvRwnd7LM7FsAcXicDBw63GO4mTg/0?wx_fmt=jpeg
+[16/04/07 20:33:12.117] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZPu38bxAiawib2PiazicdUiaRegt2z9anFicGO36Rm5hSFibRicbbFmlvNq2rlxrbDZXISjINwuFV9rduR9A/0?wx_fmt=gif
+[16/04/07 20:33:12.281] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZYYnb4CrWtS4sOlvp130nXmpE9LLJ04xic4ckjibWcuXticDHFdibb7bIjZ4CTOq07SjLOYh6yGr1tLxQ/0?wx_fmt=jpeg
+[16/04/07 20:33:12.440] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4892: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZbmRpl5l5fh3dFrZiazFL1MNq2SBvy0o42ic3vysv3OhUT3TGpzqnT1pqjs3N1u9vTbLniazqiatGibpcw/0?wx_fmt=png
+[16/04/07 20:33:12.606] INFO [weixin:crawl_weixin_article:223]- article 4892 finished.
+[16/04/07 20:33:17.724] INFO [weixin:crawl_weixin_article:196]- created article id: 4893. title: 石原里美 | 新时代独立偶像. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-25f329271a8c3f910eac0544f6b122c0
+[16/04/07 20:33:17.947] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFAYBW4XgN0AKTp8sibAJu91YQxLuHgKrGhacNAibNFKNnc1nponkpVSxQ/0?wx_fmt=jpeg
+[16/04/07 20:33:18.617] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFicUcNIZHgps7M6TGz60MzJicOSak3OXm8JfvlGibic64SqAC7WSzLg688A/0?wx_fmt=jpeg
+[16/04/07 20:33:19.315] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFiaHwnDxm899jmCaibMOQE8QZhYbJ20Yqg06Xxn37C6gWx1GH7lzxTn3g/0?wx_fmt=jpeg
+[16/04/07 20:33:20.515] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFaJ0rAddjzCO3GAbL6xBCO0WBBBiaSTvNXBtnvHiaGUczjPicSCLPdN2sw/0?wx_fmt=jpeg
+[16/04/07 20:33:21.235] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFicYyV3ofnZZXdLKaq6vPibwB2kxfAQ58picLoJMU7tEFeWcJX1tkNMibcg/0?wx_fmt=jpeg
+[16/04/07 20:33:22.214] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFzREdqrvRn7iawpDIWqL3lRUTaJTOeibAaufwHtKmQkLhSe3YicoT7HD3w/0?wx_fmt=jpeg
+[16/04/07 20:33:22.852] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFQmO887fvEqNYP8AibcfSrTicTN6eqFShcoKXO5bJ4X69wyickxDBGyPHQ/0?wx_fmt=jpeg
+[16/04/07 20:33:23.752] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOFibyX2cjbqHvIa4RNLfkPzX11kDUCHXtCvhFQMNpgDn8wjC9Vuss9t2w/0?wx_fmt=jpeg
+[16/04/07 20:33:24.680] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZZTu4YOVqlWd8tCVNfibUOF5vmlJ00oWiaicPNycRAH13reOKyc4RvBmFJXDm89GAIUlia8UOkhKJcXg/0?wx_fmt=jpeg
+[16/04/07 20:33:25.514] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZZPu38bxAiawib2PiazicdUiaRegt2z9anFicGO36Rm5hSFibRicbbFmlvNq2rlxrbDZXISjINwuFV9rduR9A/0?wx_fmt=gif
+[16/04/07 20:33:25.655] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZYYnb4CrWtS4sOlvp130nXmpE9LLJ04xic4ckjibWcuXticDHFdibb7bIjZ4CTOq07SjLOYh6yGr1tLxQ/0?wx_fmt=jpeg
+[16/04/07 20:33:25.776] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4893: http://mmbiz.qpic.cn/mmbiz/pPwy1qPq6ZbmRpl5l5fh3dFrZiazFL1MNq2SBvy0o42ic3vysv3OhUT3TGpzqnT1pqjs3N1u9vTbLniazqiatGibpcw/0?wx_fmt=png
+[16/04/07 20:33:25.900] INFO [weixin:crawl_weixin_article:223]- article 4893 finished.
+[16/04/07 20:33:25.904] INFO [weixin:get_sogou_tokens:229]- get open_id for affordable_luxury
+[16/04/07 20:33:34.223] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:33:39.20] INFO [weixin:crawl_weixin_article:196]- created article id: 4894. title: 订阅 Kindle Unlimited 的人吃亏了吗？ | 这些书可以“借”. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-1bb272fe01ca80b3f83b6d0606ea4bc0
+[16/04/07 20:33:40.950] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkEMJpzxCazvzhyomnyJ4e8qMgHErkx9GyEaaJw2sWKpWhBal8sQFWtg/0?wx_fmt=png
+[16/04/07 20:33:42.412] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312Nk5lBUgS5TFYUhVib0mYyTY8W3X8icP0zL3W35pHicZ6jSIiaZaUUUgeqLPA/0?wx_fmt=png
+[16/04/07 20:33:44.16] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkGXfMFw760Zajlqc1Zvzov8610kVIsnic6u5EkZsk3y1OqpJvib4iaeZnA/0?wx_fmt=jpeg
+[16/04/07 20:33:47.926] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkmyathuGsEF2RSOxuh0m7DkDuCcppn6VwxbAtBzkXicTu841dGsJE4mw/0?wx_fmt=jpeg
+[16/04/07 20:33:51.613] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkZ5zPVfdHia188ic1m1MkA0Q3Lelk6CgMu2XJV1eRknGJnxLOHIlnTLcA/0?wx_fmt=jpeg
+[16/04/07 20:33:52.715] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkTXqCCPFcTga7aDlEA815drDbzia2g3ibpmw122qejULnbMVaXgqia0udQ/0?wx_fmt=jpeg
+[16/04/07 20:33:54.469] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkcPD7ibKfNN2WwKcqtuJUibAVwxaVEC8eFa5OFpTLIjuQrkcW0Jvftt6w/0?wx_fmt=jpeg
+[16/04/07 20:33:55.777] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkOISaXwGdNficYA17X1NibOibj4EyzvW2luIafI2GdEzswYbCecgE3ea1Q/0?wx_fmt=jpeg
+[16/04/07 20:33:56.999] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkQxEN2PkcaZiclqRiaIIFgRMPqd8VMoBTYLR1GmtCu0fuFupvHZOovGqA/0?wx_fmt=jpeg
+[16/04/07 20:33:58.138] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkibEbHES7fWgtyF0N2k2NCficMjE5BrkibmJQI16m77bIBlLOjzOMeUswQ/0?wx_fmt=jpeg
+[16/04/07 20:33:59.347] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312Nkx4D2rbrLyvmOKLTVCFTyMnTwUOCKuPIcia1uuaiarnD4woJkSENLpgWQ/0?wx_fmt=jpeg
+[16/04/07 20:34:01.49] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkNZliaJm1uMbO57IibSjticE14q7zTFvicaRGCibjX82eYDC8URrHplnnqcQ/0?wx_fmt=jpeg
+[16/04/07 20:34:03.191] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkoibAn5EgibsIlX8mjoOJ7qFUBvjsuJZyX5PhDj9gHNuQtAc6sEgIuicgA/0?wx_fmt=jpeg
+[16/04/07 20:34:04.746] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkJh6qkRicJacgbCA64HAmgjicRqqQKWdydGhk9W1OicMUJHBpw6V1Zw4Kw/0?wx_fmt=jpeg
+[16/04/07 20:34:08.77] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312NkfUH3eAMmNShVpL0G7WLbpwFMfv5m8qKHVl9y46SibczNtk6mCZWTZOw/0?wx_fmt=png
+[16/04/07 20:34:08.588] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRsDqcugMC7uodteGt312Nk8TrOfJpPXiaAdUHUKJykCeUiaZPzzB4Xw9DurfEqA3N5bUMwBQQ3KYIQ/0?wx_fmt=png
+[16/04/07 20:34:09.614] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4894: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRxuwxNEiahWFJNdOdplPoiav2OqzFdnJibhVE8JWdysicrnoibRkMGVR2SNXtQibAibL9Z5vJWicDCN90T8g/0?wx_fmt=jpeg
+[16/04/07 20:34:10.578] INFO [weixin:crawl_weixin_article:223]- article 4894 finished.
+[16/04/07 20:34:17.305] INFO [weixin:crawl_weixin_article:196]- created article id: 4895. title: 闲鱼上的这些奇葩买家，你一定遇到过. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-b8abdea35cc7b9509cc27a49e7e0016e
+[16/04/07 20:34:18.660] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GTqnicicRicprLCN7y1s7SlPLFDgGj8ANwQ6AF1SNm10uBdfay9kM5p0gXp7bwona3kprqdT0sSgfHicQ/0?wx_fmt=gif
+[16/04/07 20:34:20.1] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GTqnicicRicprLCN7y1s7SlPLF9DmQUZxzh9zeQbybibzMMia4Bz3Ix3ziaJUKD7iahhychMria3lBPm8FbEQ/0?wx_fmt=jpeg
+[16/04/07 20:34:20.430] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GTqnicicRicprLCN7y1s7SlPLFbkvcHC6qbuWuGuSufEghBOxWicicTIKlZ44IZUjI4YlBOynQicNNOToqQ/0?wx_fmt=jpeg
+[16/04/07 20:34:20.839] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GTqnicicRicprLCN7y1s7SlPLFibicOy8WA9kwytU4KCva6PldALUpGcyKc7F3HmRjpqxoZqlAXmEjOrTQ/0?wx_fmt=jpeg
+[16/04/07 20:34:21.346] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GTqnicicRicprLCN7y1s7SlPLF9B8gFpib9107Qh07gkvTaQdpkhp69azoZhZk4UwdgRmP0P5zibdgYsibA/0?wx_fmt=jpeg
+[16/04/07 20:34:21.981] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GTqnicicRicprLCN7y1s7SlPLFvxceBpYCC1pbYzI1RGf96gnxV4tkkQy9VcGicw5JrpNicticfASwRV31g/0?wx_fmt=jpeg
+[16/04/07 20:34:22.386] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GTqnicicRicprLCN7y1s7SlPLFdibzQZJVHvIibq2wVaibLYHia9Y6vjJR9j2UGwTyvxDibB3YfO0SocUO6og/0?wx_fmt=jpeg
+[16/04/07 20:34:22.908] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GTqnicicRicprLCN7y1s7SlPLF1GjvxLMTYmRNyGacD9BxffcxoRVGbI2POwnyCHdMcn2BlBjPzXwtAg/0?wx_fmt=jpeg
+[16/04/07 20:34:23.695] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GQicSDzuPBicCeFQic1qWIDM89ZtcQgT2lAER1MGozju4YJZ9fapMNOWQFTavVwulCGLz6G1xsXLkG0Q/0?wx_fmt=png
+[16/04/07 20:34:24.99] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4895: http://mmbiz.qpic.cn/mmbiz/CjubsHZv5GRxuwxNEiahWFJNdOdplPoiav2OqzFdnJibhVE8JWdysicrnoibRkMGVR2SNXtQibAibL9Z5vJWicDCN90T8g/0?wx_fmt=jpeg
+[16/04/07 20:34:24.559] INFO [weixin:crawl_weixin_article:223]- article 4895 finished.
+[16/04/07 20:34:24.563] INFO [weixin:get_sogou_tokens:229]- get open_id for smartwoodhouse
+[16/04/07 20:34:32.856] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:34:32.859] INFO [weixin:get_sogou_tokens:229]- get open_id for gh_f5af9f65266a
+[16/04/07 20:34:41.220] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:34:46.950] INFO [weixin:crawl_weixin_article:196]- created article id: 4896. title: 地板｜鱼骨拼 Chevron Flooring. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-71c188babc82ee454735ceda47b90730
+[16/04/07 20:34:48.58] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzIsFbhxibicd9Iiaq7Q36tU4aC5W8ibhNv2wMFArFGcLH6g90EkrrjNKibBEGSC6CZEMOueJayq3GWM4xA/0?wx_fmt=gif
+[16/04/07 20:34:48.297] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4kELZxj3LeaPcYJdwOMZ3K7H4Jre2WTPUkO27RiatU1do4npaJO0lMicQQ/0?wx_fmt=jpeg
+[16/04/07 20:34:48.626] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4kB1Ik6nLxe9V5euOonPiaTRMOriax1ER8WAwbnT2VPfBbklqoNNd7BVibg/0?wx_fmt=jpeg
+[16/04/07 20:34:49.70] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4kictkHkxlydNDB4l441aXyGM0QdO31yMWEhuHK4Y64zXm6UKOC9jnuWw/0?wx_fmt=jpeg
+[16/04/07 20:34:49.548] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4khibQgibwhP3Ws7riaG2hXv03icz7zmBBb1adiaKNeNnLsyAdn7qyERFTjVw/0?wx_fmt=jpeg
+[16/04/07 20:34:49.993] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4ktHC9c3zLLoaR5hnuiaiafTlricqBvkj2LLceAtSQR0YXtl8t7lGcdLLAA/0?wx_fmt=jpeg
+[16/04/07 20:34:50.598] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4kjiaWvxUtuFbaiaxJ1B1svGIAYpf7LbDypb4JoVHSHOAFkV0Iuc5R4yqg/0?wx_fmt=jpeg
+[16/04/07 20:34:51.580] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4kWKowuT14e1Qn9iaEr1sKkiabaNHgakQ0FNX1OdicAl8TwkxaFeoTbJymg/0?wx_fmt=jpeg
+[16/04/07 20:34:52.42] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4kYkCq8WUYPiaiaQPs4zjPwOJV7AMYket1AjDCFTfMz3hQb7mcyp5lsCMQ/0?wx_fmt=jpeg
+[16/04/07 20:34:52.443] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4kNVbiaDj4Y7eoCky7kwfDtO1icawZwWKKHT3NGg4gFBAAFfWY8XvLNoBA/0?wx_fmt=jpeg
+[16/04/07 20:34:52.915] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4k8MF9HCC4m0equ7iafruCqB7y1eKVzNb6dN4UMia5o5PINBDINqllzqeg/0?wx_fmt=jpeg
+[16/04/07 20:34:53.581] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4k7Z5lmBkNISAPicCj8XgUqZPvCZ1VtWtDfRCxPmLtKiaCArfZvVkicDKbA/0?wx_fmt=jpeg
+[16/04/07 20:34:54.11] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzLOq72pnz3uMrX36pl6jL4kwvkjjT24dZT4YwMkGjNBmJsAfjp0kqYTJDWCLiabh9CvetfLpbe0AHw/0?wx_fmt=jpeg
+[16/04/07 20:34:54.716] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4896: http://mmbiz.qpic.cn/mmbiz/Tv3xet28XzKmCTR3NvA1ru2hgicudibjeo3nWthpYrQIRn6nUafVjfEH6CYZoHG2WrEicUQ4GZrjJkN7opZicqJ1icQ/640?wx_fmt=jpeg
+[16/04/07 20:34:55.739] INFO [weixin:crawl_weixin_article:223]- article 4896 finished.
+[16/04/07 20:34:55.742] INFO [weixin:get_sogou_tokens:229]- get open_id for YinJewelry
+[16/04/07 20:35:04.148] INFO [weixin:crawl_weixin_list:95]- some articles are existed, no need to go to next page.
+[16/04/07 20:35:10.389] INFO [weixin:crawl_weixin_article:196]- created article id: 4897. title: 穿金戴YIN｜把伍德吃托克搞起来的那个迷妹. identity_code: ab735a258a90e8e1-6bee54fcbd896b2a-29d8e653b43f154cd1c353dbd95a04b7
+[16/04/07 20:35:11.534] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuUib4xL49d6ibjkt749jpfqicW109uf2eWkMjuz5I2dU0ia4zN0Oyaic6t9icttMr0bBkWJ7SjY5nE5eyr4A/0
+[16/04/07 20:35:12.2] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASbMyj6CicJ96pichYkSwjkEpMnlwND43xzN59LPo9wGK8M9HqxTcsbiamQ/0?wx_fmt=jpeg
+[16/04/07 20:35:12.810] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASlbHIUEjHwic4MicMLSbta2rSTIKrmYSDncljDglicZuQxvy3zobnA7M9w/0?wx_fmt=jpeg
+[16/04/07 20:35:13.508] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuUicwDs19KLcNj9F6avyu2L9y1GAYl1MucXjzmjiaIFiafQZ19hQZ3YSyjbJB8VPB1vA2LRayzl4Kb8dw/0?wx_fmt=jpeg
+[16/04/07 20:35:13.926] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuUicwDs19KLcNj9F6avyu2L9y09Yic3icTN4na1aoy4h5fN7Xl8ISMiaYIT5tgZRYngrI1o4zW9uglqkdg/0?wx_fmt=jpeg
+[16/04/07 20:35:14.394] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuUicUdpBOiagGmbcK1N0QFXlTxnHK0C7jvy7Q49ydNdHX3YViaiaibdo5aELOWN7rKncj4aNAf3uagwezzQ/0?wx_fmt=jpeg
+[16/04/07 20:35:15.7] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWAS1qlticEicKCicm6V667Eic4iap5F2Y1ribjQnic5hx8u2Iz4wNvg9F8UewgFQ/0?wx_fmt=jpeg
+[16/04/07 20:35:16.108] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASCKKgEac2XdJuOdqo8vXL3NoacsBRGZYAuIica0nV6M9ib8gRlxshqjww/0?wx_fmt=jpeg
+[16/04/07 20:35:16.547] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASGljGJBwcGt2SCZHEYgrPqRLWmDQ6zFUv4k1hoHKickGw0MObLJ0EtFQ/0?wx_fmt=jpeg
+[16/04/07 20:35:17.187] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASOYgJOibu2cIvnGZI5IOtzqfO5CtDPtbE1dzQMXnVGR8esTc7D9HoRrA/0?wx_fmt=jpeg
+[16/04/07 20:35:18.189] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWAS07Wsytvns36RGCMVwcibg9gIlYnTBibjsxEibefYfpI06YB7CfCibMWPiaA/0?wx_fmt=jpeg
+[16/04/07 20:35:19.371] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWAS8uvGNpYeDark5WlPpzWjG7yOm6wD4smd1femuk5pCJkZZJaAwa0YyA/0?wx_fmt=jpeg
+[16/04/07 20:35:20.651] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASC1fj0CKMibHxZTh046Poxv7pyzakTUhOznB4DticbpLvU6glAtuUo5Xw/0?wx_fmt=jpeg
+[16/04/07 20:35:21.703] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASg63BdFol7WUclbTpNib6OzoYcUh9hFGMiavRicqtNGM2o0VTtVCjlUumA/0?wx_fmt=jpeg
+[16/04/07 20:35:24.120] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASQTibsGVN6DAmzAq4GgOibiabeJ22cMgYblYDhzjz68XB91FTACdhibGMLw/0?wx_fmt=jpeg
+[16/04/07 20:35:25.230] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWAS3MlBLUVevojUGpQ2NICC1ibMxOIg5gMoFDrdonS0OkfibbJRufMQPANQ/0?wx_fmt=jpeg
+[16/04/07 20:35:26.822] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASeFHWSNfsoicJXDtzTdKrkhGWIVNdp3MHiaiavpF66u3WicwFCyMjYb6OHw/0?wx_fmt=jpeg
+[16/04/07 20:35:28.747] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASMw4EEcLia89RdcFFf5xuUbZFHcp5H4d42VpqnxTcw8ggVtevpCNsFSg/0?wx_fmt=png
+[16/04/07 20:35:33.463] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASQre2csR1sEe2DIQQOmVYKhblPwPLpfX7gQMe6WQlEGKcmAon7KRZqg/0?wx_fmt=jpeg
+[16/04/07 20:35:34.341] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASqz5R8mgdxkpziaMGo7lsBNTpFRHkBqYlupAGUj22MMW2mhK7ia2icD5lg/0?wx_fmt=jpeg
+[16/04/07 20:35:35.757] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASjMvbHv6cUTNrnf8vOUNZGn2h6lVNomUCbvdsBrZl7a1T1YKWO5ibRrg/0?wx_fmt=jpeg
+[16/04/07 20:35:36.257] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuUicUdpBOiagGmbcK1N0QFXlTxdtG451bDBqtgynTwMAx7fB5Aibuvx24F8lIZicYlzzvbMxiaB12OAWx2A/0?wx_fmt=jpeg
+[16/04/07 20:35:36.523] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASiacX6a7TlmhjKr0ibtWuwwO1kZzOxzghCmRicaMTjwnnQb9fDejViaicuCA/0?wx_fmt=jpeg
+[16/04/07 20:35:38.307] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWAShBdl7rOBVJiaFMvCkDick7tULZbJlQUlSJQTOBqNsqYxeyX7vQ8Rad8w/0?wx_fmt=jpeg
+[16/04/07 20:35:38.949] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASSzp9NsHVOp6cx8b4XnlicuWMO4S9aN71WfCh9kTYia8ZFN2kvt52nmMg/0?wx_fmt=jpeg
+[16/04/07 20:35:39.436] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASI530Kgb225h6048fIJtCLO3v6SDMc4IJWFUufPMprlG9PXGjPaRlpg/0?wx_fmt=jpeg
+[16/04/07 20:35:40.60] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU81XSJECjQf8ic3hFTPTY0YDfnB5JBPoCzyyJPuGcSFmziasicB2XWC2Ij7Orf21kHicvnB53XaNjWhMA/0?wx_fmt=png
+[16/04/07 20:35:43.324] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuUicUdpBOiagGmbcK1N0QFXlTx3D9MX0We1vweP2kWmVlOldvlQ5po02CYHkw83ocbbEhzrAGdZWFkbw/0?wx_fmt=jpeg
+[16/04/07 20:35:44.355] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASfo42MfYwUBHLDB2vpBhFWJW3wtLUfB3tSNUWvYFuDqVGXf3BvG16icA/0?wx_fmt=jpeg
+[16/04/07 20:35:47.230] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuUibGzKHZfHHzH9n2LpA8tcwGNiaNvnl30A7eMVCyNqfDSR0p06bRM7Jm7uAIFkTrvicHs10z3mjTZ3DA/0?wx_fmt=jpeg
+[16/04/07 20:35:47.488] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASKmNf6ibMe23vWO9fxiciaD9zwVZtm4IuvL7MzQUC8bOg6ZugGFhoa69Yw/0?wx_fmt=png
+[16/04/07 20:35:54.86] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASkoaxf2QeWYxrq6SeuuHIzJKNia3b1Wnr7haN2xhDsf6Gbxa1wQMYhEg/0?wx_fmt=jpeg
+[16/04/07 20:35:57.28] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWAScm4AnWcmEQLMswns7ibiby7M0L7EWqLdRSLaLP3IDzKd0Ls2J558eIPQ/0?wx_fmt=jpeg
+[16/04/07 20:35:57.717] INFO [weixin:crawl_weixin_article:212]- fetch_image for article 4897: http://mmbiz.qpic.cn/mmbiz/Pla21fhIuU8q5iayXqFPedAsttPQ4KWASao241Lvk09nrqll0RgJ5wuEc7nkbPYr0hibDGmqGES8A9vSek3WYAWA/0?wx_fmt=jpeg
+[16/04/22 21:13:13.820] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/22 21:13:45.654] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/22 21:14:55.712] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/22 21:15:05.149] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/22 23:27:45.870] INFO [weixin:get_sogou_tokens:229]- get open_id for tldchina00
+[16/04/22 23:29:45.341] INFO [weixin:crawl_weixin_list:40]- weixin list for authorized author id : 27
+[16/04/22 23:29:46.665] INFO [weixin:crawl_weixin_list:40]- weixin list for authorized author id : 25
+[16/04/22 23:29:47.709] INFO [weixin:crawl_weixin_list:40]- weixin list for authorized author id : 42
+[16/04/22 23:53:37.896] INFO [weixin:crawl_weixin_list:55]- weixin list for authorized author id : 27
+[16/04/22 23:56:46.758] INFO [weixin:crawl_weixin_list:55]- weixin list for authorized author id : 27
+[16/04/22 23:56:54.971] INFO [weixin:get_user_weixin_list:46]- get weixin list for tldchina00 

@@ -4,6 +4,16 @@ import ast
 import os
 
 
+def pick(source, keys, base=None):
+    res = {}
+    for key in keys:
+        if key in source:
+            res[key] = source[key]
+    if not base is None:
+        return base.update(res)
+    return res
+
+
 def config_from_env(prefix='FARM_'):
     """
     Load all environment variables prefixed by `prefix`

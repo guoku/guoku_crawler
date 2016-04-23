@@ -15,7 +15,7 @@ from guoku_crawler.common.storage.storage import FileSystemStorage
 from guoku_crawler.common.storage.storage import MogileFSStorage
 
 
-image_path = getattr(config, 'MOGILEFS_MEDIA_URL', 'images/')
+image_path = getattr(config, 'MOGILEFS_MEDIA_URL', getattr(config,'IMAGE_PATH','images/'))
 image_host = getattr(config, 'IMAGE_HOST', None)
 
 
@@ -116,9 +116,11 @@ def fetch_image(image_url, client, full=True):
     if not image_url:
         logging.info('empty image url; skip')
         return
-    if image_url.find('guoku') >= 0:
+    if image_url.find('guoku.com') >= 0:
         logging.info('image url is from guoku; skip: %s', image_url)
         return
+    if image_url.find('127.0.0.1') >=0:
+        logging.info(('image url is from local ; skip:%s'))
     r = client.get(url=image_url, stream=True)
     try:
         try:

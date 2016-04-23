@@ -26,8 +26,8 @@ DATABASES = {
 }
 
 # Image
-IMAGE_HOST = 'http://imgcdn.guoku.com/'
-IMAGE_PATH = 'images/'
+IMAGE_HOST = 'http://127.0.0.1:9766/'
+IMAGE_PATH = '/media/upload/images/'
 LOCAL_FILE_STORAGE = True
 MEDIA_ROOT = ''
 MOGILEFS_DOMAIN = 'prod'
@@ -88,7 +88,7 @@ CELERY_ANNOTATIONS = {
         'rate_limit': '10/m',
     },
 }
-REQUEST_INTERVAL = 2
+REQUEST_INTERVAL = 1
 CELERYBEAT_SCHEDULE = {
     'crawl_all_articles': {
         'task': 'crawl_articles',
