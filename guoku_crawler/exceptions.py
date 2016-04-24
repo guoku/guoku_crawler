@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+class CrawlerBaseException(Exception):
+    def __init__(self, message=u''):
+        self.message = message
+
 
 class Retry(Exception):
     def __init__(self, countdown=5, message=u''):
@@ -16,3 +20,9 @@ class Expired(Exception):
 class TooManyRequests(Exception):
     def __init__(self, message=u''):
         self.message = message
+
+
+class CanNotFindWeixinInSogouException(CrawlerBaseException):
+    pass
+
+

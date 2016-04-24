@@ -8,5 +8,6 @@ __pycache__
 venv/
 env/
 
-article/images
+images/
+.jpg
 .DS_Store

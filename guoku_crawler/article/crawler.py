@@ -7,7 +7,7 @@ from sqlalchemy import or_
 from guoku_crawler.db import session
 from guoku_crawler.celery import RequestsTask, app
 from guoku_crawler.article.rss import crawl_rss_list
-from guoku_crawler.article.weixin import crawl_weixin_articles
+from guoku_crawler.article.weixin import crawl_user_weixin_articles_by_authorized_user_id
 from guoku_crawler.models import CoreGkuser, AuthGroup, CoreArticle
 from guoku_crawler.models import CoreAuthorizedUserProfile as Profile
 
@@ -37,7 +37,7 @@ def crawl_user_articles(authorized_user_id):
     if authorized_user.rss_url:
         crawl_rss_list.delay(authorized_user_id)
     else:
-        crawl_weixin_articles.delay(authorized_user_id)
+        crawl_user_weixin_articles_by_authorized_user_id.delay(authorized_user_id)
 
 
 def get_auth_users():
@@ -49,13 +49,14 @@ def get_auth_users():
             )),
         CoreGkuser.groups.any(AuthGroup.name == 'Author')
     ).all()
-    return users[2:3]
+    return users
 
 
 
 
 if __name__ == '__main__':
     crawl_articles()
+    # crawl_user_weixin_articles_by_authorized_user_id(19)
 
 
 

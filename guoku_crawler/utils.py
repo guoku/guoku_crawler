@@ -2,7 +2,13 @@
 # -*- coding: utf-8 -*-
 import ast
 import os
+from bs4 import BeautifulSoup
 
+
+
+def stripHtmlText(text):
+    # remove &nbsp; from text
+    return BeautifulSoup(text,'html.parser').text
 
 def pick(source, keys, base=None):
     res = {}

@@ -364,4 +364,4 @@
 [16/04/22 23:29:47.709] INFO [weixin:crawl_weixin_list:40]- weixin list for authorized author id : 42
 [16/04/22 23:53:37.896] INFO [weixin:crawl_weixin_list:55]- weixin list for authorized author id : 27
 [16/04/22 23:56:46.758] INFO [weixin:crawl_weixin_list:55]- weixin list for authorized author id : 27
-[16/04/22 23:56:54.971] INFO [weixin:get_user_weixin_list:46]- get weixin list for tldchina00 
+[16/04/22 23:56:54.971] INFO [weixin:get_user_article_mission_list:46]- get weixin list for tldchina00
