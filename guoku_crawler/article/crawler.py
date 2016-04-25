@@ -55,8 +55,8 @@ def get_auth_users():
 
 
 if __name__ == '__main__':
-    crawl_articles()
-    # crawl_user_weixin_articles_by_authorized_user_id(19)
+    # crawl_articles()
+    crawl_user_weixin_articles_by_authorized_user_id(18)
 
 
 

@@ -3,12 +3,18 @@
 import ast
 import os
 from bs4 import BeautifulSoup
+import HTMLParser
+from datetime import datetime
 
 
 
 def stripHtmlText(text):
     # remove &nbsp; from text
-    return BeautifulSoup(text,'html.parser').text
+    html_parser = HTMLParser.HTMLParser()
+    unescaped = html_parser.unescape(text)
+    unescaped = html_parser.unescape(unescaped)
+    return unescaped
+
 
 def pick(source, keys, base=None):
     res = {}

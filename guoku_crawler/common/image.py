@@ -75,7 +75,7 @@ class HandleImage(object):
         try:
             ext = self.content_type.split('/')[1]
         except Exception as e:
-            logging.error(e)
+            # logging.error(e)
             pass
 
         return ext
@@ -115,7 +115,7 @@ class HandleImage(object):
 
 
 def fetch_image(image_url, client, full=True):
-    logging.info('fetch_image %s', image_url)
+    # logging.info('fetch_image %s', image_url)
     if not image_url:
         logging.info('empty image url; skip')
         return

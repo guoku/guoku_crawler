@@ -6,6 +6,7 @@ import random
 import requests
 import json
 import hashlib
+import time
 
 from datetime import datetime
 from urlparse import urljoin
@@ -68,14 +69,27 @@ def parse_msg_object(msgObj):
     try:
         for article_item in msgObj['list']:
             article_info = article_item['app_msg_ext_info']
+            article_common_info = article_item['comm_msg_info']
+            # get create date
+            created_datetime_number = article_common_info['datetime']
+
+            #created_datetime must strip time , set to 00:00:00
+            #for compatiable with old data
+            created_date = datetime.fromtimestamp(created_datetime_number)\
+                                    .replace(hour=0, minute=0,second=0)
+
             article = pick(article_info,keys)
             article['title'] = stripHtmlText(article['title'])
+            article['created_datetime'] = created_date
             article_mission_list.append(article)
             if  'multi_app_msg_item_list' in article_info :
                 for child_article in article_info['multi_app_msg_item_list']:
+                    # c for child article
                     c_article =  pick(child_article, keys)
                     c_article['title'] = stripHtmlText(c_article['title'])
+                    c_article['created_datetime'] = created_date
                     article_mission_list.append(c_article)
+
 
     except Exception as e:
         logger.warning('can not fetch article mission list %s' % str(e))
@@ -125,12 +139,19 @@ def parse_article_url_list(response):
 
 def get_link_list_url(weixin_id, update_cookie=False):
     params = dict(type='1', ie='utf8', query=weixin_id)
-    sg_cookie = weixin_client.headers.get('Cookie')
     logger.info('get weixin list for %s ', weixin_id)
+
+    weixin_client.refresh_cookies(update_cookie)
+    sg_cookie = weixin_client.headers.get('Cookie')
+
     response = weixin_client.get(url=SEARCH_API,
                                  params=params,
                                  jsonp_callback='weixin',
                                  headers={'Cookie': sg_cookie})
+    #debug here
+    raise TooManyRequests()
+    return
+
     list_link_url = parse_link_list_for_weixinid(response, weixin_id);
     return list_link_url
 
@@ -203,9 +224,8 @@ def crawl_weixin_single_article_mission(mission, authorized_user_id=None):
         logger.warning('need authorized user id to go on')
         raise Exception #need Exception handle
     user = get_user_by_authorized_user_id(authorized_user_id)
-    # if  is_article_exist(mission, user):
-    #     return
 
+    mission['identity_code'] = caculate_identity_code(mission['title'], mission['created_datetime'],user.id )
     response = None
     try :
         response = get_mission_page_content(mission)
@@ -221,9 +241,9 @@ def crawl_weixin_single_article_mission(mission, authorized_user_id=None):
     else:
         article_dic = parse_article_page(response,authorized_user_id)
         article_dic.update(mission)
-        if is_article_exist(article_dic, article_dic['creator']):
-            return ;
-
+        if  is_article_exist(article_dic, user):
+            logger.info('article exist : %s', mission['title'])
+            return
         try :
             article = createArticle(article_dic)
             fetch_article_cover(article)
@@ -370,11 +390,10 @@ def convert_article_url(uri):
 
 @app.task(base=RequestsTask, name='weixin.crawl_list')
 def crawl_user_weixin_articles_by_authorized_user_id(authorized_user_id, update_cookie=False):
-
     logger.info('weixin articles  for authorized author id : %s' % authorized_user_id)
     weixin_id = get_weixin_id_by_authorized_user_id(authorized_user_id)
     try:
-        user_article_mission_list = get_user_article_mission_list(weixin_id, update_cookie=False)
+        user_article_mission_list = get_user_article_mission_list(weixin_id, update_cookie=update_cookie)
 
         for article_mission in user_article_mission_list:
             print article_mission
@@ -384,6 +403,10 @@ def crawl_user_weixin_articles_by_authorized_user_id(authorized_user_id, update_
     except CanNotFindWeixinInSogouException as e :
         logger.error('Fatal mission fail : %s ' %e.message )
         #todo : mail to admin
+    except TooManyRequests as e :
+        update_cookie = True
+        logger.warning("too many requests or request expired. %s", e.message)
+        crawl_user_weixin_articles_by_authorized_user_id.delay(authorized_user_id, update_cookie=update_cookie)
 
 
 

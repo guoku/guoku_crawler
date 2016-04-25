@@ -9,7 +9,7 @@ import logging.config
 import logging
 
 data_base_ip = '127.0.0.1'
-phantom_server_ip = 'http://127.0.0.1:5000/'
+phantom_server_ip = 'http://192.168.99.100:5000/'
 broker_ip = 'redis://localhost:6379/0'
 
 
