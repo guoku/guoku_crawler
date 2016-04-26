@@ -8,11 +8,43 @@ from guoku_crawler.logging_conf import LOGGING
 import logging.config
 import logging
 
+#config for local
+#=========================
 data_base_ip = '192.168.1.117'
-phantom_server_ip = 'http://192.168.99.100:5000/'
+phantom_server = 'http://192.168.99.100:5000/'
+image_host = 'http://127.0.0.1:9766/'
+image_path = 'images/'
+local_file = True
+celery_eager = True
+celery_concurrency  = 1
+request_interval = 2
+
+#config for remote test 48
+#==========================
+# data_base_ip = '10.0.2.125'
+# phantom_server = '10.0.2.48:5000'
+# image_host = 'http://imgcdn.guoku.com/'
+# image_path = 'images/'
+# local_file = False
+# celery_eager = True
+# celery_concurrency  = 1
+# request_interval = 2
+
+
+#config for remote production 49
+#===========================
+# data_base_ip = '10.0.2.90'
+# phantom_server = '10.0.2.49:5000'
+# image_host = 'http://imgcdn.guoku.com/'
+# image_path = 'images/'
+# local_file = False
+# celery_eager = True
+# celery_concurrency  = 1
+# request_interval = 2
+
+#-------------------------------
+
 broker_ip = 'redis://localhost:6379/0'
-
-
 logging.config.dictConfig(LOGGING)
 logger = logging.getLogger("request")
 
@@ -26,10 +58,10 @@ DATABASES = {
 }
 
 # Image
-IMAGE_HOST = 'http://127.0.0.1:9766/'
-IMAGE_PATH = 'images/'
-LOCAL_IMAGE_PATH = 'images/'
-LOCAL_FILE_STORAGE = True
+IMAGE_HOST =image_host
+IMAGE_PATH = image_path
+LOCAL_IMAGE_PATH = image_path
+LOCAL_FILE_STORAGE = local_file
 MEDIA_ROOT = ''
 MOGILEFS_DOMAIN = 'prod'
 MOGILEFS_TRACKERS = ['10.0.2.50:7001']
@@ -45,21 +77,23 @@ DEFAULT_ARTICLE_COVER = "%s%s" % (
 # System
 DEBUG = True
 CONNECTION_POOL = ''
-PHANTOM_SERVER = phantom_server_ip
+PHANTOM_SERVER = phantom_server
 
 # Celery
 BROKER_URL = broker_ip
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
-CELERYD_CONCURRENCY = 1
+CELERYD_CONCURRENCY = celery_concurrency
 CELERY_DISABLE_RATE_LIMITS = False
 CELERY_EAGER_PROPAGATES_EXCEPTIONS = True
-CELERY_ALWAYS_EAGER = True
+
+CELERY_ALWAYS_EAGER = celery_eager
+
 CELERY_ENABLE_UTC = False
 CELERY_TIMEZONE = 'Asia/Shanghai'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_ACCEPT_CONTENT = ['json']
-CELERYD_PREFETCH_MULTIPLIER = 1
+CELERYD_PREFETCH_MULTIPLIER = 2
 CELERY_IMPORTS = (
     'guoku_crawler.article',
 )
@@ -89,7 +123,7 @@ CELERY_ANNOTATIONS = {
         'rate_limit': '10/m',
     },
 }
-REQUEST_INTERVAL = 1
+REQUEST_INTERVAL = request_interval
 CELERYBEAT_SCHEDULE = {
     'crawl_all_articles': {
         'task': 'crawl_articles',

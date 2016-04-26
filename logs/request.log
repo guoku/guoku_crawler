@@ -164,3 +164,117 @@
 [16/04/26 09:45:47.571] INFO [weixin:fetch_article_image:301]- article 5874 finished.
 [16/04/26 09:45:51.864] INFO [weixin:fetch_article_image:301]- article 5875 finished.
 [16/04/26 09:45:56.987] INFO [weixin:fetch_article_image:301]- article 5876 finished.
+[16/04/26 10:56:59.575] INFO [weixin:crawl_user_weixin_articles_by_authorized_user_id:396]- weixin articles  for authorized author id : 5
+[16/04/26 10:56:59.599] INFO [weixin:get_link_list_url:142]- get weixin list for ha-ru-ru 
+[16/04/26 10:57:02.232] INFO [weixin:get_user_article_mission_list:174]- link list url for ha-ru-ru is http://mp.weixin.qq.com/profile?src=3&timestamp=1461639419&ver=1&signature=nPjXnPmzsrmVn2o1wX3PtwBVgaY8vMHLpJguLoxUwg0movYuPuPLRNOOjdVfyidmbEP-ZYRLfym0yyyasi-r8w==
+[16/04/26 10:57:05.104] INFO [weixin:is_article_exist:318]- article existed : 福利»摇一摇，嘴唇会变色！
+[16/04/26 10:57:05.104] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 福利»摇一摇，嘴唇会变色！
+[16/04/26 10:57:05.122] INFO [weixin:is_article_exist:318]- article existed : 广濑丝丝 × CHANEL | 清纯之美
+[16/04/26 10:57:05.122] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 广濑丝丝 × CHANEL | 清纯之美
+[16/04/26 10:57:05.143] INFO [weixin:is_article_exist:318]- article existed : 桐谷美玲 × BLUE LABEL CRESTBRIDGE | 春季新作登场，好看时髦又好穿。
+[16/04/26 10:57:05.143] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 桐谷美玲 × BLUE LABEL CRESTBRIDGE | 春季新作登场，好看时髦又好穿。
+[16/04/26 10:57:05.165] INFO [weixin:is_article_exist:318]- article existed : 蕾丝吊带、无袖大衣、鸟笼雨伞 | 日本最近流行啥？2
+[16/04/26 10:57:05.165] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 蕾丝吊带、无袖大衣、鸟笼雨伞 | 日本最近流行啥？2
+[16/04/26 10:57:05.184] INFO [weixin:is_article_exist:318]- article existed : 本田翼 × 新生MARC JACOBS
+[16/04/26 10:57:05.184] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 本田翼 × 新生MARC JACOBS
+[16/04/26 10:57:05.203] INFO [weixin:is_article_exist:318]- article existed : 吉沢亮 × DIESEL | 会玩的男人戴白表
+[16/04/26 10:57:05.203] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 吉沢亮 × DIESEL | 会玩的男人戴白表
+[16/04/26 10:57:05.223] INFO [weixin:is_article_exist:318]- article existed : 马上你就可以花99块钱买到优衣库下一个好看的联名系列了
+[16/04/26 10:57:05.223] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 马上你就可以花99块钱买到优衣库下一个好看的联名系列了
+[16/04/26 10:57:05.243] INFO [weixin:is_article_exist:318]- article existed : EXILE NAOTO × Tiffany&Co.
+[16/04/26 10:57:05.243] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : EXILE NAOTO × Tiffany&Co.
+[16/04/26 10:57:05.266] INFO [weixin:is_article_exist:318]- article existed : 中条彩未 × CHANEL | 登机了。
+[16/04/26 10:57:05.266] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 中条彩未 × CHANEL | 登机了。
+[16/04/26 10:57:05.286] INFO [weixin:is_article_exist:318]- article existed : 迷失在东京的夜色之中
+[16/04/26 10:57:05.287] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 迷失在东京的夜色之中
+[16/04/26 10:57:05.309] INFO [weixin:is_article_exist:318]- article existed : 老妈牛仔、懒人跑鞋、鹿角发饰 | 日本最近流行啥？1
+[16/04/26 10:57:05.309] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 老妈牛仔、懒人跑鞋、鹿角发饰 | 日本最近流行啥？1
+[16/04/26 10:57:05.328] INFO [weixin:is_article_exist:318]- article existed : 泽尻英龙华 | 三十而立？
+[16/04/26 10:57:05.329] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 泽尻英龙华 | 三十而立？
+[16/04/26 10:57:05.346] INFO [weixin:is_article_exist:318]- article existed : 在浴缸里瘦腿的5个简单方法🛁
+[16/04/26 10:57:05.347] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 在浴缸里瘦腿的5个简单方法🛁
+[16/04/26 10:57:05.368] INFO [weixin:is_article_exist:318]- article existed : 皮卡丘内衣内裤来了！
+[16/04/26 10:57:05.368] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 皮卡丘内衣内裤来了！
+[16/04/26 10:57:05.388] INFO [weixin:is_article_exist:318]- article existed : 堀北真希 | NO PINK, NO LIFE
+[16/04/26 10:57:05.388] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 堀北真希 | NO PINK, NO LIFE
+[16/04/26 10:57:05.406] INFO [weixin:is_article_exist:318]- article existed : 黑头怎么办？反正不要用吸黑头器就是了…
+[16/04/26 10:57:05.406] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 黑头怎么办？反正不要用吸黑头器就是了…
+[16/04/26 10:57:05.424] INFO [weixin:is_article_exist:318]- article existed : 绫濑遥 × Dior | Bar Jacket的魅力
+[16/04/26 10:57:05.424] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 绫濑遥 × Dior | Bar Jacket的魅力
+[16/04/26 10:57:05.443] INFO [weixin:is_article_exist:318]- article existed : VANS 运动鞋获奖名单
+[16/04/26 10:57:05.443] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : VANS 运动鞋获奖名单
+[16/04/26 10:57:05.462] INFO [weixin:is_article_exist:318]- article existed : 男生（和T们）如何驾驭「Denim on Denim」
+[16/04/26 10:57:05.463] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 男生（和T们）如何驾驭「Denim on Denim」
+[16/04/26 10:57:05.481] INFO [weixin:is_article_exist:318]- article existed : 深田恭子 × GUCCI | 70's淑女
+[16/04/26 10:57:05.481] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 深田恭子 × GUCCI | 70's淑女
+[16/04/26 10:57:05.500] INFO [weixin:is_article_exist:318]- article existed : 野村周平 × DIESEL | 春の骚动
+[16/04/26 10:57:05.500] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 野村周平 × DIESEL | 春の骚动
+[16/04/26 10:57:05.519] INFO [weixin:is_article_exist:318]- article existed : 穿高跟鞋的宝宝心里苦 所以宝宝要说
+[16/04/26 10:57:05.519] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 穿高跟鞋的宝宝心里苦 所以宝宝要说
+[16/04/26 10:57:05.539] INFO [weixin:is_article_exist:318]- article existed : 蛯原友里 × Burberry & DvF
+[16/04/26 10:57:05.539] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 蛯原友里 × Burberry & DvF
+[16/04/26 10:57:05.559] INFO [weixin:is_article_exist:318]- article existed : 荣仓奈奈 × COACH | 爱上马卡龙色
+[16/04/26 10:57:05.559] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 荣仓奈奈 × COACH | 爱上马卡龙色
+[16/04/26 10:57:05.588] INFO [weixin:is_article_exist:318]- article existed : 「脱盐减肥法」 3天瘦4斤
+[16/04/26 10:57:05.589] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 「脱盐减肥法」 3天瘦4斤
+[16/04/26 10:57:05.610] INFO [weixin:is_article_exist:318]- article existed : 石原里美 | 新时代独立偶像
+[16/04/26 10:57:05.610] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 石原里美 | 新时代独立偶像
+[16/04/26 10:57:05.630] INFO [weixin:is_article_exist:318]- article existed : 黑木明纱 × ESCADA | 春の衣橱
+[16/04/26 10:57:05.630] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 黑木明纱 × ESCADA | 春の衣橱
+[16/04/26 11:05:58.96] INFO [weixin:crawl_user_weixin_articles_by_authorized_user_id:396]- weixin articles  for authorized author id : 5
+[16/04/26 11:05:58.121] INFO [weixin:get_link_list_url:142]- get weixin list for ha-ru-ru 
+[16/04/26 11:06:00.728] INFO [weixin:get_user_article_mission_list:174]- link list url for ha-ru-ru is http://mp.weixin.qq.com/profile?src=3&timestamp=1461639958&ver=1&signature=nPjXnPmzsrmVn2o1wX3PtwBVgaY8vMHLpJguLoxUwg0movYuPuPLRNOOjdVfyidm840Xo*qYwTyNc0RnKoK9sg==
+[16/04/26 11:06:03.445] INFO [weixin:is_article_exist:318]- article existed : 福利»摇一摇，嘴唇会变色！
+[16/04/26 11:06:03.445] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 福利»摇一摇，嘴唇会变色！
+[16/04/26 11:06:03.468] INFO [weixin:is_article_exist:318]- article existed : 广濑丝丝 × CHANEL | 清纯之美
+[16/04/26 11:06:03.468] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 广濑丝丝 × CHANEL | 清纯之美
+[16/04/26 11:06:03.488] INFO [weixin:is_article_exist:318]- article existed : 桐谷美玲 × BLUE LABEL CRESTBRIDGE | 春季新作登场，好看时髦又好穿。
+[16/04/26 11:06:03.489] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 桐谷美玲 × BLUE LABEL CRESTBRIDGE | 春季新作登场，好看时髦又好穿。
+[16/04/26 11:06:03.509] INFO [weixin:is_article_exist:318]- article existed : 蕾丝吊带、无袖大衣、鸟笼雨伞 | 日本最近流行啥？2
+[16/04/26 11:06:03.509] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 蕾丝吊带、无袖大衣、鸟笼雨伞 | 日本最近流行啥？2
+[16/04/26 11:06:03.529] INFO [weixin:is_article_exist:318]- article existed : 本田翼 × 新生MARC JACOBS
+[16/04/26 11:06:03.529] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 本田翼 × 新生MARC JACOBS
+[16/04/26 11:06:03.549] INFO [weixin:is_article_exist:318]- article existed : 吉沢亮 × DIESEL | 会玩的男人戴白表
+[16/04/26 11:06:03.549] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 吉沢亮 × DIESEL | 会玩的男人戴白表
+[16/04/26 11:06:03.568] INFO [weixin:is_article_exist:318]- article existed : 马上你就可以花99块钱买到优衣库下一个好看的联名系列了
+[16/04/26 11:06:03.568] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 马上你就可以花99块钱买到优衣库下一个好看的联名系列了
+[16/04/26 11:06:03.587] INFO [weixin:is_article_exist:318]- article existed : EXILE NAOTO × Tiffany&Co.
+[16/04/26 11:06:03.587] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : EXILE NAOTO × Tiffany&Co.
+[16/04/26 11:06:03.606] INFO [weixin:is_article_exist:318]- article existed : 中条彩未 × CHANEL | 登机了。
+[16/04/26 11:06:03.606] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 中条彩未 × CHANEL | 登机了。
+[16/04/26 11:06:03.626] INFO [weixin:is_article_exist:318]- article existed : 迷失在东京的夜色之中
+[16/04/26 11:06:03.626] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 迷失在东京的夜色之中
+[16/04/26 11:06:03.645] INFO [weixin:is_article_exist:318]- article existed : 老妈牛仔、懒人跑鞋、鹿角发饰 | 日本最近流行啥？1
+[16/04/26 11:06:03.645] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 老妈牛仔、懒人跑鞋、鹿角发饰 | 日本最近流行啥？1
+[16/04/26 11:06:03.666] INFO [weixin:is_article_exist:318]- article existed : 泽尻英龙华 | 三十而立？
+[16/04/26 11:06:03.667] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 泽尻英龙华 | 三十而立？
+[16/04/26 11:06:03.685] INFO [weixin:is_article_exist:318]- article existed : 在浴缸里瘦腿的5个简单方法🛁
+[16/04/26 11:06:03.686] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 在浴缸里瘦腿的5个简单方法🛁
+[16/04/26 11:06:03.704] INFO [weixin:is_article_exist:318]- article existed : 皮卡丘内衣内裤来了！
+[16/04/26 11:06:03.704] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 皮卡丘内衣内裤来了！
+[16/04/26 11:06:03.723] INFO [weixin:is_article_exist:318]- article existed : 堀北真希 | NO PINK, NO LIFE
+[16/04/26 11:06:03.723] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 堀北真希 | NO PINK, NO LIFE
+[16/04/26 11:06:03.741] INFO [weixin:is_article_exist:318]- article existed : 黑头怎么办？反正不要用吸黑头器就是了…
+[16/04/26 11:06:03.741] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 黑头怎么办？反正不要用吸黑头器就是了…
+[16/04/26 11:06:03.765] INFO [weixin:is_article_exist:318]- article existed : 绫濑遥 × Dior | Bar Jacket的魅力
+[16/04/26 11:06:03.766] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 绫濑遥 × Dior | Bar Jacket的魅力
+[16/04/26 11:06:03.788] INFO [weixin:is_article_exist:318]- article existed : VANS 运动鞋获奖名单
+[16/04/26 11:06:03.788] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : VANS 运动鞋获奖名单
+[16/04/26 11:06:03.809] INFO [weixin:is_article_exist:318]- article existed : 男生（和T们）如何驾驭「Denim on Denim」
+[16/04/26 11:06:03.809] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 男生（和T们）如何驾驭「Denim on Denim」
+[16/04/26 11:06:03.828] INFO [weixin:is_article_exist:318]- article existed : 深田恭子 × GUCCI | 70's淑女
+[16/04/26 11:06:03.828] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 深田恭子 × GUCCI | 70's淑女
+[16/04/26 11:06:03.846] INFO [weixin:is_article_exist:318]- article existed : 野村周平 × DIESEL | 春の骚动
+[16/04/26 11:06:03.847] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 野村周平 × DIESEL | 春の骚动
+[16/04/26 11:06:03.866] INFO [weixin:is_article_exist:318]- article existed : 穿高跟鞋的宝宝心里苦 所以宝宝要说
+[16/04/26 11:06:03.866] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 穿高跟鞋的宝宝心里苦 所以宝宝要说
+[16/04/26 11:06:03.885] INFO [weixin:is_article_exist:318]- article existed : 蛯原友里 × Burberry & DvF
+[16/04/26 11:06:03.886] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 蛯原友里 × Burberry & DvF
+[16/04/26 11:06:03.908] INFO [weixin:is_article_exist:318]- article existed : 荣仓奈奈 × COACH | 爱上马卡龙色
+[16/04/26 11:06:03.909] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 荣仓奈奈 × COACH | 爱上马卡龙色
+[16/04/26 11:06:03.927] INFO [weixin:is_article_exist:318]- article existed : 「脱盐减肥法」 3天瘦4斤
+[16/04/26 11:06:03.927] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 「脱盐减肥法」 3天瘦4斤
+[16/04/26 11:06:03.946] INFO [weixin:is_article_exist:318]- article existed : 石原里美 | 新时代独立偶像
+[16/04/26 11:06:03.947] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 石原里美 | 新时代独立偶像
+[16/04/26 11:06:03.965] INFO [weixin:is_article_exist:318]- article existed : 黑木明纱 × ESCADA | 春の衣橱
+[16/04/26 11:06:03.965] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 黑木明纱 × ESCADA | 春の衣橱
