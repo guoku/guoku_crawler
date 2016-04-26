@@ -149,8 +149,8 @@ def get_link_list_url(weixin_id, update_cookie=False):
                                  jsonp_callback='weixin',
                                  headers={'Cookie': sg_cookie})
     #debug here
-    raise TooManyRequests()
-    return
+    # raise TooManyRequests()
+    # return
 
     list_link_url = parse_link_list_for_weixinid(response, weixin_id);
     return list_link_url
@@ -203,7 +203,7 @@ def get_request_cookie():
     return weixin_client.headers.get('Cookie')
 
 @app.task(base=RequestsTask, name='weixin.crawl_weixin_single_article_mission')
-def crawl_weixin_single_article_mission(mission, authorized_user_id=None):
+def crawl_weixin_single_article_mission(mission, authorized_user_id=None, update_cookie=False):
     '''
     :param mission:
         {
@@ -219,6 +219,7 @@ def crawl_weixin_single_article_mission(mission, authorized_user_id=None):
     :return: none
 
     '''
+    weixin_client.refresh_cookies(update_cookie)
 
     if authorized_user_id is None:
         logger.warning('need authorized user id to go on')
@@ -226,13 +227,16 @@ def crawl_weixin_single_article_mission(mission, authorized_user_id=None):
     user = get_user_by_authorized_user_id(authorized_user_id)
 
     mission['identity_code'] = caculate_identity_code(mission['title'], mission['created_datetime'],user.id )
+    if  is_article_exist(mission, user):
+            logger.info('article exist : %s', mission['title'])
+            return
+
     response = None
     try :
         response = get_mission_page_content(mission)
     except (TooManyRequests, Expired) as e  :
-        logger.warning('Too many request for mission %s ' % mission['content_url'])
-        # TODO exception handle
-        return
+        logger.warning('Too many request for single mission %s ' % mission['content_url'])
+        crawl_weixin_single_article_mission.delay(mission,authorized_user_id,update_cookie=True)
 
     if (response is None) or (response.status_code != 200):
         # TODO : Exception raise and handle
@@ -241,8 +245,9 @@ def crawl_weixin_single_article_mission(mission, authorized_user_id=None):
     else:
         article_dic = parse_article_page(response,authorized_user_id)
         article_dic.update(mission)
+        #check again , for other
         if  is_article_exist(article_dic, user):
-            logger.info('article exist : %s', mission['title'])
+            logger.info('article exist : %s', article_dic['title'])
             return
         try :
             article = createArticle(article_dic)
@@ -282,8 +287,7 @@ def fetch_article_image(article):
                 image_tag.attrs.get('src') or image_tag.attrs.get('data-src')
             )
             if img_src:
-                logger.info('fetch_image for article %d: %s', article.id,
-                            img_src)
+                # logger.info('fetch_image for article %d: %s', article.id,img_src)
                 gk_img_rc = fetch_image(img_src, weixin_client, full=False)
                 if gk_img_rc:
                     full_path = "%s%s" % (image_host, gk_img_rc)
@@ -378,15 +382,14 @@ def parse_article_page(response, user_id):
 def get_mission_page_content(mission):
     cookie  = get_request_cookie()
     url = convert_article_url(mission['content_url'])
+    # #debug
+    # raise TooManyRequests()
     response = weixin_client.get( url, headers={'Cookie': cookie})
     return response
 
 def convert_article_url(uri):
     url = 'http://mp.weixin.qq.com%s' % uri
     return url
-
-
-
 
 @app.task(base=RequestsTask, name='weixin.crawl_list')
 def crawl_user_weixin_articles_by_authorized_user_id(authorized_user_id, update_cookie=False):
@@ -397,7 +400,7 @@ def crawl_user_weixin_articles_by_authorized_user_id(authorized_user_id, update_
 
         for article_mission in user_article_mission_list:
             print article_mission
-            crawl_weixin_single_article_mission(article_mission, authorized_user_id)
+            crawl_weixin_single_article_mission.delay(article_mission, authorized_user_id, update_cookie=False)
         return
 
     except CanNotFindWeixinInSogouException as e :
@@ -407,8 +410,7 @@ def crawl_user_weixin_articles_by_authorized_user_id(authorized_user_id, update_
         update_cookie = True
         logger.warning("too many requests or request expired. %s", e.message)
         crawl_user_weixin_articles_by_authorized_user_id.delay(authorized_user_id, update_cookie=update_cookie)
-
-
+        #TODO : use retry instead of delay .
 
 
 

@@ -1,6 +1,6 @@
 FROM python:2.7
 MAINTAINER judy.programmer@gmail.com
-EXPOSE 5000
+EXPOSE 5555
 
 ENV GC_DEBUG=False
 ENV WORKERS=1

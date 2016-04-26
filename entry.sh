@@ -14,7 +14,7 @@ case $1 in
     ;;
 
     flower)
-    exec flower -A guoku_crawler --auto_refresh=True --address=0.0.0.0 --port=5000 --basic-auth=guoku:guoku1@#
+    exec flower -A guoku_crawler --auto_refresh=True --address=0.0.0.0 --port=5555 --basic-auth=guoku:guoku1@#
     ;;
 
     *)

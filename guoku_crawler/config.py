@@ -8,7 +8,7 @@ from guoku_crawler.logging_conf import LOGGING
 import logging.config
 import logging
 
-data_base_ip = '127.0.0.1'
+data_base_ip = '192.168.1.117'
 phantom_server_ip = 'http://192.168.99.100:5000/'
 broker_ip = 'redis://localhost:6379/0'
 
