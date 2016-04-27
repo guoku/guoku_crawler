@@ -26,7 +26,7 @@ class RequestsTask(Task):
         try:
             return super(RequestsTask, self).__call__(*args, **kwargs)
         except (requests.Timeout, requests.ConnectionError) as e:
-            raise self.rerty(exc=e)
+            raise self.retry(exc=e)
 
 if __name__ == '__main__':
     app.start()

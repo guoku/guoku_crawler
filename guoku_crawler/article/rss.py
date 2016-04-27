@@ -5,6 +5,7 @@ from hashlib import md5
 import datetime
 from bs4 import BeautifulSoup
 from dateutil import parser
+from guoku_crawler.article.weixin import caculate_identity_code
 from sqlalchemy.orm.exc import NoResultFound
 
 from guoku_crawler import config
@@ -39,10 +40,14 @@ def crawl_rss_list(authorized_user_id, page=1):
     # TODO :  parser
     item_list = xml_content.find_all('item')
     for item in item_list:
-        identity_code = md5(item.link.text).hexdigest()
+        title = item.title.text
+        created_datetime = parser.parse(item.pubDate.text)
+        created_datetime = datetime.datetime.strptime(str(created_datetime.date()), '%Y-%m-%d')
+        identity_code = caculate_identity_code(title, created_datetime, authorized_user.user.id)
         try:
             article = session.query(CoreArticle).filter_by(
                 identity_code=identity_code,
+                creator=authorized_user.user
             ).one()
             go_next = False
             logger.info('some items on the page already exists in db; '
@@ -52,8 +57,8 @@ def crawl_rss_list(authorized_user_id, page=1):
             article = CoreArticle(
                 creator=authorized_user.user,
                 identity_code=identity_code,
-                title=item.title.text,
-                content=item.encoded.string,
+                title=title,
+                content=item.encoded.string if item.encoded else item.description.text,
                 updated_datetime=datetime.datetime.now(),
                 created_datetime=parser.parse(item.pubDate.text),
                 publish=CoreArticle.published,
