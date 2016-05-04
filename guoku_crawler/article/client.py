@@ -15,7 +15,7 @@ from requests.exceptions import ConnectionError
 
 from guoku_crawler.db import r
 from guoku_crawler import config
-from guoku_crawler.celery import RequestsTask, app
+from guoku_crawler.tasks import RequestsTask, app
 from guoku_crawler.exceptions import TooManyRequests, Expired, Retry
 
 

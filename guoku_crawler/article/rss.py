@@ -10,7 +10,7 @@ from sqlalchemy.orm.exc import NoResultFound
 
 from guoku_crawler import config
 from guoku_crawler.article.client import RSSClient
-from guoku_crawler.celery import RequestsTask, app
+from guoku_crawler.tasks import RequestsTask, app
 from guoku_crawler.common.image import fetch_image
 from guoku_crawler.db import session
 from guoku_crawler.models import CoreArticle

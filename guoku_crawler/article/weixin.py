@@ -21,7 +21,7 @@ from sqlalchemy.orm.exc import NoResultFound
 from guoku_crawler.utils import pick, stripHtmlText
 from guoku_crawler import config
 from guoku_crawler.article.client import WeiXinClient, update_sogou_cookie
-from guoku_crawler.celery import RequestsTask, app
+from guoku_crawler.tasks import RequestsTask, app
 from guoku_crawler.common.image import fetch_image
 from guoku_crawler.common.parse import clean_xml
 from guoku_crawler.db import session
