@@ -82,6 +82,8 @@ class CoreArticle(Base):
     read_count = Column(Integer, server_default=text("'0000000000'"))
     feed_read_count = Column(Integer, server_default=text("'0000000000'"))
     identity_code = Column(String(255))
+    origin_url = Column(String(255)) #add by an
+    source =Column(Integer,nullable=True, server_default=text("'0")) #add by an
     creator_id = Column(ForeignKey('core_gkuser.id'),
                         nullable=False, index=True)
 

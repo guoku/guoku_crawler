@@ -10,7 +10,7 @@ import logging
 
 #config for local
 #=========================
-data_base_ip = '192.168.1.117'
+data_base_ip = 'localhost'
 phantom_server = 'http://192.168.99.100:5000/'
 image_host = 'http://127.0.0.1:9766/'
 image_path = 'images/'
