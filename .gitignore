@@ -11,3 +11,5 @@ env/
 images/
 .jpg
 .DS_Store
+.log
+

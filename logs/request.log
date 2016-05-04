@@ -21880,3 +21880,681 @@
 [16/05/04 15:10:03.44] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 你吃进去的，要跑多久才能消耗掉？看完我捂住了嘴
 [16/05/04 15:10:03.261] INFO [weixin:is_article_exist:318]- article existed : 拥有一辆价值11000欧的自行车是什么样的体验？
 [16/05/04 15:10:03.261] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 拥有一辆价值11000欧的自行车是什么样的体验？
+[16/05/04 17:10:22.798] INFO [weixin:crawl_user_weixin_articles_by_authorized_user_id:397]- weixin articles  for authorized author id : 62
+[16/05/04 17:10:22.838] INFO [weixin:get_link_list_url:142]- get weixin list for twippo 
+[16/05/04 17:10:27.70] INFO [weixin:get_user_article_mission_list:174]- link list url for twippo is http://mp.weixin.qq.com/profile?src=3&timestamp=1462353022&ver=1&signature=Sci47TQV-Fen3a5FCt3FzQO*ceQ3xk0xo4ErtOZ3FNEcEN96p1yfiu7YXYgSEjP0*AQJJ3JibO27h2kLw2lllg==
+[16/05/04 17:10:31.427] INFO [weixin:is_article_exist:318]- article existed : 别把配饰放在角落里积灰，快拿出来给LOOK加分
+[16/05/04 17:10:31.428] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 别把配饰放在角落里积灰，快拿出来给LOOK加分
+[16/05/04 17:10:31.448] INFO [weixin:is_article_exist:318]- article existed : 一年只有一次，妈妈值得你更多的爱
+[16/05/04 17:10:31.448] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 一年只有一次，妈妈值得你更多的爱
+[16/05/04 17:10:31.470] INFO [weixin:is_article_exist:318]- article existed : 夏天来了，你的墨镜真的真的选好了吗？
+[16/05/04 17:10:31.470] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 夏天来了，你的墨镜真的真的选好了吗？
+[16/05/04 17:10:31.490] INFO [weixin:is_article_exist:318]- article existed : 怎样才知道哪一款香水适合你？
+[16/05/04 17:10:31.491] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 怎样才知道哪一款香水适合你？
+[16/05/04 17:10:31.511] INFO [weixin:is_article_exist:318]- article existed : 一个没有性别差异的未来，从时尚界做起（下）
+[16/05/04 17:10:31.511] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 一个没有性别差异的未来，从时尚界做起（下）
+[16/05/04 17:10:31.532] INFO [weixin:is_article_exist:318]- article existed : 假期闲来无事，她把自己打扮成了世界上最有型的兔子
+[16/05/04 17:10:31.532] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 假期闲来无事，她把自己打扮成了世界上最有型的兔子
+[16/05/04 17:10:31.552] INFO [weixin:is_article_exist:318]- article existed : 适用于所有城市的单人旅行指南
+[16/05/04 17:10:31.552] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 适用于所有城市的单人旅行指南
+[16/05/04 17:10:31.574] INFO [weixin:is_article_exist:318]- article existed : 港会玩 | 祭品也时尚，但Gucci坐不住了
+[16/05/04 17:10:31.574] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 港会玩 | 祭品也时尚，但Gucci坐不住了
+[16/05/04 17:10:31.592] INFO [weixin:is_article_exist:318]- article existed : 一个没有性别差异的未来，从时尚界做起（上）
+[16/05/04 17:10:31.593] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 一个没有性别差异的未来，从时尚界做起（上）
+[16/05/04 17:10:31.611] INFO [weixin:is_article_exist:318]- article existed : 少了这些东西，你的海滩假期绝对浪不起来！
+[16/05/04 17:10:31.611] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 少了这些东西，你的海滩假期绝对浪不起来！
+[16/05/04 17:10:31.632] INFO [weixin:is_article_exist:318]- article existed : 就是要看脸，否则怎么找到最适合你的——墨镜！
+[16/05/04 17:10:31.632] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 就是要看脸，否则怎么找到最适合你的——墨镜！
+[16/05/04 17:10:31.652] INFO [weixin:is_article_exist:318]- article existed : 风靡日本，懒癌晚期也能每天换一套美甲
+[16/05/04 17:10:31.653] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 风靡日本，懒癌晚期也能每天换一套美甲
+[16/05/04 17:10:31.671] INFO [weixin:is_article_exist:318]- article existed : 今年最值得购买的露肩装，都是“削”出来的
+[16/05/04 17:10:31.671] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 今年最值得购买的露肩装，都是“削”出来的
+[16/05/04 17:10:31.691] INFO [weixin:is_article_exist:318]- article existed : 时尚趋势丨白球鞋领跑，快跟上！
+[16/05/04 17:10:31.691] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 时尚趋势丨白球鞋领跑，快跟上！
+[16/05/04 17:10:31.712] INFO [weixin:is_article_exist:318]- article existed : 出去旅游拍照，比Pose更重要的是怎样穿衣上镜！
+[16/05/04 17:10:31.712] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 出去旅游拍照，比Pose更重要的是怎样穿衣上镜！
+[16/05/04 17:10:31.729] INFO [weixin:is_article_exist:318]- article existed : 当你不在家的时候，喵星人在做什么？
+[16/05/04 17:10:31.729] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 当你不在家的时候，喵星人在做什么？
+[16/05/04 17:10:31.748] INFO [weixin:is_article_exist:318]- article existed : “过上”令人称羡的完美人生，你要不要？
+[16/05/04 17:10:31.748] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : “过上”令人称羡的完美人生，你要不要？
+[16/05/04 17:10:31.766] INFO [weixin:is_article_exist:318]- article existed : 在巴黎咖啡馆呆一下午需要多少钱?
+[16/05/04 17:10:31.766] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 在巴黎咖啡馆呆一下午需要多少钱?
+[16/05/04 17:10:31.784] INFO [weixin:is_article_exist:318]- article existed : 男士们，2016年春夏你们的鞋应该长这样！
+[16/05/04 17:10:31.784] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 男士们，2016年春夏你们的鞋应该长这样！
+[16/05/04 17:10:31.807] INFO [weixin:is_article_exist:318]- article existed : 你吃进去的，要跑多久才能消耗掉？看完我捂住了嘴
+[16/05/04 17:10:31.807] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 你吃进去的，要跑多久才能消耗掉？看完我捂住了嘴
+[16/05/04 17:10:31.827] INFO [weixin:is_article_exist:318]- article existed : 拥有一辆价值11000欧的自行车是什么样的体验？
+[16/05/04 17:10:31.827] INFO [weixin:crawl_weixin_single_article_mission:231]- article exist : 拥有一辆价值11000欧的自行车是什么样的体验？
+[16/05/04 17:14:48.291] INFO [rss:crawl_rss_images:111]- fetch_image for article 9262: http://www.qdaily.com/system/articles/articleshows/26279/medium/26279.jpg?1462106844
+[16/05/04 17:14:48.391] INFO [rss:crawl_rss_images:111]- fetch_image for article 9262: http://www.qdaily.com/uploads/image/201605/d22ec87f2142.jpg
+[16/05/04 17:14:48.997] INFO [rss:crawl_rss_images:111]- fetch_image for article 9262: http://www.qdaily.com/uploads/image/201605/f68ef2e4a7c1.jpg
+[16/05/04 17:14:49.180] INFO [rss:crawl_rss_list:80]- article 9262 finished.
+[16/05/04 17:14:49.195] INFO [rss:crawl_rss_images:111]- fetch_image for article 9263: http://www.qdaily.com/system/articles/articleshows/26383/medium/26383.jpg?1462346202
+[16/05/04 17:14:49.343] INFO [rss:crawl_rss_images:111]- fetch_image for article 9263: http://www.qdaily.com/uploads/image/201605/700c17429ede.jpg
+[16/05/04 17:14:49.455] INFO [rss:crawl_rss_images:111]- fetch_image for article 9263: http://www.qdaily.com/uploads/image/201605/4d286e335843.jpg
+[16/05/04 17:14:49.606] INFO [rss:crawl_rss_images:111]- fetch_image for article 9263: http://www.qdaily.com/uploads/image/201605/c0afe1a147c4.jpg
+[16/05/04 17:14:49.696] INFO [rss:crawl_rss_images:111]- fetch_image for article 9263: http://www.qdaily.com/uploads/image/201605/bc98d6d24002.jpg
+[16/05/04 17:14:49.783] INFO [rss:crawl_rss_list:80]- article 9263 finished.
+[16/05/04 17:14:49.796] INFO [rss:crawl_rss_images:111]- fetch_image for article 9264: http://www.qdaily.com/system/articles/articleshows/26397/medium/26397.jpg?1462345673
+[16/05/04 17:14:50.197] INFO [rss:crawl_rss_list:80]- article 9264 finished.
+[16/05/04 17:14:50.210] INFO [rss:crawl_rss_images:111]- fetch_image for article 9265: http://www.qdaily.com/system/articles/articleshows/26384/medium/26384.jpg?1462339842
+[16/05/04 17:14:50.309] INFO [rss:crawl_rss_images:111]- fetch_image for article 9265: http://www.qdaily.com/uploads/image/201605/9c7bf9c4837c.jpg
+[16/05/04 17:14:50.370] INFO [rss:crawl_rss_list:80]- article 9265 finished.
+[16/05/04 17:14:50.382] INFO [rss:crawl_rss_images:111]- fetch_image for article 9266: http://www.qdaily.com/system/articles/articleshows/26372/medium/26372.jpg?1462345224
+[16/05/04 17:14:50.441] INFO [rss:crawl_rss_images:111]- fetch_image for article 9266: http://www.qdaily.com/uploads/image/201605/64df883d3674.jpg
+[16/05/04 17:14:50.541] INFO [rss:crawl_rss_images:111]- fetch_image for article 9266: http://www.qdaily.com/uploads/image/201605/10ad762f462f.jpg
+[16/05/04 17:14:50.658] INFO [rss:crawl_rss_list:80]- article 9266 finished.
+[16/05/04 17:14:50.671] INFO [rss:crawl_rss_images:111]- fetch_image for article 9267: http://www.qdaily.com/system/articles/articleshows/26382/medium/26382.jpg?1462341151
+[16/05/04 17:14:50.765] INFO [rss:crawl_rss_images:111]- fetch_image for article 9267: http://www.qdaily.com/uploads/image/201605/4e60142ac439.gif
+[16/05/04 17:14:57.325] INFO [rss:crawl_rss_images:111]- fetch_image for article 9267: http://www.qdaily.com/uploads/image/201605/d8a71af15926.jpg
+[16/05/04 17:14:57.458] INFO [rss:crawl_rss_images:111]- fetch_image for article 9267: http://www.qdaily.com/uploads/image/201605/75c647adb824.gif
+[16/05/04 17:15:01.707] INFO [rss:crawl_rss_list:80]- article 9267 finished.
+[16/05/04 17:15:01.721] INFO [rss:crawl_rss_images:111]- fetch_image for article 9268: http://www.qdaily.com/system/articles/articleshows/26362/medium/26362.jpg?1462293939
+[16/05/04 17:15:02.33] INFO [rss:crawl_rss_images:111]- fetch_image for article 9268: http://www.qdaily.com/uploads/image/201605/a18dbd74b176.jpg
+[16/05/04 17:15:02.242] INFO [rss:crawl_rss_images:111]- fetch_image for article 9268: http://www.qdaily.com/uploads/image/201605/15936783eff1.jpg
+[16/05/04 17:15:02.413] INFO [rss:crawl_rss_images:111]- fetch_image for article 9268: http://www.qdaily.com/uploads/image/201605/e15e43203707.jpg
+[16/05/04 17:15:02.623] INFO [rss:crawl_rss_list:80]- article 9268 finished.
+[16/05/04 17:15:02.638] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/system/articles/articleshows/26381/medium/26381.jpg?1462339483
+[16/05/04 17:15:02.772] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/72939114e691.jpg
+[16/05/04 17:15:02.916] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/eba0d2d6fa9d.jpg
+[16/05/04 17:15:03.6] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/fac3b29056f0.jpg
+[16/05/04 17:15:03.77] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/46a8b823d28b.jpg
+[16/05/04 17:15:03.270] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/b9486be6dd22.jpg
+[16/05/04 17:15:03.392] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/cad5baca3e03.jpg
+[16/05/04 17:15:03.482] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/d39155b1bbb4.jpg
+[16/05/04 17:15:03.552] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/12b5ad94832c.jpg
+[16/05/04 17:15:03.636] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/0d7c81dc9c5e.jpg
+[16/05/04 17:15:03.753] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/af8e991ebcfb.jpg
+[16/05/04 17:15:03.828] INFO [rss:crawl_rss_images:111]- fetch_image for article 9269: http://www.qdaily.com/uploads/image/201605/a154a736bdc2.jpg
+[16/05/04 17:15:03.972] INFO [rss:crawl_rss_list:80]- article 9269 finished.
+[16/05/04 17:15:03.990] INFO [rss:crawl_rss_images:111]- fetch_image for article 9270: http://www.qdaily.com/system/articles/articleshows/26385/medium/26385.jpg?1462340230
+[16/05/04 17:15:04.82] INFO [rss:crawl_rss_images:111]- fetch_image for article 9270: http://www.qdaily.com/uploads/image/201605/f535305e5e4a.jpg
+[16/05/04 17:15:04.182] INFO [rss:crawl_rss_images:111]- fetch_image for article 9270: http://www.qdaily.com/uploads/image/201605/9e3998d7334d.jpg
+[16/05/04 17:15:04.334] INFO [rss:crawl_rss_images:111]- fetch_image for article 9270: http://www.qdaily.com/uploads/image/201605/4f00a81e0f43.jpg
+[16/05/04 17:15:04.500] INFO [rss:crawl_rss_images:111]- fetch_image for article 9270: http://www.qdaily.com/uploads/image/201605/1212ef6af7d9.jpg
+[16/05/04 17:15:34.505] INFO [rss:crawl_rss_list:80]- article 9270 finished.
+[16/05/04 17:15:34.520] INFO [rss:crawl_rss_images:111]- fetch_image for article 9271: http://www.qdaily.com/system/articles/articleshows/26350/medium/26350.jpg?1462276075
+[16/05/04 17:15:34.649] INFO [rss:crawl_rss_images:111]- fetch_image for article 9271: http://www.qdaily.com/uploads/image/201605/5173cf2d18c6.jpg
+[16/05/04 17:15:34.805] INFO [rss:crawl_rss_list:80]- article 9271 finished.
+[16/05/04 17:15:34.818] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/system/articles/articleshows/26378/medium/26378.jpeg?1462334777
+[16/05/04 17:15:34.965] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/1ff2c367048d.jpg
+[16/05/04 17:15:35.514] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/41948546ff62.jpg
+[16/05/04 17:15:35.577] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/bdaadc96c665.jpg
+[16/05/04 17:15:35.716] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/e4a08e4609da.jpg
+[16/05/04 17:15:35.821] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/95c0b3a88ea2.jpg
+[16/05/04 17:15:36.54] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/4093c65ecb9c.jpg
+[16/05/04 17:15:36.165] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/0e286a017abc.jpg
+[16/05/04 17:15:36.261] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/c74a15385e7f.jpg
+[16/05/04 17:15:36.445] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/eb210f4fb3f7.jpg
+[16/05/04 17:15:36.560] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/eff90681402f.jpg
+[16/05/04 17:15:36.788] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/6cba756d06f4.jpg
+[16/05/04 17:15:36.898] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/bccaaa4b25d5.jpg
+[16/05/04 17:15:37.97] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/317a0b798933.jpg
+[16/05/04 17:15:37.261] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/86f9dd893070.jpg
+[16/05/04 17:15:37.399] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/2d1a4016be04.jpg
+[16/05/04 17:15:37.566] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/3526990eb1f1.jpg
+[16/05/04 17:15:37.693] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/09e63f81f8a6.jpg
+[16/05/04 17:15:37.857] INFO [rss:crawl_rss_images:111]- fetch_image for article 9272: http://www.qdaily.com/uploads/image/201605/ba89874b889b.jpg
+[16/05/04 17:15:38.2] INFO [rss:crawl_rss_list:80]- article 9272 finished.
+[16/05/04 17:15:38.14] INFO [rss:crawl_rss_images:111]- fetch_image for article 9273: http://www.qdaily.com/system/articles/articleshows/26377/medium/26377.jpg?1462332484
+[16/05/04 17:15:38.93] INFO [rss:crawl_rss_images:111]- fetch_image for article 9273: http://www.qdaily.com/uploads/image/201605/f52efef60eb8.jpg
+[16/05/04 17:15:38.297] INFO [rss:crawl_rss_list:80]- article 9273 finished.
+[16/05/04 17:15:38.309] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/system/articles/articleshows/26379/medium/26379.jpeg?1462336968
+[16/05/04 17:15:38.408] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/b9469f7462a3.jpg
+[16/05/04 17:15:38.648] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/d6804ea593df.jpg
+[16/05/04 17:15:38.941] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/dafbe5f707f9.jpg
+[16/05/04 17:15:39.150] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/77f8cd9bc460.jpg
+[16/05/04 17:15:39.363] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/7915de8b40ae.jpg
+[16/05/04 17:15:39.568] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/61c03014b12c.jpg
+[16/05/04 17:15:39.668] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/611bc87855b7.jpg
+[16/05/04 17:15:39.906] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/f592a0e863c6.jpg
+[16/05/04 17:15:40.98] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/9f89dfb71b6c.jpg
+[16/05/04 17:15:40.347] INFO [rss:crawl_rss_images:111]- fetch_image for article 9274: http://www.qdaily.com/uploads/image/201605/dc45e5304a7a.jpg
+[16/05/04 17:15:40.469] INFO [rss:crawl_rss_list:80]- article 9274 finished.
+[16/05/04 17:15:40.484] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/system/articles/articleshows/26380/medium/26380.jpg?1462337863
+[16/05/04 17:15:40.523] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/05432bb85b77.jpg
+[16/05/04 17:15:40.570] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/bbb970e82865.jpg
+[16/05/04 17:15:40.945] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/a6dd0f80b287.jpg
+[16/05/04 17:15:41.81] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/b7ece3b8fcca.jpg
+[16/05/04 17:15:41.165] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/90099d13949b.jpg
+[16/05/04 17:15:41.231] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/d495e9aa4aea.jpg
+[16/05/04 17:15:41.311] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/e4e0d31da7b7.jpg
+[16/05/04 17:15:41.442] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/e8720b65e344.jpg
+[16/05/04 17:15:41.540] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/e9c8c38576ec.jpg
+[16/05/04 17:15:41.611] INFO [rss:crawl_rss_images:111]- fetch_image for article 9275: http://www.qdaily.com/uploads/image/201605/a047195f8631.jpg
+[16/05/04 17:15:41.724] INFO [rss:crawl_rss_list:80]- article 9275 finished.
+[16/05/04 17:15:41.736] INFO [rss:crawl_rss_images:111]- fetch_image for article 9276: http://www.qdaily.com/system/articles/articleshows/26373/medium/26373.jpg?1462330940
+[16/05/04 17:15:41.813] INFO [rss:crawl_rss_images:111]- fetch_image for article 9276: http://www.qdaily.com/uploads/image/201605/4eee3f786d0a.jpg
+[16/05/04 17:15:41.949] INFO [rss:crawl_rss_images:111]- fetch_image for article 9276: http://www.qdaily.com/uploads/image/201605/d2bb615820ff.jpg
+[16/05/04 17:15:42.115] INFO [rss:crawl_rss_images:111]- fetch_image for article 9276: http://www.qdaily.com/uploads/image/201605/e178957391af.jpg
+[16/05/04 17:15:42.198] INFO [rss:crawl_rss_images:111]- fetch_image for article 9276: http://www.qdaily.com/uploads/image/201605/3c31533aa46e.jpg
+[16/05/04 17:15:42.305] INFO [rss:crawl_rss_images:111]- fetch_image for article 9276: http://www.qdaily.com/uploads/image/201605/e6d387ba996f.jpg
+[16/05/04 17:15:42.433] INFO [rss:crawl_rss_images:111]- fetch_image for article 9276: http://www.qdaily.com/uploads/image/201605/ea9b30848025.jpg
+[16/05/04 17:15:42.539] INFO [rss:crawl_rss_list:80]- article 9276 finished.
+[16/05/04 17:15:42.552] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/system/articles/articleshows/26375/medium/26375.jpg?1462333144
+[16/05/04 17:15:42.656] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/ea67cf3fae6c.jpg
+[16/05/04 17:15:42.730] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/d75b583596e6.jpg
+[16/05/04 17:15:42.817] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/d61906f8296d.jpg
+[16/05/04 17:15:44.208] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/7fdae9d58c1b.jpg
+[16/05/04 17:15:44.361] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/662c97fdacd4.jpg
+[16/05/04 17:15:44.417] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/b2fff8612bb3.jpg
+[16/05/04 17:15:44.473] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/d7394b5ccd86.jpg
+[16/05/04 17:15:44.651] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/53fc1db9f0f3.jpg
+[16/05/04 17:15:44.765] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/affb9f28b764.jpg
+[16/05/04 17:15:44.887] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/7cfe8e587d55.jpg
+[16/05/04 17:15:44.992] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/a3e0ca003e72.jpg
+[16/05/04 17:15:45.85] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/37940190d193.jpg
+[16/05/04 17:15:45.171] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/6971e63a8941.jpg
+[16/05/04 17:15:45.303] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/d459ccb8e715.jpg
+[16/05/04 17:15:45.395] INFO [rss:crawl_rss_images:111]- fetch_image for article 9277: http://www.qdaily.com/uploads/image/201605/28cbdc77c9dc.jpg
+[16/05/04 17:15:45.477] INFO [rss:crawl_rss_list:80]- article 9277 finished.
+[16/05/04 17:15:45.491] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/system/articles/articleshows/26369/medium/26369.jpg?1462323776
+[16/05/04 17:15:45.580] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/87fcc75669a6.jpg
+[16/05/04 17:15:45.646] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/86ae18bc5990.jpg
+[16/05/04 17:15:45.739] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/5e0f47fe87db.jpg
+[16/05/04 17:15:45.885] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/30e939a3b06b.jpg
+[16/05/04 17:15:45.989] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/019ddf371b4b.jpg
+[16/05/04 17:15:46.121] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/2a1cec0d7e73.jpg
+[16/05/04 17:15:46.189] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/1355a85f9074.jpg
+[16/05/04 17:15:46.253] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/ea66eb3f17c4.jpg
+[16/05/04 17:15:46.374] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/9e9b0f8ccf8f.jpg
+[16/05/04 17:15:46.492] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/03ff2cc08842.jpg
+[16/05/04 17:15:46.560] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/ff2baacb5804.jpg
+[16/05/04 17:15:46.627] INFO [rss:crawl_rss_images:111]- fetch_image for article 9278: http://www.qdaily.com/uploads/image/201605/4780fa46a80a.jpg
+[16/05/04 17:15:46.729] INFO [rss:crawl_rss_list:80]- article 9278 finished.
+[16/05/04 17:15:46.741] INFO [rss:crawl_rss_images:111]- fetch_image for article 9279: http://www.qdaily.com/system/articles/articleshows/26376/medium/26376.jpg?1462332454
+[16/05/04 17:15:46.839] INFO [rss:crawl_rss_images:111]- fetch_image for article 9279: http://www.qdaily.com/uploads/image/201605/94d7f4ee6921.gif
+[16/05/04 17:15:47.372] INFO [rss:crawl_rss_images:111]- fetch_image for article 9279: http://www.qdaily.com/uploads/image/201605/a48e125fa8f5.jpg
+[16/05/04 17:15:47.535] INFO [rss:crawl_rss_list:80]- article 9279 finished.
+[16/05/04 17:15:47.547] INFO [rss:crawl_rss_images:111]- fetch_image for article 9280: http://www.qdaily.com/system/articles/articleshows/26361/medium/26361.jpg?1462293183
+[16/05/04 17:15:47.624] INFO [rss:crawl_rss_images:111]- fetch_image for article 9280: http://www.qdaily.com/uploads/image/201605/72bff6052800.jpg
+[16/05/04 17:15:48.628] INFO [rss:crawl_rss_list:80]- article 9280 finished.
+[16/05/04 17:15:48.640] INFO [rss:crawl_rss_images:111]- fetch_image for article 9281: http://www.qdaily.com/system/articles/articleshows/26366/medium/26366.jpg?1462319930
+[16/05/04 17:15:48.699] INFO [rss:crawl_rss_images:111]- fetch_image for article 9281: http://www.qdaily.com/uploads/image/201605/a3081d79ac3b.jpg
+[16/05/04 17:15:48.898] INFO [rss:crawl_rss_images:111]- fetch_image for article 9281: http://www.qdaily.com/uploads/image/201605/16bbd6f175c2.jpg
+[16/05/04 17:15:49.100] INFO [rss:crawl_rss_images:111]- fetch_image for article 9281: http://www.qdaily.com/uploads/image/201605/2435c45479b7.jpg
+[16/05/04 17:15:49.253] INFO [rss:crawl_rss_list:80]- article 9281 finished.
+[16/05/04 17:15:49.265] INFO [rss:crawl_rss_images:111]- fetch_image for article 9282: http://www.qdaily.com/system/articles/articleshows/26336/medium/26336.jpg?1462259861
+[16/05/04 17:15:49.334] INFO [rss:crawl_rss_images:111]- fetch_image for article 9282: http://www.qdaily.com/uploads/image/201605/9dad0b0d685e.jpg
+[16/05/04 17:15:49.470] INFO [rss:crawl_rss_list:80]- article 9282 finished.
+[16/05/04 17:15:49.483] INFO [rss:crawl_rss_images:111]- fetch_image for article 9283: http://www.qdaily.com/system/articles/articleshows/26370/medium/26370.jpg?1462325721
+[16/05/04 17:15:49.606] INFO [rss:crawl_rss_images:111]- fetch_image for article 9283: http://www.qdaily.com/uploads/image/201605/153417147d8a.jpg
+[16/05/04 17:15:49.677] INFO [rss:crawl_rss_images:111]- fetch_image for article 9283: http://www.qdaily.com/uploads/image/201605/63ef011aead2.jpg
+[16/05/04 17:15:49.783] INFO [rss:crawl_rss_images:111]- fetch_image for article 9283: http://www.qdaily.com/uploads/image/201605/50209e14ef77.jpg
+[16/05/04 17:15:49.905] INFO [rss:crawl_rss_list:80]- article 9283 finished.
+[16/05/04 17:15:49.920] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/system/articles/articleshows/26367/medium/26367.jpg?1462322581
+[16/05/04 17:15:50.40] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/b469371f272c.jpg
+[16/05/04 17:15:50.108] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/5ee956dedcab.jpg
+[16/05/04 17:15:50.254] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/c1cea643624d.jpg
+[16/05/04 17:15:50.413] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/a8ef00bdf233.jpg
+[16/05/04 17:15:50.557] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/7c5831c764a2.jpg
+[16/05/04 17:15:50.677] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/fb1570d6802e.jpg
+[16/05/04 17:15:50.889] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/ed9609bbfe9e.jpg
+[16/05/04 17:15:51.90] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/5736046df2d0.jpg
+[16/05/04 17:15:51.171] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/e2816c125389.jpg
+[16/05/04 17:15:51.290] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/a5c428ad51c5.jpg
+[16/05/04 17:15:51.406] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/0a4023203e46.jpg
+[16/05/04 17:15:51.531] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/95bfcb209aaa.jpg
+[16/05/04 17:15:51.663] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/ccae79df4eb0.jpg
+[16/05/04 17:15:51.763] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/997c1320c576.jpg
+[16/05/04 17:15:51.881] INFO [rss:crawl_rss_images:111]- fetch_image for article 9284: http://www.qdaily.com/uploads/image/201605/58e54c761b26.jpg
+[16/05/04 17:15:51.990] INFO [rss:crawl_rss_list:80]- article 9284 finished.
+[16/05/04 17:15:52.5] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/system/articles/articleshows/26363/medium/26363.jpg?1462326225
+[16/05/04 17:15:52.51] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/2300843a7ca3.jpg
+[16/05/04 17:15:52.88] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/83900c5a742d.jpg
+[16/05/04 17:15:52.181] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/c14cae6cd9bc.jpg
+[16/05/04 17:15:52.236] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/b4099e8718f0.jpg
+[16/05/04 17:15:52.282] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/a6cce66d9989.jpg
+[16/05/04 17:15:52.328] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/2befbdb0acb3.jpg
+[16/05/04 17:15:52.399] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/32b097ae8939.jpg
+[16/05/04 17:15:52.492] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/7c5edeef7a9e.jpg
+[16/05/04 17:15:52.567] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/b3709fc7466e.jpg
+[16/05/04 17:15:52.613] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/2bbd221423e6.jpg
+[16/05/04 17:15:52.663] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/8c129c9ce990.jpg
+[16/05/04 17:15:52.711] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/b42a247bbe26.jpg
+[16/05/04 17:15:52.755] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/9352c88ba956.jpg
+[16/05/04 17:15:52.806] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/89730d7d91fa.jpg
+[16/05/04 17:15:52.895] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/f394b87b35c4.jpg
+[16/05/04 17:15:52.966] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/1be627107d84.jpg
+[16/05/04 17:15:53.34] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/068ad4f4416c.jpg
+[16/05/04 17:15:53.113] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/f23ec3475bca.jpg
+[16/05/04 17:15:53.189] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/78a76edc438f.jpg
+[16/05/04 17:15:53.264] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/b7f37530761e.jpg
+[16/05/04 17:15:53.352] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/20eda6929001.jpg
+[16/05/04 17:15:53.437] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/10c4eaf68cf1.jpg
+[16/05/04 17:15:53.497] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/6a082c9f0575.jpg
+[16/05/04 17:15:53.572] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/90bba933c3a5.jpg
+[16/05/04 17:15:53.733] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/801801450787.jpg
+[16/05/04 17:15:53.827] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/a9c6081e63a2.jpg
+[16/05/04 17:15:53.916] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/2668c825fc1a.jpg
+[16/05/04 17:15:54.79] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/5569641ee375.jpg
+[16/05/04 17:15:54.212] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/269c2532b5a8.jpg
+[16/05/04 17:15:54.307] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/10f78da08f27.jpg
+[16/05/04 17:15:54.344] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/afec467bd620.jpg
+[16/05/04 17:15:54.410] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/6f2a00df67a1.jpg
+[16/05/04 17:15:54.502] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/64eb7e9cb90f.jpg
+[16/05/04 17:15:54.635] INFO [rss:crawl_rss_images:111]- fetch_image for article 9285: http://www.qdaily.com/uploads/image/201605/b8e5d4e33f4d.jpg
+[16/05/04 17:15:54.830] INFO [rss:crawl_rss_list:80]- article 9285 finished.
+[16/05/04 17:15:54.843] INFO [rss:crawl_rss_images:111]- fetch_image for article 9286: http://www.qdaily.com/system/articles/articleshows/26368/medium/26368.jpg?1462325584
+[16/05/04 17:15:54.927] INFO [rss:crawl_rss_images:111]- fetch_image for article 9286: http://www.qdaily.com/uploads/image/201605/44f759f27104.jpg
+[16/05/04 17:15:55.854] INFO [rss:crawl_rss_images:111]- fetch_image for article 9286: http://www.qdaily.com/uploads/image/201605/95b9973c70f1.jpg
+[16/05/04 17:15:56.766] INFO [rss:crawl_rss_list:80]- article 9286 finished.
+[16/05/04 17:15:56.777] INFO [rss:crawl_rss_images:111]- fetch_image for article 9287: http://www.qdaily.com/system/articles/articleshows/26365/medium/26365.jpeg?1462319871
+[16/05/04 17:15:57.683] INFO [rss:crawl_rss_list:80]- article 9287 finished.
+[16/05/04 17:15:57.698] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/system/articles/articleshows/26364/medium/26364.jpg?1462308299
+[16/05/04 17:15:57.789] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/f3f8f4aaabeb.jpg
+[16/05/04 17:15:57.986] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/a1dbd9305aad.jpg
+[16/05/04 17:15:58.143] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/e8c1a5d6e8df.jpg
+[16/05/04 17:15:58.346] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/57a55799148f.jpg
+[16/05/04 17:15:58.600] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/11023826cf95.jpg
+[16/05/04 17:15:59.193] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/838c30b543b2.jpg
+[16/05/04 17:15:59.394] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/89a74a8758f9.jpg
+[16/05/04 17:15:59.473] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/d75e3a147e00.jpg
+[16/05/04 17:15:59.564] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/9fa724e55136.jpg
+[16/05/04 17:15:59.820] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/f8fb040bf784.jpg
+[16/05/04 17:15:59.972] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/84e709fe71e8.jpg
+[16/05/04 17:16:00.124] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/b33964440dbe.jpg
+[16/05/04 17:16:00.328] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/367c686092d5.jpg
+[16/05/04 17:16:00.654] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/fec6edc33152.jpg
+[16/05/04 17:16:00.876] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/5f7db492a23d.jpg
+[16/05/04 17:16:01.48] INFO [rss:crawl_rss_images:111]- fetch_image for article 9288: http://www.qdaily.com/uploads/image/201605/55ab8a733fc5.jpg
+[16/05/04 17:16:01.177] INFO [rss:crawl_rss_list:80]- article 9288 finished.
+[16/05/04 17:16:01.192] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/system/articles/articleshows/26341/medium/26341.jpg?1462266199
+[16/05/04 17:16:01.288] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/a1bcf9317202.jpg
+[16/05/04 17:16:01.420] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/dedccf981887.jpg
+[16/05/04 17:16:01.516] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/c116fe587780.jpg
+[16/05/04 17:16:01.658] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/6145ce6e9f0a.jpg
+[16/05/04 17:16:01.765] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/453cd0365cfd.jpg
+[16/05/04 17:16:01.926] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/1e9b8466521d.jpg
+[16/05/04 17:16:02.17] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/edc0d9ba86d4.jpg
+[16/05/04 17:16:02.124] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/57f68c3b4afa.jpg
+[16/05/04 17:16:02.274] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/2e66c5d5e0e0.jpg
+[16/05/04 17:16:02.887] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/f6660fa02689.jpg
+[16/05/04 17:16:02.967] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/58d8d2fbcb18.jpg
+[16/05/04 17:16:03.53] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/d8467fdb7b24.jpg
+[16/05/04 17:16:03.162] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/37bef94ffdae.jpg
+[16/05/04 17:16:03.289] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/850eae84dd40.jpg
+[16/05/04 17:16:03.527] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/b4cf8081b823.jpg
+[16/05/04 17:16:03.650] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/e5d8c74c3d9e.jpg
+[16/05/04 17:16:03.818] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/78d0cd9ffaec.jpg
+[16/05/04 17:16:03.914] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/6517a436f543.jpg
+[16/05/04 17:16:04.65] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/3fb35493e769.jpg
+[16/05/04 17:16:04.248] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/9c99f2932609.jpg
+[16/05/04 17:16:04.484] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/de10060d632d.jpg
+[16/05/04 17:16:04.621] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/11cf2cd33fd3.jpg
+[16/05/04 17:16:04.775] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/47897efb88ae.jpg
+[16/05/04 17:16:04.874] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/9be6e1a3fdf7.jpg
+[16/05/04 17:16:04.978] INFO [rss:crawl_rss_images:111]- fetch_image for article 9289: http://www.qdaily.com/uploads/image/201605/6dc741e30ce2.jpg
+[16/05/04 17:16:05.251] INFO [rss:crawl_rss_list:80]- article 9289 finished.
+[16/05/04 17:16:05.266] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/system/articles/articleshows/26340/medium/26340.jpg?1462265961
+[16/05/04 17:16:05.314] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/e63f39cd0e03.jpg
+[16/05/04 17:16:05.487] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/448010215577.jpg
+[16/05/04 17:16:05.560] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/86954a447089.jpg
+[16/05/04 17:16:05.679] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/2b8953dc1db2.jpg
+[16/05/04 17:16:05.795] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/60d25723ab30.jpg
+[16/05/04 17:16:05.910] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/87a9450da87f.jpg
+[16/05/04 17:16:06.12] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/d8e8332fed83.jpg
+[16/05/04 17:16:06.142] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/b25a1b835fb8.jpg
+[16/05/04 17:16:06.232] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/cd1d9c183cfc.jpg
+[16/05/04 17:16:06.317] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/81990cd0316c.jpg
+[16/05/04 17:16:06.473] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/8947f18e52e8.jpg
+[16/05/04 17:16:06.566] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/b3f48e1081dd.jpg
+[16/05/04 17:16:06.671] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/04790fd4d0a1.jpg
+[16/05/04 17:16:06.760] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/8ccd087fb928.jpg
+[16/05/04 17:16:06.879] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/4599453c8521.jpg
+[16/05/04 17:16:06.981] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/9a5bee1d0f85.jpg
+[16/05/04 17:16:07.88] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/9b4fa93e52f9.jpg
+[16/05/04 17:16:07.199] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/471ba193e85f.jpg
+[16/05/04 17:16:07.348] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/7b3cefe1bdb7.gif
+[16/05/04 17:16:07.666] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/06b9bd94087d.jpg
+[16/05/04 17:16:07.762] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/a62a2915f152.jpg
+[16/05/04 17:16:07.860] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/3b687e513b27.jpg
+[16/05/04 17:16:07.971] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/58959d05f0bf.jpg
+[16/05/04 17:16:08.107] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/abc5e2c70139.jpg
+[16/05/04 17:16:08.185] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/dd4d483d0f1b.jpg
+[16/05/04 17:16:08.285] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/ef526a3c7047.jpg
+[16/05/04 17:16:08.386] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/3cd022394515.jpg
+[16/05/04 17:16:08.502] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/eadbbdb5bfe7.jpg
+[16/05/04 17:16:08.621] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/b7cfd323380d.jpg
+[16/05/04 17:16:08.733] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/4c7992c45496.jpg
+[16/05/04 17:16:08.946] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/dc3cb451cf76.jpg
+[16/05/04 17:16:09.47] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/7663e79ae553.jpg
+[16/05/04 17:16:09.242] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/8accf8649585.jpg
+[16/05/04 17:16:09.382] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/09bbddc213ec.jpg
+[16/05/04 17:16:09.507] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/4dab1af3f455.jpg
+[16/05/04 17:16:09.620] INFO [rss:crawl_rss_images:111]- fetch_image for article 9290: http://www.qdaily.com/uploads/image/201605/6ef80f824e83.jpg
+[16/05/04 17:16:09.738] INFO [rss:crawl_rss_list:80]- article 9290 finished.
+[16/05/04 17:16:09.752] INFO [rss:crawl_rss_images:111]- fetch_image for article 9291: http://www.qdaily.com/system/articles/articleshows/26343/medium/26343.jpg?1462268494
+[16/05/04 17:16:17.119] INFO [rss:crawl_rss_images:111]- fetch_image for article 9291: http://www.qdaily.com/uploads/image/201605/5e4a62d079ec.jpg
+[16/05/04 17:16:17.275] INFO [rss:crawl_rss_images:111]- fetch_image for article 9291: http://www.qdaily.com/uploads/image/201605/12c5217e209b.jpg
+[16/05/04 17:16:17.353] INFO [rss:crawl_rss_images:111]- fetch_image for article 9291: http://www.qdaily.com/uploads/image/201605/355162814e89.jpg
+[16/05/04 17:16:17.428] INFO [rss:crawl_rss_list:80]- article 9291 finished.
+[16/05/04 17:16:17.440] INFO [rss:crawl_rss_images:111]- fetch_image for article 9292: http://www.qdaily.com/system/articles/articleshows/26344/medium/26344.jpeg?1462268176
+[16/05/04 17:16:17.558] INFO [rss:crawl_rss_images:111]- fetch_image for article 9292: http://www.qdaily.com/uploads/image/201605/7a0a5d1ac66d.jpg
+[16/05/04 17:16:17.713] INFO [rss:crawl_rss_images:111]- fetch_image for article 9292: http://www.qdaily.com/uploads/image/201605/60f4cb478fab.jpg
+[16/05/04 17:16:17.882] INFO [rss:crawl_rss_images:111]- fetch_image for article 9292: http://www.qdaily.com/uploads/image/201605/df988c66f057.jpg
+[16/05/04 17:16:18.22] INFO [rss:crawl_rss_images:111]- fetch_image for article 9292: http://www.qdaily.com/uploads/image/201605/89343ae62b8c.jpg
+[16/05/04 17:16:18.194] INFO [rss:crawl_rss_images:111]- fetch_image for article 9292: http://www.qdaily.com/uploads/image/201605/506ba0ba93f7.jpg
+[16/05/04 17:16:18.363] INFO [rss:crawl_rss_images:111]- fetch_image for article 9292: http://www.qdaily.com/uploads/image/201605/854190f7b43d.jpg
+[16/05/04 17:16:18.518] INFO [rss:crawl_rss_list:80]- article 9292 finished.
+[16/05/04 17:16:18.532] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/system/articles/articleshows/26348/medium/26348.jpeg?1462269868
+[16/05/04 17:16:18.678] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/07830206b9d6.jpg
+[16/05/04 17:16:18.825] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/8f3c5ac11e36.jpg
+[16/05/04 17:16:19.37] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/f0fd7fee46a1.jpg
+[16/05/04 17:16:19.136] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/9615f68d95a7.jpg
+[16/05/04 17:16:19.316] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/603517e32840.jpg
+[16/05/04 17:16:19.386] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/912fc445f87c.jpg
+[16/05/04 17:16:19.492] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/575c4009366a.jpg
+[16/05/04 17:16:19.623] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/79a67bc2ef2c.jpg
+[16/05/04 17:16:19.728] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/257c73c3c393.jpg
+[16/05/04 17:16:19.860] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/6e87fa5ed41f.jpg
+[16/05/04 17:16:20.55] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/c7bccb13f6a1.jpg
+[16/05/04 17:16:20.181] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/c5e9a7387281.jpg
+[16/05/04 17:16:20.313] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/c6cc00b812b6.jpg
+[16/05/04 17:16:20.549] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/9d235b4c5c03.jpg
+[16/05/04 17:16:20.652] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/8375acc4caaf.gif
+[16/05/04 17:16:20.779] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/7accbb21080e.gif
+[16/05/04 17:16:20.953] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/1b36400de134.gif
+[16/05/04 17:16:21.20] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/cc2ab870c539.gif
+[16/05/04 17:16:21.269] INFO [rss:crawl_rss_images:111]- fetch_image for article 9293: http://www.qdaily.com/uploads/image/201605/dc6b7178b66d.gif
+[16/05/04 17:16:21.366] INFO [rss:crawl_rss_list:80]- article 9293 finished.
+[16/05/04 17:16:21.379] INFO [rss:crawl_rss_images:111]- fetch_image for article 9294: http://www.qdaily.com/system/articles/articleshows/26345/medium/26345.jpg?1462268912
+[16/05/04 17:16:26.723] INFO [rss:crawl_rss_images:111]- fetch_image for article 9294: http://www.qdaily.com/uploads/image/201605/743865d88604.jpg
+[16/05/04 17:16:40.600] INFO [rss:crawl_rss_images:111]- fetch_image for article 9294: http://www.qdaily.com/uploads/image/201605/d5e99c81b94d.jpg
+[16/05/04 17:16:40.693] INFO [rss:crawl_rss_images:111]- fetch_image for article 9294: http://www.qdaily.com/uploads/image/201605/e4342bc904a1.jpg
+[16/05/04 17:16:40.797] INFO [rss:crawl_rss_list:80]- article 9294 finished.
+[16/05/04 17:16:40.810] INFO [rss:crawl_rss_images:111]- fetch_image for article 9295: http://www.qdaily.com/system/articles/articleshows/26349/medium/26349.jpg?1462271846
+[16/05/04 17:16:40.895] INFO [rss:crawl_rss_images:111]- fetch_image for article 9295: http://www.qdaily.com/uploads/image/201605/3b463f70e2cf.jpg
+[16/05/04 17:16:41.13] INFO [rss:crawl_rss_images:111]- fetch_image for article 9295: http://www.qdaily.com/uploads/image/201605/3161c91175b7.jpg
+[16/05/04 17:16:41.150] INFO [rss:crawl_rss_list:80]- article 9295 finished.
+[16/05/04 17:16:41.162] INFO [rss:crawl_rss_images:111]- fetch_image for article 9296: http://www.qdaily.com/system/articles/articleshows/26351/medium/26351.jpg?1462277445
+[16/05/04 17:16:41.308] INFO [rss:crawl_rss_images:111]- fetch_image for article 9296: http://www.qdaily.com/uploads/image/201605/c4d118f86d34.jpg
+[16/05/04 17:16:41.584] INFO [rss:crawl_rss_images:111]- fetch_image for article 9296: http://www.qdaily.com/uploads/image/201605/21c31cab3c49.jpg
+[16/05/04 17:16:41.737] INFO [rss:crawl_rss_images:111]- fetch_image for article 9296: http://www.qdaily.com/uploads/image/201605/f1de34600f9e.jpg
+[16/05/04 17:16:41.909] INFO [rss:crawl_rss_images:111]- fetch_image for article 9296: http://www.qdaily.com/uploads/image/201605/9cc790b77931.jpg
+[16/05/04 17:16:42.48] INFO [rss:crawl_rss_images:111]- fetch_image for article 9296: http://www.qdaily.com/uploads/image/201605/31197ee6e44b.jpg
+[16/05/04 17:16:42.203] INFO [rss:crawl_rss_images:111]- fetch_image for article 9296: http://www.qdaily.com/uploads/image/201605/d255ba4038de.jpg
+[16/05/04 17:16:42.344] INFO [rss:crawl_rss_list:80]- article 9296 finished.
+[16/05/04 17:16:42.356] INFO [rss:crawl_rss_images:111]- fetch_image for article 9297: http://www.qdaily.com/system/articles/articleshows/26360/medium/26360.gif?1462303321
+[16/05/04 17:16:42.674] INFO [rss:crawl_rss_images:111]- fetch_image for article 9297: http://www.qdaily.com/uploads/image/201605/4f13289c5d73.jpg
+[16/05/04 17:16:42.772] INFO [rss:crawl_rss_images:111]- fetch_image for article 9297: http://www.qdaily.com/uploads/image/201605/0418e70dabb3.gif
+[16/05/04 17:16:43.24] INFO [rss:crawl_rss_images:111]- fetch_image for article 9297: http://www.qdaily.com/uploads/image/201605/e3ea4deba6b4.jpg
+[16/05/04 17:16:43.160] INFO [rss:crawl_rss_images:111]- fetch_image for article 9297: http://www.qdaily.com/uploads/image/201605/89942d07a714.gif
+[16/05/04 17:16:43.458] INFO [rss:crawl_rss_images:111]- fetch_image for article 9297: http://www.qdaily.com/uploads/image/201605/faaab2c9f993.gif
+[16/05/04 17:16:43.724] INFO [rss:crawl_rss_list:80]- article 9297 finished.
+[16/05/04 17:16:43.737] INFO [rss:crawl_rss_images:111]- fetch_image for article 9298: http://www.qdaily.com/system/articles/articleshows/26206/medium/26206.jpg?1461851426
+[16/05/04 17:16:43.796] INFO [rss:crawl_rss_images:111]- fetch_image for article 9298: http://www.qdaily.com/uploads/image/201605/9fcc4f4d1a33.jpg
+[16/05/04 17:16:43.871] INFO [rss:crawl_rss_images:111]- fetch_image for article 9298: http://www.qdaily.com/uploads/image/201605/9c2a23602800.jpg
+[16/05/04 17:16:43.927] INFO [rss:crawl_rss_images:111]- fetch_image for article 9298: http://www.qdaily.com/uploads/image/201605/76b248f0ee44.jpg
+[16/05/04 17:16:43.987] INFO [rss:crawl_rss_images:111]- fetch_image for article 9298: http://www.qdaily.com/uploads/image/201605/cccedd4262b2.jpg
+[16/05/04 17:16:44.97] INFO [rss:crawl_rss_images:111]- fetch_image for article 9298: http://www.qdaily.com/uploads/image/201605/5b64116d7b9e.jpg
+[16/05/04 17:16:44.217] INFO [rss:crawl_rss_images:111]- fetch_image for article 9298: http://www.qdaily.com/uploads/image/201605/a78ca1f4f57f.jpg
+[16/05/04 17:16:44.303] INFO [rss:crawl_rss_images:111]- fetch_image for article 9298: http://www.qdaily.com/uploads/image/201605/3c6c68372c37.jpg
+[16/05/04 17:16:44.344] INFO [rss:crawl_rss_list:80]- article 9298 finished.
+[16/05/04 17:16:44.356] INFO [rss:crawl_rss_images:111]- fetch_image for article 9299: http://www.qdaily.com/system/articles/articleshows/26359/medium/26359.jpg?1462289894
+[16/05/04 17:16:44.484] INFO [rss:crawl_rss_images:111]- fetch_image for article 9299: http://www.qdaily.com/uploads/image/201605/375e04339c30.jpg
+[16/05/04 17:16:44.566] INFO [rss:crawl_rss_images:111]- fetch_image for article 9299: http://www.qdaily.com/uploads/image/201605/3900aff80019.jpg
+[16/05/04 17:16:44.665] INFO [rss:crawl_rss_images:111]- fetch_image for article 9299: http://www.qdaily.com/uploads/image/201605/c5c6c645225f.jpg
+[16/05/04 17:16:44.795] INFO [rss:crawl_rss_list:80]- article 9299 finished.
+[16/05/04 17:16:44.806] INFO [rss:crawl_rss_images:111]- fetch_image for article 9300: http://www.qdaily.com/system/articles/articleshows/26293/medium/26293.jpg?1462202363
+[16/05/04 17:16:44.936] INFO [rss:crawl_rss_images:111]- fetch_image for article 9300: http://www.qdaily.com/uploads/image/201605/419b5626890c.jpg
+[16/05/04 17:16:45.29] INFO [rss:crawl_rss_images:111]- fetch_image for article 9300: http://www.qdaily.com/uploads/image/201605/38f62520495c.jpg
+[16/05/04 17:16:45.124] INFO [rss:crawl_rss_images:111]- fetch_image for article 9300: http://www.qdaily.com/uploads/image/201605/d6c17e6023cf.jpg
+[16/05/04 17:16:45.288] INFO [rss:crawl_rss_images:111]- fetch_image for article 9300: http://www.qdaily.com/uploads/image/201605/629c3fe0e3b9.jpg
+[16/05/04 17:16:45.423] INFO [rss:crawl_rss_images:111]- fetch_image for article 9300: http://www.qdaily.com/uploads/image/201605/3ec8834ac48b.jpg
+[16/05/04 17:16:45.581] INFO [rss:crawl_rss_images:111]- fetch_image for article 9300: http://www.qdaily.com/uploads/image/201605/cb46c04d8244.jpg
+[16/05/04 17:16:45.680] INFO [rss:crawl_rss_images:111]- fetch_image for article 9300: http://www.qdaily.com/uploads/image/201605/f4e0e9e6b493.jpg
+[16/05/04 17:16:45.862] INFO [rss:crawl_rss_images:111]- fetch_image for article 9300: http://www.qdaily.com/uploads/image/201605/103a4b48da86.jpg
+[16/05/04 17:16:45.981] INFO [rss:crawl_rss_list:80]- article 9300 finished.
+[16/05/04 17:16:45.993] INFO [rss:crawl_rss_images:111]- fetch_image for article 9301: http://www.qdaily.com/system/articles/articleshows/26339/medium/26339.jpg?1462277174
+[16/05/04 17:16:46.124] INFO [rss:crawl_rss_images:111]- fetch_image for article 9301: http://www.qdaily.com/uploads/image/201605/3888d12757cb.gif
+[16/05/04 17:16:52.80] INFO [rss:crawl_rss_images:111]- fetch_image for article 9301: http://www.qdaily.com/uploads/image/201605/4465ced80259.jpg
+[16/05/04 17:16:52.181] INFO [rss:crawl_rss_list:80]- article 9301 finished.
+[16/05/04 17:16:52.193] INFO [rss:crawl_rss_images:111]- fetch_image for article 9302: http://www.qdaily.com/system/articles/articleshows/26346/medium/26346.jpg?1462269048
+[16/05/04 17:16:52.307] INFO [rss:crawl_rss_images:111]- fetch_image for article 9302: http://www.qdaily.com/uploads/image/201605/301a15cbd1c8.jpg
+[16/05/04 17:16:52.429] INFO [rss:crawl_rss_images:111]- fetch_image for article 9302: http://www.qdaily.com/uploads/image/201605/9ffc57ebf32b.jpg
+[16/05/04 17:16:52.533] INFO [rss:crawl_rss_list:80]- article 9302 finished.
+[16/05/04 17:16:52.545] INFO [rss:crawl_rss_images:111]- fetch_image for article 9303: http://www.qdaily.com/system/articles/articleshows/26347/medium/26347.jpg?1462269493
+[16/05/04 17:16:52.638] INFO [rss:crawl_rss_images:111]- fetch_image for article 9303: http://www.qdaily.com/uploads/image/201605/acc89e3a9605.jpg
+[16/05/04 17:16:52.887] INFO [rss:crawl_rss_list:80]- article 9303 finished.
+[16/05/04 17:16:52.898] INFO [rss:crawl_rss_images:111]- fetch_image for article 9304: http://www.qdaily.com/system/articles/articleshows/26342/medium/26342.jpg?1462271552
+[16/05/04 17:16:53.14] INFO [rss:crawl_rss_images:111]- fetch_image for article 9304: http://www.qdaily.com/uploads/image/201605/ad1ba5f3dc2d.jpg
+[16/05/04 17:16:53.818] INFO [rss:crawl_rss_images:111]- fetch_image for article 9304: http://www.qdaily.com/uploads/image/201605/13fe6523bdb6.jpg
+[16/05/04 17:16:53.937] INFO [rss:crawl_rss_images:111]- fetch_image for article 9304: http://www.qdaily.com/uploads/image/201605/5da8fdeddcd9.jpg
+[16/05/04 17:16:54.113] INFO [rss:crawl_rss_list:80]- article 9304 finished.
+[16/05/04 17:16:54.127] INFO [rss:crawl_rss_images:111]- fetch_image for article 9305: http://www.qdaily.com/system/articles/articleshows/26335/medium/26335.jpg?1462259827
+[16/05/04 17:16:54.227] INFO [rss:crawl_rss_images:111]- fetch_image for article 9305: http://www.qdaily.com/uploads/image/201605/23a20f455d77.jpg
+[16/05/04 17:16:54.375] INFO [rss:crawl_rss_images:111]- fetch_image for article 9305: http://www.qdaily.com/uploads/image/201605/f959be2f9353.jpg
+[16/05/04 17:16:54.512] INFO [rss:crawl_rss_images:111]- fetch_image for article 9305: http://www.qdaily.com/uploads/image/201605/21095abfedd6.jpg
+[16/05/04 17:16:54.606] INFO [rss:crawl_rss_images:111]- fetch_image for article 9305: http://www.qdaily.com/uploads/image/201605/1404bedee0db.jpg
+[16/05/04 17:16:54.735] INFO [rss:crawl_rss_images:111]- fetch_image for article 9305: http://www.qdaily.com/uploads/image/201605/5bdaba052fca.jpg
+[16/05/04 17:16:54.928] INFO [rss:crawl_rss_images:111]- fetch_image for article 9305: http://www.qdaily.com/uploads/image/201605/1b816aa98809.jpg
+[16/05/04 17:16:55.141] INFO [rss:crawl_rss_images:111]- fetch_image for article 9305: http://www.qdaily.com/uploads/image/201605/a91f8c355cc0.jpg
+[16/05/04 17:16:55.262] INFO [rss:crawl_rss_list:80]- article 9305 finished.
+[16/05/04 17:16:55.273] INFO [rss:crawl_rss_images:111]- fetch_image for article 9306: http://www.qdaily.com/system/articles/articleshows/26338/medium/26338.jpg?1462262817
+[16/05/04 17:16:55.418] INFO [rss:crawl_rss_images:111]- fetch_image for article 9306: http://www.qdaily.com/uploads/image/201605/df17b72d803f.jpg
+[16/05/04 17:16:55.576] INFO [rss:crawl_rss_images:111]- fetch_image for article 9306: http://www.qdaily.com/uploads/image/201605/b437441f415f.jpg
+[16/05/04 17:16:55.769] INFO [rss:crawl_rss_list:80]- article 9306 finished.
+[16/05/04 17:16:55.782] INFO [rss:crawl_rss_images:111]- fetch_image for article 9307: http://www.qdaily.com/system/articles/articleshows/26331/medium/26331.jpg?1462253425
+[16/05/04 17:16:55.839] INFO [rss:crawl_rss_images:111]- fetch_image for article 9307: http://www.qdaily.com/uploads/image/201605/95c74dbe507d.jpg
+[16/05/04 17:16:55.973] INFO [rss:crawl_rss_list:80]- article 9307 finished.
+[16/05/04 17:16:55.985] INFO [rss:crawl_rss_images:111]- fetch_image for article 9308: http://www.qdaily.com/system/articles/articleshows/26333/medium/26333.jpg?1462255997
+[16/05/04 17:16:56.143] INFO [rss:crawl_rss_images:111]- fetch_image for article 9308: http://www.qdaily.com/uploads/image/201605/ec1a8b639752.jpg
+[16/05/04 17:16:56.280] INFO [rss:crawl_rss_images:111]- fetch_image for article 9308: http://www.qdaily.com/uploads/image/201605/a1a17111f975.jpg
+[16/05/04 17:16:56.375] INFO [rss:crawl_rss_images:111]- fetch_image for article 9308: http://www.qdaily.com/uploads/image/201605/c1a9abef3676.jpg
+[16/05/04 17:16:56.494] INFO [rss:crawl_rss_images:111]- fetch_image for article 9308: http://www.qdaily.com/uploads/image/201605/b0aea49e9aeb.jpg
+[16/05/04 17:16:56.580] INFO [rss:crawl_rss_images:111]- fetch_image for article 9308: http://www.qdaily.com/uploads/image/201605/ef498672b5b7.jpg
+[16/05/04 17:16:56.715] INFO [rss:crawl_rss_images:111]- fetch_image for article 9308: http://www.qdaily.com/uploads/image/201605/94ecc27531a1.jpg
+[16/05/04 17:16:56.829] INFO [rss:crawl_rss_list:80]- article 9308 finished.
+[16/05/04 17:16:56.842] INFO [rss:crawl_rss_images:111]- fetch_image for article 9309: http://www.qdaily.com/system/articles/articleshows/26337/medium/26337.jpg?1462260963
+[16/05/04 17:16:56.977] INFO [rss:crawl_rss_list:80]- article 9309 finished.
+[16/05/04 17:16:56.990] INFO [rss:crawl_rss_images:111]- fetch_image for article 9310: http://www.qdaily.com/system/articles/articleshows/26332/medium/26332.jpg?1462253862
+[16/05/04 17:16:57.80] INFO [rss:crawl_rss_images:111]- fetch_image for article 9310: http://www.qdaily.com/uploads/image/201605/5460b10358b9.jpg
+[16/05/04 17:16:57.204] INFO [rss:crawl_rss_list:80]- article 9310 finished.
+[16/05/04 17:16:57.216] INFO [rss:crawl_rss_images:111]- fetch_image for article 9311: http://www.qdaily.com/system/articles/articleshows/26334/medium/26334.jpg?1462256012
+[16/05/04 17:16:57.397] INFO [rss:crawl_rss_images:111]- fetch_image for article 9311: http://www.qdaily.com/uploads/image/201605/91b66c16be38.jpg
+[16/05/04 17:16:57.477] INFO [rss:crawl_rss_images:111]- fetch_image for article 9311: http://www.qdaily.com/uploads/image/201605/941883bc1b88.jpg
+[16/05/04 17:16:57.533] INFO [rss:crawl_rss_images:111]- fetch_image for article 9311: http://www.qdaily.com/uploads/image/201605/6cdbead12c05.jpg
+[16/05/04 17:16:57.599] INFO [rss:crawl_rss_images:111]- fetch_image for article 9311: http://www.qdaily.com/uploads/image/201605/5698e1357a3c.jpg
+[16/05/04 17:16:57.634] INFO [rss:crawl_rss_list:80]- article 9311 finished.
+[16/05/04 17:16:57.634] INFO [rss:crawl_rss_list:92]- prepare to get next page: 2
+[16/05/04 17:16:59.822] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        这个看起来很老气的挂钟，是故意让你怀旧的设计
+      
+[16/05/04 17:16:59.822] INFO [rss:crawl_rss_list:80]- article 9262 finished.
+[16/05/04 17:16:59.825] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        运动场上女性没法很好表现，因此她去设计了运动装
+      
+[16/05/04 17:16:59.825] INFO [rss:crawl_rss_list:80]- article 9263 finished.
+[16/05/04 17:16:59.829] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        英超取消了冠名赞助，想要找更多赞助商
+      
+[16/05/04 17:16:59.829] INFO [rss:crawl_rss_list:80]- article 9264 finished.
+[16/05/04 17:16:59.832] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        库克电视访谈止住了股价下跌，但他在中国的挑战没有结束
+      
+[16/05/04 17:16:59.832] INFO [rss:crawl_rss_list:80]- article 9265 finished.
+[16/05/04 17:16:59.836] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        三星也做智能语音助手了，是亚马逊音箱 Echo 的呆萌版
+      
+[16/05/04 17:16:59.836] INFO [rss:crawl_rss_list:80]- article 9266 finished.
+[16/05/04 17:16:59.839] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        IBM的沃森参与制作了一条“智能”裙子，会变色
+      
+[16/05/04 17:16:59.839] INFO [rss:crawl_rss_list:80]- article 9267 finished.
+[16/05/04 17:16:59.842] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        《浪客剑心》真人版导演带来了新作，一部另类的科幻推理片
+      
+[16/05/04 17:16:59.842] INFO [rss:crawl_rss_list:80]- article 9268 finished.
+[16/05/04 17:16:59.845] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        B 站五一的涂鸦比赛受欢迎，但却陷入了抄袭风波
+      
+[16/05/04 17:16:59.845] INFO [rss:crawl_rss_list:80]- article 9269 finished.
+[16/05/04 17:16:59.847] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        Google 无人车正式和车厂合作，它的技术都曾用在哪些车上？
+      
+[16/05/04 17:16:59.847] INFO [rss:crawl_rss_list:80]- article 9270 finished.
+[16/05/04 17:16:59.850] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        猎鹰 9 号火箭更新参数，达到完全体
+      
+[16/05/04 17:16:59.850] INFO [rss:crawl_rss_list:80]- article 9271 finished.
+[16/05/04 17:16:59.853] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        这户在莫斯科的家庭住宅，有 57 个隐藏的储物抽屉
+      
+[16/05/04 17:16:59.853] INFO [rss:crawl_rss_list:80]- article 9272 finished.
+[16/05/04 17:16:59.856] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        头号虚拟现实公司是怎么坑了它的支持者？
+      
+[16/05/04 17:16:59.856] INFO [rss:crawl_rss_list:80]- article 9273 finished.
+[16/05/04 17:16:59.859] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        北京老胡同里的灰砖，是这个红酒吧混搭的主打元素
+      
+[16/05/04 17:16:59.859] INFO [rss:crawl_rss_list:80]- article 9274 finished.
+[16/05/04 17:16:59.862] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        姜黄、越南粉和小口小口吃的食物，这些在美国正流行
+      
+[16/05/04 17:16:59.862] INFO [rss:crawl_rss_list:80]- article 9275 finished.
+[16/05/04 17:16:59.865] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        除了大银幕，IMAX 这家公司在电影行业里的生存机会要比你想得多
+      
+[16/05/04 17:16:59.865] INFO [rss:crawl_rss_list:80]- article 9276 finished.
+[16/05/04 17:16:59.868] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        「这世界」英国王室的孩子穿得是否有些......太复古了？
+      
+[16/05/04 17:16:59.868] INFO [rss:crawl_rss_list:80]- article 9277 finished.
+[16/05/04 17:16:59.870] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        除了各路红毯，今年大都会博物馆真正展的是什么？
+      
+[16/05/04 17:16:59.870] INFO [rss:crawl_rss_list:80]- article 9278 finished.
+[16/05/04 17:16:59.873] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        苹果专利曝光，拿起笔就能认出你是谁
+      
+[16/05/04 17:16:59.873] INFO [rss:crawl_rss_list:80]- article 9279 finished.
+[16/05/04 17:16:59.876] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        碧桂园想进入一线城市，方式是和本地开发商合作
+      
+[16/05/04 17:16:59.876] INFO [rss:crawl_rss_list:80]- article 9280 finished.
+[16/05/04 17:16:59.879] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        网络不好的时候，用这个应用找人聊天
+      
+[16/05/04 17:16:59.879] INFO [rss:crawl_rss_list:80]- article 9281 finished.
+[16/05/04 17:16:59.883] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        说了一阵子要上市的韩都衣舍，要去新三板了
+      
+[16/05/04 17:16:59.883] INFO [rss:crawl_rss_list:80]- article 9282 finished.
+[16/05/04 17:16:59.885] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        聚焦种族的作家执笔，新版《黑豹》漫画的超级英雄会怎样？
+      
+[16/05/04 17:16:59.885] INFO [rss:crawl_rss_list:80]- article 9283 finished.
+[16/05/04 17:16:59.888] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        看图：这里是过去24小时内发生的重要的事
+      
+[16/05/04 17:16:59.888] INFO [rss:crawl_rss_list:80]- article 9284 finished.
+[16/05/04 17:16:59.891] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        雅诗兰黛预大规模裁员，以及，Gucci 推出四款双肩包｜浮华日报
+      
+[16/05/04 17:16:59.891] INFO [rss:crawl_rss_list:80]- article 9285 finished.
+[16/05/04 17:16:59.894] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        今日娱乐：《魔兽》中国内地定档，白百何出演新片
+      
+[16/05/04 17:16:59.894] INFO [rss:crawl_rss_list:80]- article 9286 finished.
+[16/05/04 17:16:59.896] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        大公司头条：Google 与造车业合作无人车，小米变成广告播放器
+      
+[16/05/04 17:16:59.897] INFO [rss:crawl_rss_list:80]- article 9287 finished.
+[16/05/04 17:16:59.900] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        苹果一到时尚界，就拥有了另一种人格
+      
+[16/05/04 17:16:59.900] INFO [rss:crawl_rss_list:80]- article 9288 finished.
+[16/05/04 17:16:59.903] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        错过了艺术北京？没关系，这里是综合盘点（多图预警）
+      
+[16/05/04 17:16:59.903] INFO [rss:crawl_rss_list:80]- article 9289 finished.
+[16/05/04 17:16:59.907] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        这个设计了不起之今日最佳
+      
+[16/05/04 17:16:59.907] INFO [rss:crawl_rss_list:80]- article 9290 finished.
+[16/05/04 17:16:59.910] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        这位数学家想科普自己的专业，先给人讲的是怎么做甜品
+      
+[16/05/04 17:16:59.910] INFO [rss:crawl_rss_list:80]- article 9291 finished.
+[16/05/04 17:16:59.912] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        薄荷绿和酒红在一起有多配？请看赫尔辛基这间餐厅
+      
+[16/05/04 17:16:59.912] INFO [rss:crawl_rss_list:80]- article 9292 finished.
+[16/05/04 17:16:59.915] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        老旧大楼改造成的办公空间，一个中庭调动了活泼气氛
+      
+[16/05/04 17:16:59.915] INFO [rss:crawl_rss_list:80]- article 9293 finished.
+[16/05/04 17:16:59.917] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        把指纹识别嵌入到玻璃内，LG 想率先取消手机 Home 键？
+      
+[16/05/04 17:16:59.918] INFO [rss:crawl_rss_list:80]- article 9294 finished.
+[16/05/04 17:16:59.920] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        30年后，这个传奇导演的传说中的大制作终于要上映了
+      
+[16/05/04 17:16:59.920] INFO [rss:crawl_rss_list:80]- article 9295 finished.
+[16/05/04 17:16:59.923] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        登上这趟新干线，你就来到了世界最高速美术馆
+      
+[16/05/04 17:16:59.923] INFO [rss:crawl_rss_list:80]- article 9296 finished.
+[16/05/04 17:16:59.926] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        纽约这家健身房，用光和声音让你的训练变得更有趣
+      
+[16/05/04 17:16:59.926] INFO [rss:crawl_rss_list:80]- article 9297 finished.
+[16/05/04 17:16:59.929] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        中国诞生了第一个上下游通吃的民营电影公司，这意味着什么？
+      
+[16/05/04 17:16:59.929] INFO [rss:crawl_rss_list:80]- article 9298 finished.
+[16/05/04 17:16:59.932] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        那个卖喉宝的金嗓子，也要开始卖饮料了
+      
+[16/05/04 17:16:59.932] INFO [rss:crawl_rss_list:80]- article 9299 finished.
+[16/05/04 17:16:59.934] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        西装400年来如何演变，这本书帮你梳理几次重大变化
+      
+[16/05/04 17:16:59.934] INFO [rss:crawl_rss_list:80]- article 9300 finished.
+[16/05/04 17:16:59.937] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        飞机上熊孩子哭 4 次，下次乘坐捷蓝航空免费
+      
+[16/05/04 17:16:59.937] INFO [rss:crawl_rss_list:80]- article 9301 finished.
+[16/05/04 17:16:59.940] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        星巴克被指在冰饮里加了太多冰，这事儿有多大？
+      
+[16/05/04 17:16:59.940] INFO [rss:crawl_rss_list:80]- article 9302 finished.
+[16/05/04 17:16:59.943] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        没有对手跑不快？Puma 做了一个赛跑机器人
+      
+[16/05/04 17:16:59.943] INFO [rss:crawl_rss_list:80]- article 9303 finished.
+[16/05/04 17:16:59.946] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        社交网站 Twitter，现在把自己定位成新闻应用了？
+      
+[16/05/04 17:16:59.946] INFO [rss:crawl_rss_list:80]- article 9304 finished.
+[16/05/04 17:16:59.949] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        为探究气候变化，这位建筑师设计了一个浮动的房子
+      
+[16/05/04 17:16:59.949] INFO [rss:crawl_rss_list:80]- article 9305 finished.
+[16/05/04 17:16:59.952] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        《刀剑乱舞》要来中国了，这个代理公司你满意吗？
+      
+[16/05/04 17:16:59.952] INFO [rss:crawl_rss_list:80]- article 9306 finished.
+[16/05/04 17:16:59.955] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        英特尔放弃了一款处理器，也放弃了手机和平板市场
+      
+[16/05/04 17:16:59.955] INFO [rss:crawl_rss_list:80]- article 9307 finished.
+[16/05/04 17:16:59.957] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        给水果姐做了演出服之后，她开了个时装设计教育网站
+      
+[16/05/04 17:16:59.958] INFO [rss:crawl_rss_list:80]- article 9308 finished.
+[16/05/04 17:16:59.960] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        李宁和盈方也想加入 CBA 公司，但这事好像不太对
+      
+[16/05/04 17:16:59.960] INFO [rss:crawl_rss_list:80]- article 9309 finished.
+[16/05/04 17:16:59.963] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        Apple Watch 又卖新表带了，这次拉来了 Coach
+      
+[16/05/04 17:16:59.963] INFO [rss:crawl_rss_list:80]- article 9310 finished.
+[16/05/04 17:16:59.966] INFO [rss:crawl_rss_list:61]- ARTICLE EXIST :
+        鬼才虚渊玄又带着他的新作来了，这次是霹雳布袋戏
+      
+[16/05/04 17:16:59.966] INFO [rss:crawl_rss_list:80]- article 9311 finished.
