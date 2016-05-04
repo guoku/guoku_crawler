@@ -70,6 +70,7 @@ def crawl_rss_list(authorized_user_id, page=1):
                 created_datetime=parser.parse(item.pubDate.text),
                 publish=CoreArticle.published,
                 cover=config.DEFAULT_ARTICLE_COVER,
+                origin_url=item.link.text,
                 source=2,# source 2 is from rss.
             )
             session.add(article)
