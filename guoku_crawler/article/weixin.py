@@ -332,6 +332,7 @@ def createArticle(article_dic):
             updated_datetime=datetime.now(),
             publish=CoreArticle.published,
             cover=article_dic['cover'],
+            source = 1, #source 1 is from weixin
         )
     session.add(article)
     session.commit()
