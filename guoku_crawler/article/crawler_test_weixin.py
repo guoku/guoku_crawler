@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 import datetime
-import time
+
 from sqlalchemy import or_
 
 from guoku_crawler.db import session
@@ -27,7 +27,6 @@ today_start = datetime.datetime.combine(
 def crawl_articles():
     users = get_auth_users()
     for user in users:
-        time.sleep(5)
         crawl_user_articles.delay(user.profile.id)
 
 @app.task(base=RequestsTask, name='crawl_user_articles')
@@ -58,8 +57,8 @@ def get_auth_users():
 
 if __name__ == '__main__':
     # crawl_rss_list(65)
-    crawl_articles()
-    # crawl_user_weixin_articles_by_authorized_user_id(62)
+    # crawl_articles()
+    crawl_user_weixin_articles_by_authorized_user_id(62)
 
 
 

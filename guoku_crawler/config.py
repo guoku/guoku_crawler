@@ -10,7 +10,9 @@ import logging
 
 #config for local
 #=========================
-data_base_ip = 'localhost'
+data_base_ip = '192.168.1.117'
+data_base_user = 'guoku'
+data_base_pass = 'guoku!@#'
 phantom_server = 'http://192.168.99.100:5000/'
 image_host = 'http://127.0.0.1:9766/'
 image_path = 'images/'
@@ -22,6 +24,8 @@ request_interval = 2
 #config for remote test 48
 #==========================
 # data_base_ip = '10.0.2.125'
+# data_base_user = 'guoku'
+# data_base_pass = 'guoku1@#'
 # phantom_server = '10.0.2.48:5000'
 # image_host = 'http://imgcdn.guoku.com/'
 # image_path = 'images/'
@@ -34,6 +38,8 @@ request_interval = 2
 #config for remote production 49
 #===========================
 # data_base_ip = '10.0.2.90'
+# data_base_user = 'guoku'
+# data_base_pass = 'guoku!@#
 # phantom_server = '10.0.2.49:5000'
 # image_host = 'http://imgcdn.guoku.com/'
 # image_path = 'images/'
@@ -51,8 +57,8 @@ logger = logging.getLogger("request")
 # Database
 DATABASES = {
     'DB_NAME': 'core',
-    'USER': 'guoku',
-    'PASSWORD': 'guoku!@#',
+    'USER':  data_base_user,
+    'PASSWORD': data_base_pass,
     'HOST': data_base_ip,
     'PORT': '3306',
 }
@@ -127,7 +133,7 @@ REQUEST_INTERVAL = request_interval
 CELERYBEAT_SCHEDULE = {
     'crawl_all_articles': {
         'task': 'crawl_articles',
-        'schedule': crontab(minute=59, hour=23)
+        'schedule': crontab(minute=59, hour='*/4')
     },
 }
 

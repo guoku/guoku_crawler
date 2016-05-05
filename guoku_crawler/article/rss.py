@@ -123,3 +123,5 @@ def crawl_rss_images(content_string, article_id):
             content_html = article_soup.decode_contents(formatter="html")
             article.content = content_html
             session.commit()
+
+#comment here
